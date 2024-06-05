@@ -9,7 +9,7 @@ namespace DverMarketWinForms {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	static int curretRuchkaY = 41;
+	static int curretFurnituraY = 41;
 	
 
 
@@ -427,35 +427,35 @@ namespace DverMarketWinForms {
 		   array <TextBox^>^ tbCount = gcnew array<TextBox^>(99);
 		   array <TextBox^>^ tbPrice = gcnew array<TextBox^>(99);
 		   int RuchkaCount = 0;
-		   array <TextBox^>^ tbRuchkaName = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbRuchkaCount = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbRuchkaPrice = gcnew array<TextBox^>(99);
+		   array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(99);
+		   array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(99);
+		   array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(99);
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MoveCompsDown(1);
-		tbRuchkaName[RuchkaCount] = gcnew TextBox();
-		tbRuchkaName[RuchkaCount]->Location = System::Drawing::Point(13, curretRuchkaY + 23 + RuchkaCount * 30);
-		tbRuchkaName[RuchkaCount]->Size = System::Drawing::Size(175, 24);
-		tbRuchkaName[RuchkaCount]->Name = L"textFurNameBox" + doorCount.ToString();
-		tbRuchkaName[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbRuchkaName[RuchkaCount], L"Наименование");
-			Controls->Add(tbRuchkaName[RuchkaCount]);
+		tbFurnituraName[RuchkaCount] = gcnew TextBox();
+		tbFurnituraName[RuchkaCount]->Location = System::Drawing::Point(13, curretFurnituraY + 23 + RuchkaCount * 30);
+		tbFurnituraName[RuchkaCount]->Size = System::Drawing::Size(175, 24);
+		tbFurnituraName[RuchkaCount]->Name = L"textFurNameBox" + doorCount.ToString();
+		tbFurnituraName[RuchkaCount]->TabIndex = RuchkaCount;
+			this->toolTip1->SetToolTip(tbFurnituraName[RuchkaCount], L"Наименование");
+			Controls->Add(tbFurnituraName[RuchkaCount]);
 
-			tbRuchkaCount[RuchkaCount] = gcnew TextBox();
-			tbRuchkaCount[RuchkaCount]->Location = System::Drawing::Point(194, curretRuchkaY + 23 + RuchkaCount * 30);
-			tbRuchkaCount[RuchkaCount]->Size = System::Drawing::Size(92, 24);
-			tbRuchkaCount[RuchkaCount]->Name = L"textFurCountBox" + doorCount.ToString();
-			tbRuchkaCount[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbRuchkaCount[RuchkaCount], L"Количество");
-			Controls->Add(tbRuchkaCount[RuchkaCount]);
+			tbFurnituraCount[RuchkaCount] = gcnew TextBox();
+			tbFurnituraCount[RuchkaCount]->Location = System::Drawing::Point(194, curretFurnituraY + 23 + RuchkaCount * 30);
+			tbFurnituraCount[RuchkaCount]->Size = System::Drawing::Size(92, 24);
+			tbFurnituraCount[RuchkaCount]->Name = L"textFurCountBox" + doorCount.ToString();
+			tbFurnituraCount[RuchkaCount]->TabIndex = RuchkaCount;
+			this->toolTip1->SetToolTip(tbFurnituraCount[RuchkaCount], L"Количество");
+			Controls->Add(tbFurnituraCount[RuchkaCount]);
 
 
-			tbRuchkaPrice[RuchkaCount] = gcnew TextBox();
-			tbRuchkaPrice[RuchkaCount]->Location = System::Drawing::Point(293, curretRuchkaY + 23 + RuchkaCount * 30);
-			tbRuchkaPrice[RuchkaCount]->Size = System::Drawing::Size(85, 24);
-			tbRuchkaPrice[RuchkaCount]->Name = L"textFurPriceBox" + doorCount.ToString();
-			tbRuchkaPrice[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbRuchkaPrice[RuchkaCount], L"Стоимость");
-			Controls->Add(tbRuchkaPrice[RuchkaCount]);
+			tbFurnituraPrice[RuchkaCount] = gcnew TextBox();
+			tbFurnituraPrice[RuchkaCount]->Location = System::Drawing::Point(293, curretFurnituraY + 23 + RuchkaCount * 30);
+			tbFurnituraPrice[RuchkaCount]->Size = System::Drawing::Size(85, 24);
+			tbFurnituraPrice[RuchkaCount]->Name = L"textFurPriceBox" + doorCount.ToString();
+			tbFurnituraPrice[RuchkaCount]->TabIndex = RuchkaCount;
+			this->toolTip1->SetToolTip(tbFurnituraPrice[RuchkaCount], L"Стоимость");
+			Controls->Add(tbFurnituraPrice[RuchkaCount]);
 			RuchkaCount++;
 			if (RuchkaCount > 0) { button4->Enabled = true; }
 			else { button4->Enabled = false; }
@@ -465,12 +465,12 @@ namespace DverMarketWinForms {
 	}
 		   private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 			   MoveCompsUp(1);
-			   Controls->Remove(tbRuchkaName[RuchkaCount - 1]);
-			   delete tbRuchkaName[RuchkaCount - 1];
-			   Controls->Remove(tbRuchkaCount[RuchkaCount - 1]);
-			   delete tbRuchkaCount[RuchkaCount - 1];
-			   Controls->Remove(tbRuchkaPrice[RuchkaCount - 1]);
-			   delete tbRuchkaPrice[RuchkaCount - 1];
+			   Controls->Remove(tbFurnituraName[RuchkaCount - 1]);
+			   delete tbFurnituraName[RuchkaCount - 1];
+			   Controls->Remove(tbFurnituraCount[RuchkaCount - 1]);
+			   delete tbFurnituraCount[RuchkaCount - 1];
+			   Controls->Remove(tbFurnituraPrice[RuchkaCount - 1]);
+			   delete tbFurnituraPrice[RuchkaCount - 1];
 			   
 			   RuchkaCount--;
 			   if (RuchkaCount > 0) { button4->Enabled = true; }
@@ -549,36 +549,36 @@ namespace DverMarketWinForms {
 	
 	void MoveCompsDown(int index) {
 		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, curretRuchkaY += 30);
-			this->button3->Location = System::Drawing::Point(95, curretRuchkaY);
-			this->button4->Location = System::Drawing::Point(124, curretRuchkaY);
+			this->label5->Location = System::Drawing::Point(13, curretFurnituraY += 30);
+			this->button3->Location = System::Drawing::Point(95, curretFurnituraY);
+			this->button4->Location = System::Drawing::Point(124, curretFurnituraY);
 			for (int i = 0; i < 99; i++)
 			{
-				if (tbRuchkaName[i] != nullptr) {
-					tbRuchkaName[i]->Location = System::Drawing::Point(13, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaName[i]);
-					tbRuchkaCount[i]->Location = System::Drawing::Point(194, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaCount[i]);
-					tbRuchkaPrice[i]->Location = System::Drawing::Point(293, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaPrice[i]);
+				if (tbFurnituraName[i] != nullptr) {
+					tbFurnituraName[i]->Location = System::Drawing::Point(13, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraName[i]);
+					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraCount[i]);
+					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraPrice[i]);
 				}
 			}
 		}
 	}
 	void MoveCompsUp(int index) {
 		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, curretRuchkaY -= 30);
-			this->button3->Location = System::Drawing::Point(95, curretRuchkaY);
-			this->button4->Location = System::Drawing::Point(124, curretRuchkaY);
+			this->label5->Location = System::Drawing::Point(13, curretFurnituraY -= 30);
+			this->button3->Location = System::Drawing::Point(95, curretFurnituraY);
+			this->button4->Location = System::Drawing::Point(124, curretFurnituraY);
 			for (int i = 0; i < 99; i++)
 			{
-				if (tbRuchkaName[i] != nullptr) {
-					tbRuchkaName[i]->Location = System::Drawing::Point(13, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaName[i]);
-					tbRuchkaCount[i]->Location = System::Drawing::Point(194, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaCount[i]);
-					tbRuchkaPrice[i]->Location = System::Drawing::Point(293, (curretRuchkaY + 23 + i * 30));
-					Controls->Add(tbRuchkaPrice[i]);
+				if (tbFurnituraName[i] != nullptr) {
+					tbFurnituraName[i]->Location = System::Drawing::Point(13, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraName[i]);
+					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraCount[i]);
+					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (curretFurnituraY + 23 + i * 30));
+					Controls->Add(tbFurnituraPrice[i]);
 				}
 			}
 		}
@@ -613,9 +613,9 @@ namespace DverMarketWinForms {
 		}
 
 		for (int i = 0; i < 99; i++) {
-			if (tbRuchkaCount[i] != nullptr && tbRuchkaPrice[i] != nullptr) {
+			if (tbFurnituraCount[i] != nullptr && tbFurnituraPrice[i] != nullptr) {
 				int count, price;
-				if (Int32::TryParse(tbRuchkaCount[i]->Text, count) && Int32::TryParse(tbRuchkaPrice[i]->Text, price)) {
+				if (Int32::TryParse(tbFurnituraCount[i]->Text, count) && Int32::TryParse(tbFurnituraPrice[i]->Text, price)) {
 					FurPrice += count * price;
 				}
 			}
