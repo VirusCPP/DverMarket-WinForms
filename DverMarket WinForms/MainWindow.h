@@ -367,7 +367,7 @@ namespace DverMarketWinForms {
 			   this->button5->Name = L"button5";
 			   this->button5->Size = System::Drawing::Size(384, 23);
 			   this->button5->TabIndex = 8;
-			   this->button5->Text = L"Расчитать";
+			   this->button5->Text = L"Рассчитать";
 			   this->button5->UseVisualStyleBackColor = true;
 			   this->button5->Click += gcnew System::EventHandler(this, &MainWindow::button5_Click);
 			   // 
