@@ -9,7 +9,7 @@ namespace DverMarketWinForms {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	static int curretFurnituraY = 41;
+	static int currentFurnituraY = 41;
 	
 
 
@@ -445,7 +445,7 @@ namespace DverMarketWinForms {
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MoveCompsDown(1);
 		tbFurnituraName[RuchkaCount] = gcnew TextBox();
-		tbFurnituraName[RuchkaCount]->Location = System::Drawing::Point(13, curretFurnituraY + 23 + RuchkaCount * 30);
+		tbFurnituraName[RuchkaCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + RuchkaCount * 30);
 		tbFurnituraName[RuchkaCount]->Size = System::Drawing::Size(175, 24);
 		tbFurnituraName[RuchkaCount]->Name = L"textFurNameBox" + doorCount.ToString();
 		tbFurnituraName[RuchkaCount]->TabIndex = RuchkaCount;
@@ -453,7 +453,7 @@ namespace DverMarketWinForms {
 			Controls->Add(tbFurnituraName[RuchkaCount]);
 
 			tbFurnituraCount[RuchkaCount] = gcnew TextBox();
-			tbFurnituraCount[RuchkaCount]->Location = System::Drawing::Point(194, curretFurnituraY + 23 + RuchkaCount * 30);
+			tbFurnituraCount[RuchkaCount]->Location = System::Drawing::Point(194, currentFurnituraY + 23 + RuchkaCount * 30);
 			tbFurnituraCount[RuchkaCount]->Size = System::Drawing::Size(92, 24);
 			tbFurnituraCount[RuchkaCount]->Name = L"textFurCountBox" + doorCount.ToString();
 			tbFurnituraCount[RuchkaCount]->TabIndex = RuchkaCount;
@@ -462,7 +462,7 @@ namespace DverMarketWinForms {
 
 
 			tbFurnituraPrice[RuchkaCount] = gcnew TextBox();
-			tbFurnituraPrice[RuchkaCount]->Location = System::Drawing::Point(293, curretFurnituraY + 23 + RuchkaCount * 30);
+			tbFurnituraPrice[RuchkaCount]->Location = System::Drawing::Point(293, currentFurnituraY + 23 + RuchkaCount * 30);
 			tbFurnituraPrice[RuchkaCount]->Size = System::Drawing::Size(85, 24);
 			tbFurnituraPrice[RuchkaCount]->Name = L"textFurPriceBox" + doorCount.ToString();
 			tbFurnituraPrice[RuchkaCount]->TabIndex = RuchkaCount;
@@ -561,17 +561,17 @@ namespace DverMarketWinForms {
 	
 	void MoveCompsDown(int index) {
 		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, curretFurnituraY += 30);
-			this->button3->Location = System::Drawing::Point(95, curretFurnituraY);
-			this->button4->Location = System::Drawing::Point(124, curretFurnituraY);
+			this->label5->Location = System::Drawing::Point(13, currentFurnituraY += 30);
+			this->button3->Location = System::Drawing::Point(95, currentFurnituraY);
+			this->button4->Location = System::Drawing::Point(124, currentFurnituraY);
 			for (int i = 0; i < 99; i++)
 			{
 				if (tbFurnituraName[i] != nullptr) {
-					tbFurnituraName[i]->Location = System::Drawing::Point(13, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraName[i]->Location = System::Drawing::Point(13, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraName[i]);
-					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraCount[i]);
-					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraPrice[i]);
 				}
 			}
@@ -579,17 +579,17 @@ namespace DverMarketWinForms {
 	}
 	void MoveCompsUp(int index) {
 		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, curretFurnituraY -= 30);
-			this->button3->Location = System::Drawing::Point(95, curretFurnituraY);
-			this->button4->Location = System::Drawing::Point(124, curretFurnituraY);
+			this->label5->Location = System::Drawing::Point(13, currentFurnituraY -= 30);
+			this->button3->Location = System::Drawing::Point(95, currentFurnituraY);
+			this->button4->Location = System::Drawing::Point(124, currentFurnituraY);
 			for (int i = 0; i < 99; i++)
 			{
 				if (tbFurnituraName[i] != nullptr) {
-					tbFurnituraName[i]->Location = System::Drawing::Point(13, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraName[i]->Location = System::Drawing::Point(13, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraName[i]);
-					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraCount[i]);
-					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (curretFurnituraY + 23 + i * 30));
+					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (currentFurnituraY + 23 + i * 30));
 					Controls->Add(tbFurnituraPrice[i]);
 				}
 			}
