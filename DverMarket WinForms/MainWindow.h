@@ -69,6 +69,7 @@ namespace DverMarketWinForms {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ label8;
 	private: System::ComponentModel::IContainer^ components;
 
 #pragma region Windows Form Designer generated code
@@ -106,6 +107,7 @@ namespace DverMarketWinForms {
 			   this->label6 = (gcnew System::Windows::Forms::Label());
 			   this->label7 = (gcnew System::Windows::Forms::Label());
 			   this->button5 = (gcnew System::Windows::Forms::Button());
+			   this->label8 = (gcnew System::Windows::Forms::Label());
 			   this->SuspendLayout();
 			   // 
 			   // label1
@@ -371,12 +373,22 @@ namespace DverMarketWinForms {
 			   this->button5->UseVisualStyleBackColor = true;
 			   this->button5->Click += gcnew System::EventHandler(this, &MainWindow::button5_Click);
 			   // 
+			   // label8
+			   // 
+			   this->label8->Location = System::Drawing::Point(566, 200);
+			   this->label8->Name = L"label8";
+			   this->label8->Size = System::Drawing::Size(384, 16);
+			   this->label8->TabIndex = 9;
+			   this->label8->Text = L"Примечание";
+			   this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			   // 
 			   // MainWindow
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			   this->AutoScroll = true;
 			   this->ClientSize = System::Drawing::Size(970, 611);
+			   this->Controls->Add(this->label8);
 			   this->Controls->Add(this->button5);
 			   this->Controls->Add(this->label7);
 			   this->Controls->Add(this->label6);
