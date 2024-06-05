@@ -330,6 +330,7 @@ namespace DverMarketWinForms {
 			   this->textBox12->Name = L"textBox12";
 			   this->textBox12->Size = System::Drawing::Size(118, 22);
 			   this->textBox12->TabIndex = 4;
+			   this->toolTip1->SetToolTip(this->textBox12, L"Стоимость");
 			   // 
 			   // dateTimePicker1
 			   // 
