@@ -22,9 +22,10 @@ namespace DverMarketWinForms {
 			checkButtonStatus();
 			checkButtonStatus2();
 			Form1_Load();
-			
 		}
+
 	protected:
+
 		~MainWindow()
 		{
 			if (components)
