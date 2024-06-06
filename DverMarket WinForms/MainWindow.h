@@ -11,8 +11,6 @@ namespace DverMarketWinForms {
 
 	static int currentFurnituraY = 41;
 	
-
-
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
 		
@@ -682,8 +680,8 @@ namespace DverMarketWinForms {
 		this->label7->Text = Result.ToString() + " Руб.";
 	}
 
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	Calculate();
-}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		Calculate();
+	}
 };
 }
