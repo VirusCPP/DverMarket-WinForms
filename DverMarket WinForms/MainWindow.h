@@ -23,9 +23,9 @@ namespace DverMarketWinForms {
 			
 			InitializeComponent();
 			checkButtonStatus();
-			if (RuchkaCount > 0) { button4->Enabled = true; }
+			if (FurnituraCount > 0) { button4->Enabled = true; }
 			else { button4->Enabled = false; }
-			if (RuchkaCount > 98) { button3->Enabled = false; }
+			if (FurnituraCount > 98) { button3->Enabled = false; }
 			else { button3->Enabled = true; }
 		}
 
@@ -439,56 +439,56 @@ namespace DverMarketWinForms {
 		   array <TextBox^>^ tbColor = gcnew array<TextBox^>(99);
 		   array <TextBox^>^ tbCount = gcnew array<TextBox^>(99);
 		   array <TextBox^>^ tbPrice = gcnew array<TextBox^>(99);
-		   int RuchkaCount = 0;
+		   int FurnituraCount = 0;
 		   array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(99);
 		   array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(99);
 		   array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(99);
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MoveCompsDown(1);
-		tbFurnituraName[RuchkaCount] = gcnew TextBox();
-		tbFurnituraName[RuchkaCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + RuchkaCount * 30);
-		tbFurnituraName[RuchkaCount]->Size = System::Drawing::Size(175, 24);
-		tbFurnituraName[RuchkaCount]->Name = L"textFurNameBox" + doorCount.ToString();
-		tbFurnituraName[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbFurnituraName[RuchkaCount], L"Наименование");
-			Controls->Add(tbFurnituraName[RuchkaCount]);
+		tbFurnituraName[FurnituraCount] = gcnew TextBox();
+		tbFurnituraName[FurnituraCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + FurnituraCount * 30);
+		tbFurnituraName[FurnituraCount]->Size = System::Drawing::Size(175, 24);
+		tbFurnituraName[FurnituraCount]->Name = L"textFurNameBox" + doorCount.ToString();
+		tbFurnituraName[FurnituraCount]->TabIndex = FurnituraCount;
+			this->toolTip1->SetToolTip(tbFurnituraName[FurnituraCount], L"Наименование");
+			Controls->Add(tbFurnituraName[FurnituraCount]);
 
-			tbFurnituraCount[RuchkaCount] = gcnew TextBox();
-			tbFurnituraCount[RuchkaCount]->Location = System::Drawing::Point(194, currentFurnituraY + 23 + RuchkaCount * 30);
-			tbFurnituraCount[RuchkaCount]->Size = System::Drawing::Size(92, 24);
-			tbFurnituraCount[RuchkaCount]->Name = L"textFurCountBox" + doorCount.ToString();
-			tbFurnituraCount[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbFurnituraCount[RuchkaCount], L"Количество");
-			Controls->Add(tbFurnituraCount[RuchkaCount]);
+			tbFurnituraCount[FurnituraCount] = gcnew TextBox();
+			tbFurnituraCount[FurnituraCount]->Location = System::Drawing::Point(194, currentFurnituraY + 23 + FurnituraCount * 30);
+			tbFurnituraCount[FurnituraCount]->Size = System::Drawing::Size(92, 24);
+			tbFurnituraCount[FurnituraCount]->Name = L"textFurCountBox" + doorCount.ToString();
+			tbFurnituraCount[FurnituraCount]->TabIndex = FurnituraCount;
+			this->toolTip1->SetToolTip(tbFurnituraCount[FurnituraCount], L"Количество");
+			Controls->Add(tbFurnituraCount[FurnituraCount]);
 
 
-			tbFurnituraPrice[RuchkaCount] = gcnew TextBox();
-			tbFurnituraPrice[RuchkaCount]->Location = System::Drawing::Point(293, currentFurnituraY + 23 + RuchkaCount * 30);
-			tbFurnituraPrice[RuchkaCount]->Size = System::Drawing::Size(85, 24);
-			tbFurnituraPrice[RuchkaCount]->Name = L"textFurPriceBox" + doorCount.ToString();
-			tbFurnituraPrice[RuchkaCount]->TabIndex = RuchkaCount;
-			this->toolTip1->SetToolTip(tbFurnituraPrice[RuchkaCount], L"Стоимость");
-			Controls->Add(tbFurnituraPrice[RuchkaCount]);
-			RuchkaCount++;
-			if (RuchkaCount > 0) { button4->Enabled = true; }
+			tbFurnituraPrice[FurnituraCount] = gcnew TextBox();
+			tbFurnituraPrice[FurnituraCount]->Location = System::Drawing::Point(293, currentFurnituraY + 23 + FurnituraCount * 30);
+			tbFurnituraPrice[FurnituraCount]->Size = System::Drawing::Size(85, 24);
+			tbFurnituraPrice[FurnituraCount]->Name = L"textFurPriceBox" + doorCount.ToString();
+			tbFurnituraPrice[FurnituraCount]->TabIndex = FurnituraCount;
+			this->toolTip1->SetToolTip(tbFurnituraPrice[FurnituraCount], L"Стоимость");
+			Controls->Add(tbFurnituraPrice[FurnituraCount]);
+			FurnituraCount++;
+			if (FurnituraCount > 0) { button4->Enabled = true; }
 			else { button4->Enabled = false; }
-			if (RuchkaCount > 98) { button3->Enabled = false; }
+			if (FurnituraCount > 98) { button3->Enabled = false; }
 			else { button3->Enabled = true; }
 
 	}
 		   private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 			   MoveCompsUp(1);
-			   Controls->Remove(tbFurnituraName[RuchkaCount - 1]);
-			   delete tbFurnituraName[RuchkaCount - 1];
-			   Controls->Remove(tbFurnituraCount[RuchkaCount - 1]);
-			   delete tbFurnituraCount[RuchkaCount - 1];
-			   Controls->Remove(tbFurnituraPrice[RuchkaCount - 1]);
-			   delete tbFurnituraPrice[RuchkaCount - 1];
+			   Controls->Remove(tbFurnituraName[FurnituraCount - 1]);
+			   delete tbFurnituraName[FurnituraCount - 1];
+			   Controls->Remove(tbFurnituraCount[FurnituraCount - 1]);
+			   delete tbFurnituraCount[FurnituraCount - 1];
+			   Controls->Remove(tbFurnituraPrice[FurnituraCount - 1]);
+			   delete tbFurnituraPrice[FurnituraCount - 1];
 			   
-			   RuchkaCount--;
-			   if (RuchkaCount > 0) { button4->Enabled = true; }
+			   FurnituraCount--;
+			   if (FurnituraCount > 0) { button4->Enabled = true; }
 			   else { button4->Enabled = false; }
-			   if (RuchkaCount > 98) { button3->Enabled = false; }
+			   if (FurnituraCount > 98) { button3->Enabled = false; }
 			   else { button3->Enabled = true; }
 		   }
 
