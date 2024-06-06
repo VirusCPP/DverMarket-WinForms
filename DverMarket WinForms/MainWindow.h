@@ -74,6 +74,36 @@ namespace DverMarketWinForms {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: PrintDocument^ printDocument;
 
 	
@@ -466,12 +496,13 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->label1);
 		this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(204)));
+		this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 		this->Margin = System::Windows::Forms::Padding(4);
 		this->MaximumSize = System::Drawing::Size(986, 650);
 		this->MinimumSize = System::Drawing::Size(986, 650);
 		this->Name = L"MainWindow";
 		this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-		this->Text = L"MainWindow";
+		this->Text = L"ДверМаркет";
 		this->ResumeLayout(false);
 		this->PerformLayout();
 
@@ -733,12 +764,9 @@ namespace DverMarketWinForms {
 		
 		
 	}
-private: System::Void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
-
-	e->Graphics->DrawImage(bmp, 0, 0);
-	
-	
-}
+	private: System::Void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
+		e->Graphics->DrawImage(bmp, 0, 0);
+	}
 	   
 };
 }
