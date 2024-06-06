@@ -20,17 +20,12 @@ namespace DverMarketWinForms {
 		
 		MainWindow(void)
 		{
-			
 			InitializeComponent();
 			checkButtonStatus();
+			checkButtonStatus2();
 			Form1_Load();
-			if (furCount > 0) { button4->Enabled = true; }
-			else { button4->Enabled = false; }
-			if (furCount > 98) { button3->Enabled = false; }
-			else { button3->Enabled = true; }
 			
 		}
-
 	protected:
 		~MainWindow()
 		{
@@ -39,8 +34,6 @@ namespace DverMarketWinForms {
 				delete components;
 			}
 		}
-		
-
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
@@ -76,43 +69,41 @@ namespace DverMarketWinForms {
 	private: System::ComponentModel::IContainer^ components;
 	
 #pragma region Windows Form Designer generated code
-		   void InitializeComponent(void)
-		   {
-			   
-			   this->components = (gcnew System::ComponentModel::Container());
-			   this->label1 = (gcnew System::Windows::Forms::Label());
-			   this->button1 = (gcnew System::Windows::Forms::Button());
-			   this->button2 = (gcnew System::Windows::Forms::Button());
-			   this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			   this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			   this->label2 = (gcnew System::Windows::Forms::Label());
-			   this->label3 = (gcnew System::Windows::Forms::Label());
-			   this->label4 = (gcnew System::Windows::Forms::Label());
-			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			   this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			   this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			   this->label5 = (gcnew System::Windows::Forms::Label());
-			   this->button3 = (gcnew System::Windows::Forms::Button());
-			   this->button4 = (gcnew System::Windows::Forms::Button());
-			   this->label11 = (gcnew System::Windows::Forms::Label());
-			   this->label12 = (gcnew System::Windows::Forms::Label());
-			   this->label13 = (gcnew System::Windows::Forms::Label());
-			   this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-			   this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			   this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-			   this->label6 = (gcnew System::Windows::Forms::Label());
-			   this->label7 = (gcnew System::Windows::Forms::Label());
-			   this->button5 = (gcnew System::Windows::Forms::Button());
-			   this->label8 = (gcnew System::Windows::Forms::Label());
-			   this->SuspendLayout();
+	void InitializeComponent(void){
+		this->components = (gcnew System::ComponentModel::Container());
+		this->label1 = (gcnew System::Windows::Forms::Label());
+		this->button1 = (gcnew System::Windows::Forms::Button());
+		this->button2 = (gcnew System::Windows::Forms::Button());
+		this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
+		this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+		this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+		this->label2 = (gcnew System::Windows::Forms::Label());
+		this->label3 = (gcnew System::Windows::Forms::Label());
+		this->label4 = (gcnew System::Windows::Forms::Label());
+		this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+		this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+		this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+		this->label5 = (gcnew System::Windows::Forms::Label());
+		this->button3 = (gcnew System::Windows::Forms::Button());
+		this->button4 = (gcnew System::Windows::Forms::Button());
+		this->label11 = (gcnew System::Windows::Forms::Label());
+		this->label12 = (gcnew System::Windows::Forms::Label());
+		this->label13 = (gcnew System::Windows::Forms::Label());
+		this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+		this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+		this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+		this->label6 = (gcnew System::Windows::Forms::Label());
+		this->label7 = (gcnew System::Windows::Forms::Label());
+		this->button5 = (gcnew System::Windows::Forms::Button());
+		this->label8 = (gcnew System::Windows::Forms::Label());
+		this->SuspendLayout();
 			   // 
 			   // label1
 			   // 
@@ -425,7 +416,8 @@ namespace DverMarketWinForms {
 			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->label5);
 			   this->Controls->Add(this->label1);
-			   this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, 
+				   System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
 			   this->Margin = System::Windows::Forms::Padding(4);
 			   this->MaximumSize = System::Drawing::Size(986, 650);
@@ -435,25 +427,24 @@ namespace DverMarketWinForms {
 			   this->Text = L"MainWindow";
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
-		   }
+	}
 #pragma endregion
 		   
-		   int doorCount = 0;
-		   array <TextBox^>^ tbDoorName = gcnew array<TextBox^>(99);
-		   array <ComboBox^>^ cbDoorSize = gcnew array<ComboBox^>(99);
-		   array <TextBox^>^ tbDoorColor = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbDoorCount = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbDoorPrice = gcnew array<TextBox^>(99);
-		   int furCount = 0;
-		   array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(99);
-		   array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(99);
+	int doorCount = 0, furCount = 0;
+	array <TextBox^>^ tbDoorName = gcnew array<TextBox^>(99);
+	array <ComboBox^>^ cbDoorSize = gcnew array<ComboBox^>(99);
+	array <TextBox^>^ tbDoorColor = gcnew array<TextBox^>(99);
+	array <TextBox^>^ tbDoorCount = gcnew array<TextBox^>(99);
+	array <TextBox^>^ tbDoorPrice = gcnew array<TextBox^>(99);
+	array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(99);
+	array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(99);
+	array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(99);
 	private: System::Void Form1_Load() {
-			   ToolTip^ toolTip1 = gcnew ToolTip;
-			   toolTip1->AutoPopDelay = 50000;
-			   toolTip1->InitialDelay = 1;
-			   toolTip1->ReshowDelay = 1;
-			   toolTip1->ShowAlways = true;
+		ToolTip^ toolTip1 = gcnew ToolTip;
+		toolTip1->AutoPopDelay = 50000;
+		toolTip1->InitialDelay = 1;
+		toolTip1->ReshowDelay = 1;
+		toolTip1->ShowAlways = true;
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MoveCompsDown(1);
@@ -462,46 +453,38 @@ namespace DverMarketWinForms {
 		tbFurnituraName[furCount]->Size = System::Drawing::Size(175, 24);
 		tbFurnituraName[furCount]->Name = L"textFurNameBox" + doorCount.ToString();
 		tbFurnituraName[furCount]->TabIndex = furCount;
-			this->toolTip1->SetToolTip(tbFurnituraName[furCount], L"Наименование");
-			Controls->Add(tbFurnituraName[furCount]);
+		this->toolTip1->SetToolTip(tbFurnituraName[furCount], L"Наименование");
+		Controls->Add(tbFurnituraName[furCount]);
 
-			tbFurnituraCount[furCount] = gcnew TextBox();
-			tbFurnituraCount[furCount]->Location = System::Drawing::Point(194, currentFurnituraY + 23 + furCount * 30);
-			tbFurnituraCount[furCount]->Size = System::Drawing::Size(92, 24);
-			tbFurnituraCount[furCount]->Name = L"textFurCountBox" + doorCount.ToString();
-			tbFurnituraCount[furCount]->TabIndex = furCount;
-			this->toolTip1->SetToolTip(tbFurnituraCount[furCount], L"Количество");
-			Controls->Add(tbFurnituraCount[furCount]);
+		tbFurnituraCount[furCount] = gcnew TextBox();
+		tbFurnituraCount[furCount]->Location = System::Drawing::Point(194, currentFurnituraY + 23 + furCount * 30);
+		tbFurnituraCount[furCount]->Size = System::Drawing::Size(92, 24);
+		tbFurnituraCount[furCount]->Name = L"textFurCountBox" + doorCount.ToString();
+		tbFurnituraCount[furCount]->TabIndex = furCount;
+		this->toolTip1->SetToolTip(tbFurnituraCount[furCount], L"Количество");
+		Controls->Add(tbFurnituraCount[furCount]);
 
-			tbFurnituraPrice[furCount] = gcnew TextBox();
-			tbFurnituraPrice[furCount]->Location = System::Drawing::Point(293, currentFurnituraY + 23 + furCount * 30);
-			tbFurnituraPrice[furCount]->Size = System::Drawing::Size(85, 24);
-			tbFurnituraPrice[furCount]->Name = L"textFurPriceBox" + doorCount.ToString();
-			tbFurnituraPrice[furCount]->TabIndex = furCount;
-			this->toolTip1->SetToolTip(tbFurnituraPrice[furCount], L"Стоимость");
-			Controls->Add(tbFurnituraPrice[furCount]);
-			furCount++;
-			if (furCount > 0) { button4->Enabled = true; }
-			else { button4->Enabled = false; }
-			if (furCount > 98) { button3->Enabled = false; }
-			else { button3->Enabled = true; }
-
+		tbFurnituraPrice[furCount] = gcnew TextBox();
+		tbFurnituraPrice[furCount]->Location = System::Drawing::Point(293, currentFurnituraY + 23 + furCount * 30);
+		tbFurnituraPrice[furCount]->Size = System::Drawing::Size(85, 24);
+		tbFurnituraPrice[furCount]->Name = L"textFurPriceBox" + doorCount.ToString();
+		tbFurnituraPrice[furCount]->TabIndex = furCount;
+		this->toolTip1->SetToolTip(tbFurnituraPrice[furCount], L"Стоимость");
+		Controls->Add(tbFurnituraPrice[furCount]);
+		furCount++;
+		checkButtonStatus2();
 	}
-		   private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-			   MoveCompsUp(1);
-			   Controls->Remove(tbFurnituraName[furCount - 1]);
-			   delete tbFurnituraName[furCount - 1];
-			   Controls->Remove(tbFurnituraCount[furCount - 1]);
-			   delete tbFurnituraCount[furCount - 1];
-			   Controls->Remove(tbFurnituraPrice[furCount - 1]);
-			   delete tbFurnituraPrice[furCount - 1];
-			   
-			   furCount--;
-			   if (furCount > 0) { button4->Enabled = true; }
-			   else { button4->Enabled = false; }
-			   if (furCount > 98) { button3->Enabled = false; }
-			   else { button3->Enabled = true; }
-		   }
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		MoveCompsUp(1);
+		Controls->Remove(tbFurnituraName[furCount - 1]);
+		delete tbFurnituraName[furCount - 1];
+		Controls->Remove(tbFurnituraCount[furCount - 1]);
+		delete tbFurnituraCount[furCount - 1];
+		Controls->Remove(tbFurnituraPrice[furCount - 1]);
+		delete tbFurnituraPrice[furCount - 1];
+		furCount--;
+		checkButtonStatus2();
+	}
 
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -565,10 +548,16 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 	void checkButtonStatus() {
-			   if (doorCount > 0) { button2->Enabled = true; }
-			   else { button2->Enabled = false; }
-			   if (doorCount > 98) { button1->Enabled = false; }
-			   else { button1->Enabled = true; }
+		if (doorCount > 0) { button2->Enabled = true; }
+		else { button2->Enabled = false; }
+		if (doorCount > 98) { button1->Enabled = false; }
+		else { button1->Enabled = true; }
+	}
+	void checkButtonStatus2() {
+		if (furCount > 0) { button4->Enabled = true; }
+		else { button4->Enabled = false; }
+		if (furCount > 98) { button3->Enabled = false; }
+		else { button3->Enabled = true; }
 	}
 	
 	void MoveCompsDown(int index) {
