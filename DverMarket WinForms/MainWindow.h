@@ -593,16 +593,9 @@ namespace DverMarketWinForms {
 		}
 	}
 	void Calculate() {
-		int DoorPrice = 0;
-		int FurPrice = 0;
-		int KorPrice = 0;
-		int NalPrice = 0;
-		int DoborPrice = 0;
-		int PodPrice = 0;
-		int MonPrice = 0;
-		int DosPrice = 0;
-		int Result = 0;
-
+		int DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0, 
+			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Result = 0;
+		
 		for (int i = 0; i < 99; i++) {
 			if (tbDoorCount[i] != nullptr && tbDoorPrice[i] != nullptr && cbDoorSize[i] != nullptr) {
 				int count, price;
