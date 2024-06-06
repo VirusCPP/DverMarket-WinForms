@@ -483,8 +483,6 @@ namespace DverMarketWinForms {
 		furCount--;
 		checkButtonStatus2();
 	}
-
-
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MoveCompsDown(0);
 		tbDoorName[doorCount] = gcnew TextBox();
@@ -557,7 +555,6 @@ namespace DverMarketWinForms {
 		if (furCount > 98) { button3->Enabled = false; }
 		else { button3->Enabled = true; }
 	}
-	
 	void MoveCompsDown(int index) {
 		if (index == 0) {
 			this->label5->Location = System::Drawing::Point(13, currentFurnituraY += 30);
@@ -679,7 +676,6 @@ namespace DverMarketWinForms {
 
 		this->label7->Text = Result.ToString() + " Руб.";
 	}
-
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		Calculate();
 	}
