@@ -73,6 +73,7 @@ namespace DverMarketWinForms {
 
 
 
+
 	private: PrintDocument^ printDocument;
 
 	
