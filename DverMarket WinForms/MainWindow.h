@@ -70,6 +70,8 @@ namespace DverMarketWinForms {
 	private: System::ComponentModel::IContainer^ components;
 	private: System::Drawing::Printing::PrintDocument^ printDocument1;
 	private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::ComboBox^ comboBox4;
 
 
 
@@ -146,6 +148,8 @@ namespace DverMarketWinForms {
 		this->button6 = (gcnew System::Windows::Forms::Button());
 		this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 		this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
+		this->label9 = (gcnew System::Windows::Forms::Label());
+		this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
 		this->SuspendLayout();
 		// 
 		// label1
@@ -379,7 +383,7 @@ namespace DverMarketWinForms {
 		// 
 		// dateTimePicker1
 		// 
-		this->dateTimePicker1->Location = System::Drawing::Point(566, 168);
+		this->dateTimePicker1->Location = System::Drawing::Point(806, 175);
 		this->dateTimePicker1->Name = L"dateTimePicker1";
 		this->dateTimePicker1->Size = System::Drawing::Size(144, 22);
 		this->dateTimePicker1->TabIndex = 5;
@@ -455,6 +459,25 @@ namespace DverMarketWinForms {
 		this->printPreviewDialog1->UseAntiAlias = true;
 		this->printPreviewDialog1->Visible = false;
 		// 
+		// label9
+		// 
+		this->label9->Location = System::Drawing::Point(566, 175);
+		this->label9->Name = L"label9";
+		this->label9->Size = System::Drawing::Size(118, 22);
+		this->label9->TabIndex = 10;
+		this->label9->Text = L"Скидка";
+		this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		// 
+		// comboBox4
+		// 
+		this->comboBox4->FormattingEnabled = true;
+		this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5%", L"7%", L"10%" });
+		this->comboBox4->Location = System::Drawing::Point(662, 173);
+		this->comboBox4->Name = L"comboBox4";
+		this->comboBox4->Size = System::Drawing::Size(108, 24);
+		this->comboBox4->TabIndex = 11;
+		this->comboBox4->Text = L"без скидки";
+		// 
 		// MainWindow
 		// 
 		this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
@@ -462,6 +485,8 @@ namespace DverMarketWinForms {
 		this->AutoScroll = true;
 		this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 		this->ClientSize = System::Drawing::Size(970, 611);
+		this->Controls->Add(this->comboBox4);
+		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
 		this->Controls->Add(this->button6);
 		this->Controls->Add(this->button5);
@@ -745,8 +770,20 @@ namespace DverMarketWinForms {
 		PodPrice = tb7 * tb10;
 		MonPrice = tb11;
 		DosPrice = tb12;
-
-		Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+		if (comboBox4->Text == "5%") {
+			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+			Result = Result - (Result * 5) / 100;
+		}
+		else if (comboBox4->Text == "7%") {
+			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+			Result = Result - (Result * 7) / 100;
+		}
+		else if (comboBox4->Text == "10%") {
+			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+			Result = Result - (Result * 10) / 100;
+		}
+		else
+			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
 
 		this->label7->Text = Result.ToString() + " Руб.";
 	}
