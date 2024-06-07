@@ -433,8 +433,8 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->label2);
 		this->Controls->Add(this->label5);
 		this->Controls->Add(this->label1);
-		this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
-			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+		this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(204)));
 		this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 		this->Margin = System::Windows::Forms::Padding(4);
 		this->MaximumSize = System::Drawing::Size(986, 650);
@@ -444,6 +444,7 @@ namespace DverMarketWinForms {
 		this->Text = L"ДверМаркет";
 		this->ResumeLayout(false);
 		this->PerformLayout();
+
 	}
 
 	void MainWindow::button1_Click(System::Object^ sender, System::EventArgs^ e){
