@@ -64,6 +64,10 @@ namespace DverMarketWinForms {
 		this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
 		this->label9 = (gcnew System::Windows::Forms::Label());
 		this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+		this->label10 = (gcnew System::Windows::Forms::Label());
+		this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+		this->label14 = (gcnew System::Windows::Forms::Label());
+		this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 		this->SuspendLayout();
 		// 
 		// label1
@@ -346,9 +350,6 @@ namespace DverMarketWinForms {
 		this->label8->Text = L"Примечание";
 		this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
-		// printDocument1
-		// 
-		// 
 		// printPreviewDialog1
 		// 
 		this->printPreviewDialog1->AutoScrollMargin = System::Drawing::Size(0, 0);
@@ -374,20 +375,58 @@ namespace DverMarketWinForms {
 		// comboBox4
 		// 
 		this->comboBox4->FormattingEnabled = true;
-		this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5%", L"7%", L"10%" });
+		this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"без скидки", L"5%", L"7%", L"10%" });
 		this->comboBox4->Location = System::Drawing::Point(662, 173);
 		this->comboBox4->Name = L"comboBox4";
 		this->comboBox4->Size = System::Drawing::Size(108, 24);
 		this->comboBox4->TabIndex = 11;
 		this->comboBox4->Text = L"без скидки";
 		// 
+		// label10
+		// 
+		this->label10->AutoSize = true;
+		this->label10->Location = System::Drawing::Point(566, 402);
+		this->label10->Name = L"label10";
+		this->label10->Size = System::Drawing::Size(93, 16);
+		this->label10->TabIndex = 12;
+		this->label10->Text = L"Общая сумма";
+		// 
+		// textBox8
+		// 
+		this->textBox8->Location = System::Drawing::Point(662, 401);
+		this->textBox8->Name = L"textBox8";
+		this->textBox8->ReadOnly = true;
+		this->textBox8->Size = System::Drawing::Size(85, 22);
+		this->textBox8->TabIndex = 13;
+		// 
+		// label14
+		// 
+		this->label14->AutoSize = true;
+		this->label14->Location = System::Drawing::Point(768, 404);
+		this->label14->Name = L"label14";
+		this->label14->Size = System::Drawing::Size(98, 16);
+		this->label14->TabIndex = 12;
+		this->label14->Text = L"Сумма скидки";
+		// 
+		// textBox9
+		// 
+		this->textBox9->Location = System::Drawing::Point(872, 402);
+		this->textBox9->Name = L"textBox9";
+		this->textBox9->ReadOnly = true;
+		this->textBox9->Size = System::Drawing::Size(77, 22);
+		this->textBox9->TabIndex = 13;
+		// 
 		// MainWindow
 		// 
 		this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
 		this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 		this->AutoScroll = true;
-		this->BackColor = System::Drawing::SystemColors::ControlLightLight;
+		this->BackColor = System::Drawing::SystemColors::Control;
 		this->ClientSize = System::Drawing::Size(970, 611);
+		this->Controls->Add(this->textBox9);
+		this->Controls->Add(this->textBox8);
+		this->Controls->Add(this->label14);
+		this->Controls->Add(this->label10);
 		this->Controls->Add(this->comboBox4);
 		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
@@ -613,7 +652,7 @@ namespace DverMarketWinForms {
 
 	void MainWindow::Calculate(){
 		int DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,
-			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Result = 0;
+			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Sum = 0, Skidka = 0, Result = 0;
 
 		for (int i = 0; i < 99; i++) {
 			if (tbDoorCount[i] != nullptr && tbDoorPrice[i] != nullptr && cbDoorSize[i] != nullptr) {
@@ -684,21 +723,22 @@ namespace DverMarketWinForms {
 		PodPrice = tb7 * tb10;
 		MonPrice = tb11;
 		DosPrice = tb12;
+		Sum = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
 		if (comboBox4->Text == "5%") {
-			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
-			Result = Result - (Result * 5) / 100;
+			Skidka = (Sum * 5) / 100;
 		}
 		else if (comboBox4->Text == "7%") {
-			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
-			Result = Result - (Result * 7) / 100;
+			Skidka = (Sum * 7) / 100;
 		}
 		else if (comboBox4->Text == "10%") {
-			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
-			Result = Result - (Result * 10) / 100;
+			Skidka = (Sum * 10) / 100;
 		}
 		else
-			Result = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+			Skidka = 0;
+		Result = Sum - Skidka;
 
+		this->textBox8->Text = Sum.ToString() + " Руб.";
+		this->textBox9->Text = Skidka.ToString() + " Руб.";
 		this->label7->Text = Result.ToString() + " Руб.";
 	}
 }

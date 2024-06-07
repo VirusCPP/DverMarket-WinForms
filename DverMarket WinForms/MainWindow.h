@@ -27,9 +27,7 @@ namespace DverMarketWinForms {
 		static array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(99);
 		static array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(99);
 		static array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(99);
-
-	public: 
-		System::Windows::Forms::Label^ label1;
+		static System::Windows::Forms::Label^ label1;
 		static System::Windows::Forms::Button^ button1;
 		static System::Windows::Forms::Button^ button2;
 		static System::Windows::Forms::ToolTip^ toolTip1;
@@ -61,88 +59,16 @@ namespace DverMarketWinForms {
 		static System::Windows::Forms::Label^ label7;
 		static System::Windows::Forms::Button^ button5;
 		static System::Windows::Forms::Label^ label8;
+		static System::Drawing::Printing::PrintDocument^ printDocument1;
+		static System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+		static System::Windows::Forms::Label^ label9;
+		static System::Windows::Forms::ComboBox^ comboBox4;
+		static System::Windows::Forms::Label^ label10;
+		static System::Windows::Forms::TextBox^ textBox8;
+		static System::Windows::Forms::Label^ label14;
+		static System::Windows::Forms::TextBox^ textBox9;
+		PrintDocument^ printDocument;
 	private: System::ComponentModel::IContainer^ components;
-	public:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public:
-	static System::Drawing::Printing::PrintDocument^ printDocument1;
-	static System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
-	static System::Windows::Forms::Label^ label9;
-	static System::Windows::Forms::ComboBox^ comboBox4;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		   PrintDocument^ printDocument;
-	
-
 		void InitializeComponent(void);
 		void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		void button2_Click(System::Object^ sender, System::EventArgs^ e);
