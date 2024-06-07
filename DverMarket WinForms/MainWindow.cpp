@@ -1,6 +1,7 @@
 // MainWindowFunctions.cpp
 
 #include "MainWindow.h"
+#include "PrintForm.h"
 
 namespace DverMarketWinForms {
 
@@ -59,7 +60,6 @@ namespace DverMarketWinForms {
 		this->label7 = (gcnew System::Windows::Forms::Label());
 		this->button5 = (gcnew System::Windows::Forms::Button());
 		this->label8 = (gcnew System::Windows::Forms::Label());
-		this->button6 = (gcnew System::Windows::Forms::Button());
 		this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 		this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
 		this->label9 = (gcnew System::Windows::Forms::Label());
@@ -329,7 +329,7 @@ namespace DverMarketWinForms {
 		// 
 		// button5
 		// 
-		this->button5->Location = System::Drawing::Point(566, 517);
+		this->button5->Location = System::Drawing::Point(566, 538);
 		this->button5->Name = L"button5";
 		this->button5->Size = System::Drawing::Size(384, 23);
 		this->button5->TabIndex = 8;
@@ -346,19 +346,8 @@ namespace DverMarketWinForms {
 		this->label8->Text = L"Примечание";
 		this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
-		// button6
-		// 
-		this->button6->Location = System::Drawing::Point(566, 546);
-		this->button6->Name = L"button6";
-		this->button6->Size = System::Drawing::Size(384, 23);
-		this->button6->TabIndex = 8;
-		this->button6->Text = L"Печать";
-		this->button6->UseVisualStyleBackColor = true;
-		this->button6->Click += gcnew System::EventHandler(this, &MainWindow::button6_Click);
-		// 
 		// printDocument1
 		// 
-		this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &MainWindow::printDocument1_PrintPage);
 		// 
 		// printPreviewDialog1
 		// 
@@ -402,7 +391,6 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->comboBox4);
 		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
-		this->Controls->Add(this->button6);
 		this->Controls->Add(this->button5);
 		this->Controls->Add(this->label7);
 		this->Controls->Add(this->label6);
@@ -552,22 +540,15 @@ namespace DverMarketWinForms {
 
 	Void MainWindow::button5_Click(System::Object^ sender, System::EventArgs^ e){
 		Calculate();
+		PrintForm^ printForm = gcnew PrintForm();
+		printForm->enterText();
+		printForm->Show();
 	}
 
-	void MainWindow::button6_Click(System::Object^ sender, System::EventArgs^ e){
-		Graphics^ g = this->CreateGraphics();
-		bmp = gcnew Bitmap(this->Width, this->Height, g);
-		Graphics^ mg = Graphics::FromImage(bmp);
-		mg->CopyFromScreen(this->Location.X + 10, this->Location.Y + 30, 20, 135, this->Size);
-		bmp->RotateFlip(RotateFlipType::Rotate270FlipNone);
-		printPreviewDialog1->Document = printDocument1;
-		printPreviewDialog1->ShowDialog();
-	}
-	void MainWindow::printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e){
-		if (bmp != nullptr)
-		{
-			e->Graphics->DrawImage(bmp, 0, 0);
-		}
+	Void MainWindow::button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		PrintForm^ printForm = gcnew PrintForm();
+		printForm->enterText();
+		printForm->Show();
 	}
 
 	void MainWindow::Form1_Load(){
