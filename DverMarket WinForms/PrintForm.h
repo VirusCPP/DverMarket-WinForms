@@ -37,18 +37,18 @@ namespace DverMarketWinForms {
 					+ "   Количество: " + MainWindow::textBox1->Text
 					+ "   Стоимость: " + MainWindow::textBox2->Text + "\r\n";
 			}
-			if (MainWindow::comboBox3->Text != "Размер") {
+			if (MainWindow::comboBox2->Text != "Размер") {
 				this->textBox1->Text += "\r\nНаличник: " + "\r\n"
-					+ "   Размер: " + MainWindow::comboBox3->Text
-					+ "   Количество: " + MainWindow::textBox5->Text
-					+ "   Стоимость: " + MainWindow::textBox6->Text + "\r\n";
+					+ "   Размер: " + MainWindow::comboBox2->Text
+					+ "   Количество: " + MainWindow::textBox3->Text
+					+ "   Стоимость: " + MainWindow::textBox4->Text + "\r\n";
 			}
 
-			if (MainWindow::comboBox1->Text != "Размер") {
+			if (MainWindow::comboBox3->Text != "Размер") {
 				this->textBox1->Text += "\r\nДобор: " + "\r\n"
 					+ "   Размер: " + MainWindow::comboBox1->Text
-					+ "   Количество: " + MainWindow::textBox1->Text
-					+ "   Стоимость: " + MainWindow::textBox2->Text + "\r\n";
+					+ "   Количество: " + MainWindow::textBox5->Text
+					+ "   Стоимость: " + MainWindow::textBox6->Text + "\r\n";
 			}
 			if (MainWindow::textBox7->Text != "") {
 				this->textBox1->Text += "\r\nПодъем: " + "\r\n"
