@@ -72,40 +72,6 @@ namespace DverMarketWinForms {
 	private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::ComboBox^ comboBox4;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: PrintDocument^ printDocument;
 
 	
