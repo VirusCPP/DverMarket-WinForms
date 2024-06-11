@@ -584,12 +584,6 @@ namespace DverMarketWinForms {
 		printForm->Show();
 	}
 
-	Void MainWindow::button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		PrintForm^ printForm = gcnew PrintForm();
-		printForm->enterText();
-		printForm->Show();
-	}
-
 	void MainWindow::Form1_Load(){
 		ToolTip^ toolTip1 = gcnew ToolTip;
 		toolTip1->AutoPopDelay = 50000;

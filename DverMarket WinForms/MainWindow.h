@@ -81,6 +81,6 @@ namespace DverMarketWinForms {
 		void checkButtonStatus2();
 		void MoveCompsDown(int index);
 		void MoveCompsUp(int index);
-		Void button7_Click(System::Object^ sender, System::EventArgs^ e);
+		//Void button7_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

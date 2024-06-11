@@ -76,10 +76,6 @@ namespace DverMarketWinForms {
 			this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::label7->Text;
 		}
 
-
-
-
-
 		PrintForm(void)
 		{
 			InitializeComponent();
@@ -95,19 +91,14 @@ namespace DverMarketWinForms {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Drawing::Printing::PrintDocument^ printDocument1;
-	private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
-
-
-	private: System::ComponentModel::IContainer^ components;
-	protected:
-
-	private:
-		
+	private: 
+		System::Windows::Forms::TextBox^ textBox1;
+		System::Windows::Forms::PictureBox^ pictureBox1;
+		System::Windows::Forms::TextBox^ textBox2;
+		System::Windows::Forms::Button^ button1;
+		System::Drawing::Printing::PrintDocument^ printDocument1;
+		System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+		System::ComponentModel::IContainer^ components;
 
 
 #pragma region Windows Form Designer generated code
@@ -219,12 +210,11 @@ namespace DverMarketWinForms {
 		printPreviewDialog1->Document = printDocument1;
 		printPreviewDialog1->ShowDialog();
 	}
-		   void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
-			   if (bmp != nullptr)
-			   {
-				   e->Graphics->DrawImage(bmp, 0, 0);
-			   }
-		   }
+	void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
+		if (bmp != nullptr){
+		e->Graphics->DrawImage(bmp, 0, 0);
+		}
+	}
 
 };
 }
