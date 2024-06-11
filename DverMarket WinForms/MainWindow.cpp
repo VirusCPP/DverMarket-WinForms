@@ -84,7 +84,7 @@ namespace DverMarketWinForms {
 		this->DoorButtonPlus->TabIndex = 1;
 		this->DoorButtonPlus->Text = L"+";
 		this->DoorButtonPlus->UseVisualStyleBackColor = true;
-		this->DoorButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::button1_Click);
+		this->DoorButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::DoorButtonPlus_Click);
 		// 
 		// button2
 		// 
@@ -94,7 +94,7 @@ namespace DverMarketWinForms {
 		this->DoorButtonMinus->TabIndex = 1;
 		this->DoorButtonMinus->Text = L"-";
 		this->DoorButtonMinus->UseVisualStyleBackColor = true;
-		this->DoorButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::button2_Click);
+		this->DoorButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::DoorButtonMinus_Click);
 		// 
 		// toolTip1
 		// 
@@ -257,7 +257,7 @@ namespace DverMarketWinForms {
 		this->FurButtonPlus->TabIndex = 1;
 		this->FurButtonPlus->Text = L"+";
 		this->FurButtonPlus->UseVisualStyleBackColor = true;
-		this->FurButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::button3_Click);
+		this->FurButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::FurButtonPlus_Click);
 		// 
 		// button4
 		// 
@@ -267,7 +267,7 @@ namespace DverMarketWinForms {
 		this->FurButtonMinus->TabIndex = 1;
 		this->FurButtonMinus->Text = L"-";
 		this->FurButtonMinus->UseVisualStyleBackColor = true;
-		this->FurButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::button4_Click);
+		this->FurButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::FurButtonMinus_Click);
 		// 
 		// label11
 		// 
@@ -336,7 +336,7 @@ namespace DverMarketWinForms {
 		this->CalculateButton->TabIndex = 8;
 		this->CalculateButton->Text = L"Рассчитать";
 		this->CalculateButton->UseVisualStyleBackColor = true;
-		this->CalculateButton->Click += gcnew System::EventHandler(this, &MainWindow::button5_Click);
+		this->CalculateButton->Click += gcnew System::EventHandler(this, &MainWindow::Calculate_Click);
 		// 
 		// label8
 		// 
@@ -471,7 +471,7 @@ namespace DverMarketWinForms {
 
 	}
 
-	void MainWindow::button1_Click(System::Object^ sender, System::EventArgs^ e){
+	void MainWindow::DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(0);
 		tbDoorName[doorCount] = gcnew TextBox();
 		tbDoorName[doorCount]->Location = System::Drawing::Point(13, 33 + doorCount * 30);
@@ -517,7 +517,7 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 
-	void MainWindow::button2_Click(System::Object^ sender, System::EventArgs^ e){
+	void MainWindow::DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(1);
 		Controls->Remove(tbDoorName[doorCount - 1]);
 		if (tbDoorName[doorCount - 1] != nullptr) delete tbDoorName[doorCount - 1];
@@ -533,7 +533,7 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 
-	void MainWindow::button3_Click(System::Object^ sender, System::EventArgs^ e){
+	void MainWindow::FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
 		tbFurnituraName[furCount] = gcnew TextBox();
 		tbFurnituraName[furCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + furCount * 30);
 		tbFurnituraName[furCount]->Size = System::Drawing::Size(175, 24);
@@ -561,7 +561,7 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 
-	void MainWindow::button4_Click(System::Object^ sender, System::EventArgs^ e){
+	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		Controls->Remove(tbFurnituraName[furCount - 1]);
 		if (tbFurnituraName[furCount - 1] != nullptr) delete tbFurnituraName[furCount - 1];
 		Controls->Remove(tbFurnituraCount[furCount - 1]);
@@ -572,7 +572,7 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 
-	Void MainWindow::button5_Click(System::Object^ sender, System::EventArgs^ e){
+	Void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e){
 		Calculate();
 		PrintForm^ printForm = gcnew PrintForm();
 		printForm->enterText();

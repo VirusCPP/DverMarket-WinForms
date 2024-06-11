@@ -71,11 +71,11 @@ namespace DverMarketWinForms {
 		PrintDocument^ printDocument;
 	private: System::ComponentModel::IContainer^ components;
 		void InitializeComponent(void);
-		void button1_Click(System::Object^ sender, System::EventArgs^ e);
-		void button2_Click(System::Object^ sender, System::EventArgs^ e);
-		void button3_Click(System::Object^ sender, System::EventArgs^ e);
-		void button4_Click(System::Object^ sender, System::EventArgs^ e);
-		void button5_Click(System::Object^ sender, System::EventArgs^ e);
+		void DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
+		void DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
+		void FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
+		void FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
+		void Calculate_Click(System::Object^ sender, System::EventArgs^ e);
 		void Form1_Load();
 		void Calculate();
 		void checkButtonStatus();
