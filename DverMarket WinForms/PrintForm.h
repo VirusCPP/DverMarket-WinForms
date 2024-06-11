@@ -31,37 +31,37 @@ namespace DverMarketWinForms {
 					+ "   Количество: " + MainWindow::tbFurnituraCount[i]->Text
 					+ "   Стоимость за 1 шт.: " + MainWindow::tbFurnituraPrice[i]->Text + "\r\n";
 			}
-			if (MainWindow::comboBox1->Text != "Размер") {
+			if (MainWindow::KorComboBox->Text != "Размер") {
 				this->textBox1->Text += "\r\nКоробка: " + "\r\n"
-					+ "   Размер: " + MainWindow::comboBox1->Text
-					+ "   Количество: " + MainWindow::textBox1->Text
-					+ "   Стоимость: " + MainWindow::textBox2->Text + "\r\n";
+					+ "   Размер: " + MainWindow::KorComboBox->Text
+					+ "   Количество: " + MainWindow::KorVolBox->Text
+					+ "   Стоимость: " + MainWindow::KorPriceBox->Text + "\r\n";
 			}
-			if (MainWindow::comboBox2->Text != "Размер") {
+			if (MainWindow::NalComboBox->Text != "Размер") {
 				this->textBox1->Text += "\r\nНаличник: " + "\r\n"
-					+ "   Размер: " + MainWindow::comboBox2->Text
-					+ "   Количество: " + MainWindow::textBox3->Text
-					+ "   Стоимость: " + MainWindow::textBox4->Text + "\r\n";
+					+ "   Размер: " + MainWindow::NalComboBox->Text
+					+ "   Количество: " + MainWindow::NalVolBox->Text
+					+ "   Стоимость: " + MainWindow::NalPriceBox->Text + "\r\n";
 			}
 
-			if (MainWindow::comboBox3->Text != "Размер") {
+			if (MainWindow::DobComboBox->Text != "Размер") {
 				this->textBox1->Text += "\r\nДобор: " + "\r\n"
-					+ "   Размер: " + MainWindow::comboBox1->Text
-					+ "   Количество: " + MainWindow::textBox5->Text
-					+ "   Стоимость: " + MainWindow::textBox6->Text + "\r\n";
+					+ "   Размер: " + MainWindow::KorComboBox->Text
+					+ "   Количество: " + MainWindow::DobVolBox->Text
+					+ "   Стоимость: " + MainWindow::DobPriceBox->Text + "\r\n";
 			}
-			if (MainWindow::textBox7->Text != "") {
+			if (MainWindow::PodVolBox->Text != "") {
 				this->textBox1->Text += "\r\nПодъем: " + "\r\n"
-					+ "   Этаж: " + MainWindow::textBox7->Text
-					+ "   Стоимость за этаж: " + MainWindow::textBox10->Text + "\r\n";
+					+ "   Этаж: " + MainWindow::PodVolBox->Text
+					+ "   Стоимость за этаж: " + MainWindow::PodPriceBox->Text + "\r\n";
 			}
-			if (MainWindow::textBox11->Text != "") {
+			if (MainWindow::MonPriceBox->Text != "") {
 				this->textBox1->Text += "\r\nМонтаж: " + "\r\n"
-					+ "   Стоимость монтажа: " + MainWindow::textBox11->Text + "\r\n";
+					+ "   Стоимость монтажа: " + MainWindow::MonPriceBox->Text + "\r\n";
 			}
-			if (MainWindow::textBox12->Text != "") {
+			if (MainWindow::DosPriceBox->Text != "") {
 				this->textBox1->Text += "\r\nДоставка: " + "\r\n"
-					+ "   Стоимость доставки: " + MainWindow::textBox12->Text + "\r\n";
+					+ "   Стоимость доставки: " + MainWindow::DosPriceBox->Text + "\r\n";
 			}
 			if (MainWindow::textBox8->Text != "") {
 				this->textBox1->Text += "\r\nОбщая сумма: "

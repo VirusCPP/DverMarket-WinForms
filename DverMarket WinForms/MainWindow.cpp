@@ -1,5 +1,3 @@
-// MainWindowFunctions.cpp
-
 #include "MainWindow.h"
 #include "PrintForm.h"
 
@@ -28,37 +26,37 @@ namespace DverMarketWinForms {
 	void MainWindow::InitializeComponent(void){
 		this->components = (gcnew System::ComponentModel::Container());
 		System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainWindow::typeid));
-		this->label1 = (gcnew System::Windows::Forms::Label());
-		this->button1 = (gcnew System::Windows::Forms::Button());
-		this->button2 = (gcnew System::Windows::Forms::Button());
+		this->DoorLable = (gcnew System::Windows::Forms::Label());
+		this->DoorButtonPlus = (gcnew System::Windows::Forms::Button());
+		this->DoorButtonMinus = (gcnew System::Windows::Forms::Button());
 		this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
-		this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-		this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-		this->label2 = (gcnew System::Windows::Forms::Label());
-		this->label3 = (gcnew System::Windows::Forms::Label());
-		this->label4 = (gcnew System::Windows::Forms::Label());
-		this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-		this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-		this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-		this->label5 = (gcnew System::Windows::Forms::Label());
-		this->button3 = (gcnew System::Windows::Forms::Button());
-		this->button4 = (gcnew System::Windows::Forms::Button());
-		this->label11 = (gcnew System::Windows::Forms::Label());
-		this->label12 = (gcnew System::Windows::Forms::Label());
-		this->label13 = (gcnew System::Windows::Forms::Label());
+		this->KorVolBox = (gcnew System::Windows::Forms::TextBox());
+		this->KorPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->NalPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->NalVolBox = (gcnew System::Windows::Forms::TextBox());
+		this->DobVolBox = (gcnew System::Windows::Forms::TextBox());
+		this->DobPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->PodVolBox = (gcnew System::Windows::Forms::TextBox());
+		this->PodPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->MonPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->DosPriceBox = (gcnew System::Windows::Forms::TextBox());
+		this->KorLable = (gcnew System::Windows::Forms::Label());
+		this->NalLable = (gcnew System::Windows::Forms::Label());
+		this->DobLable = (gcnew System::Windows::Forms::Label());
+		this->KorComboBox = (gcnew System::Windows::Forms::ComboBox());
+		this->NalComboBox = (gcnew System::Windows::Forms::ComboBox());
+		this->DobComboBox = (gcnew System::Windows::Forms::ComboBox());
+		this->FurLable = (gcnew System::Windows::Forms::Label());
+		this->FurButtonPlus = (gcnew System::Windows::Forms::Button());
+		this->FurButtonMinus = (gcnew System::Windows::Forms::Button());
+		this->PodLable = (gcnew System::Windows::Forms::Label());
+		this->MonLable = (gcnew System::Windows::Forms::Label());
+		this->DosLable = (gcnew System::Windows::Forms::Label());
 		this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 		this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-		this->label6 = (gcnew System::Windows::Forms::Label());
+		this->TotalAmountLable = (gcnew System::Windows::Forms::Label());
 		this->label7 = (gcnew System::Windows::Forms::Label());
-		this->button5 = (gcnew System::Windows::Forms::Button());
+		this->CalculateButton = (gcnew System::Windows::Forms::Button());
 		this->label8 = (gcnew System::Windows::Forms::Label());
 		this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 		this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
@@ -72,32 +70,32 @@ namespace DverMarketWinForms {
 		// 
 		// label1
 		// 
-		this->label1->AutoSize = true;
-		this->label1->Location = System::Drawing::Point(13, 10);
-		this->label1->Name = L"label1";
-		this->label1->Size = System::Drawing::Size(47, 16);
-		this->label1->TabIndex = 0;
-		this->label1->Text = L"Дверь";
+		this->DoorLable->AutoSize = true;
+		this->DoorLable->Location = System::Drawing::Point(13, 10);
+		this->DoorLable->Name = L"label1";
+		this->DoorLable->Size = System::Drawing::Size(47, 16);
+		this->DoorLable->TabIndex = 0;
+		this->DoorLable->Text = L"Дверь";
 		// 
 		// button1
 		// 
-		this->button1->Location = System::Drawing::Point(95, 10);
-		this->button1->Name = L"button1";
-		this->button1->Size = System::Drawing::Size(23, 23);
-		this->button1->TabIndex = 1;
-		this->button1->Text = L"+";
-		this->button1->UseVisualStyleBackColor = true;
-		this->button1->Click += gcnew System::EventHandler(this, &MainWindow::button1_Click);
+		this->DoorButtonPlus->Location = System::Drawing::Point(95, 10);
+		this->DoorButtonPlus->Name = L"button1";
+		this->DoorButtonPlus->Size = System::Drawing::Size(23, 23);
+		this->DoorButtonPlus->TabIndex = 1;
+		this->DoorButtonPlus->Text = L"+";
+		this->DoorButtonPlus->UseVisualStyleBackColor = true;
+		this->DoorButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::button1_Click);
 		// 
 		// button2
 		// 
-		this->button2->Location = System::Drawing::Point(124, 10);
-		this->button2->Name = L"button2";
-		this->button2->Size = System::Drawing::Size(23, 23);
-		this->button2->TabIndex = 1;
-		this->button2->Text = L"-";
-		this->button2->UseVisualStyleBackColor = true;
-		this->button2->Click += gcnew System::EventHandler(this, &MainWindow::button2_Click);
+		this->DoorButtonMinus->Location = System::Drawing::Point(124, 10);
+		this->DoorButtonMinus->Name = L"button2";
+		this->DoorButtonMinus->Size = System::Drawing::Size(23, 23);
+		this->DoorButtonMinus->TabIndex = 1;
+		this->DoorButtonMinus->Text = L"-";
+		this->DoorButtonMinus->UseVisualStyleBackColor = true;
+		this->DoorButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::button2_Click);
 		// 
 		// toolTip1
 		// 
@@ -108,196 +106,196 @@ namespace DverMarketWinForms {
 		// 
 		// textBox1
 		// 
-		this->textBox1->Location = System::Drawing::Point(566, 64);
-		this->textBox1->Name = L"textBox1";
-		this->textBox1->Size = System::Drawing::Size(59, 22);
-		this->textBox1->TabIndex = 3;
-		this->toolTip1->SetToolTip(this->textBox1, L"Количество");
+		this->KorVolBox->Location = System::Drawing::Point(566, 64);
+		this->KorVolBox->Name = L"textBox1";
+		this->KorVolBox->Size = System::Drawing::Size(59, 22);
+		this->KorVolBox->TabIndex = 3;
+		this->toolTip1->SetToolTip(this->KorVolBox, L"Количество");
 		// 
 		// textBox2
 		// 
-		this->textBox2->Location = System::Drawing::Point(625, 64);
-		this->textBox2->Name = L"textBox2";
-		this->textBox2->Size = System::Drawing::Size(59, 22);
-		this->textBox2->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox2, L"Стоимость");
+		this->KorPriceBox->Location = System::Drawing::Point(625, 64);
+		this->KorPriceBox->Name = L"textBox2";
+		this->KorPriceBox->Size = System::Drawing::Size(59, 22);
+		this->KorPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->KorPriceBox, L"Стоимость");
 		// 
 		// textBox4
 		// 
-		this->textBox4->Location = System::Drawing::Point(751, 64);
-		this->textBox4->Name = L"textBox4";
-		this->textBox4->Size = System::Drawing::Size(59, 22);
-		this->textBox4->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox4, L"Стоимость");
+		this->NalPriceBox->Location = System::Drawing::Point(751, 64);
+		this->NalPriceBox->Name = L"textBox4";
+		this->NalPriceBox->Size = System::Drawing::Size(59, 22);
+		this->NalPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->NalPriceBox, L"Стоимость");
 		// 
 		// textBox3
 		// 
-		this->textBox3->Location = System::Drawing::Point(692, 64);
-		this->textBox3->Name = L"textBox3";
-		this->textBox3->Size = System::Drawing::Size(59, 22);
-		this->textBox3->TabIndex = 3;
-		this->toolTip1->SetToolTip(this->textBox3, L"Количество");
+		this->NalVolBox->Location = System::Drawing::Point(692, 64);
+		this->NalVolBox->Name = L"textBox3";
+		this->NalVolBox->Size = System::Drawing::Size(59, 22);
+		this->NalVolBox->TabIndex = 3;
+		this->toolTip1->SetToolTip(this->NalVolBox, L"Количество");
 		// 
 		// textBox5
 		// 
-		this->textBox5->Location = System::Drawing::Point(832, 64);
-		this->textBox5->Name = L"textBox5";
-		this->textBox5->Size = System::Drawing::Size(59, 22);
-		this->textBox5->TabIndex = 3;
-		this->toolTip1->SetToolTip(this->textBox5, L"Количество");
+		this->DobVolBox->Location = System::Drawing::Point(832, 64);
+		this->DobVolBox->Name = L"textBox5";
+		this->DobVolBox->Size = System::Drawing::Size(59, 22);
+		this->DobVolBox->TabIndex = 3;
+		this->toolTip1->SetToolTip(this->DobVolBox, L"Количество");
 		// 
 		// textBox6
 		// 
-		this->textBox6->Location = System::Drawing::Point(891, 64);
-		this->textBox6->Name = L"textBox6";
-		this->textBox6->Size = System::Drawing::Size(59, 22);
-		this->textBox6->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox6, L"Стоимость");
+		this->DobPriceBox->Location = System::Drawing::Point(891, 64);
+		this->DobPriceBox->Name = L"textBox6";
+		this->DobPriceBox->Size = System::Drawing::Size(59, 22);
+		this->DobPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->DobPriceBox, L"Стоимость");
 		// 
 		// textBox7
 		// 
-		this->textBox7->Location = System::Drawing::Point(566, 122);
-		this->textBox7->Name = L"textBox7";
-		this->textBox7->Size = System::Drawing::Size(59, 22);
-		this->textBox7->TabIndex = 3;
-		this->toolTip1->SetToolTip(this->textBox7, L"Этаж");
+		this->PodVolBox->Location = System::Drawing::Point(566, 122);
+		this->PodVolBox->Name = L"textBox7";
+		this->PodVolBox->Size = System::Drawing::Size(59, 22);
+		this->PodVolBox->TabIndex = 3;
+		this->toolTip1->SetToolTip(this->PodVolBox, L"Этаж");
 		// 
 		// textBox10
 		// 
-		this->textBox10->Location = System::Drawing::Point(625, 122);
-		this->textBox10->Name = L"textBox10";
-		this->textBox10->Size = System::Drawing::Size(59, 22);
-		this->textBox10->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox10, L"Стоимость");
+		this->PodPriceBox->Location = System::Drawing::Point(625, 122);
+		this->PodPriceBox->Name = L"textBox10";
+		this->PodPriceBox->Size = System::Drawing::Size(59, 22);
+		this->PodPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->PodPriceBox, L"Стоимость");
 		// 
 		// textBox11
 		// 
-		this->textBox11->Location = System::Drawing::Point(692, 122);
-		this->textBox11->Name = L"textBox11";
-		this->textBox11->Size = System::Drawing::Size(118, 22);
-		this->textBox11->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox11, L"Стоимость");
+		this->MonPriceBox->Location = System::Drawing::Point(692, 122);
+		this->MonPriceBox->Name = L"textBox11";
+		this->MonPriceBox->Size = System::Drawing::Size(118, 22);
+		this->MonPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->MonPriceBox, L"Стоимость");
 		// 
 		// textBox12
 		// 
-		this->textBox12->Location = System::Drawing::Point(832, 122);
-		this->textBox12->Name = L"textBox12";
-		this->textBox12->Size = System::Drawing::Size(118, 22);
-		this->textBox12->TabIndex = 4;
-		this->toolTip1->SetToolTip(this->textBox12, L"Стоимость");
+		this->DosPriceBox->Location = System::Drawing::Point(832, 122);
+		this->DosPriceBox->Name = L"textBox12";
+		this->DosPriceBox->Size = System::Drawing::Size(118, 22);
+		this->DosPriceBox->TabIndex = 4;
+		this->toolTip1->SetToolTip(this->DosPriceBox, L"Стоимость");
 		// 
 		// label2
 		// 
-		this->label2->AutoSize = true;
-		this->label2->Location = System::Drawing::Point(563, 13);
-		this->label2->Name = L"label2";
-		this->label2->Size = System::Drawing::Size(62, 16);
-		this->label2->TabIndex = 0;
-		this->label2->Text = L"Коробка";
+		this->KorLable->AutoSize = true;
+		this->KorLable->Location = System::Drawing::Point(563, 13);
+		this->KorLable->Name = L"label2";
+		this->KorLable->Size = System::Drawing::Size(62, 16);
+		this->KorLable->TabIndex = 0;
+		this->KorLable->Text = L"Коробка";
 		// 
 		// label3
 		// 
-		this->label3->AutoSize = true;
-		this->label3->Location = System::Drawing::Point(689, 13);
-		this->label3->Name = L"label3";
-		this->label3->Size = System::Drawing::Size(72, 16);
-		this->label3->TabIndex = 0;
-		this->label3->Text = L"Наличник";
+		this->NalLable->AutoSize = true;
+		this->NalLable->Location = System::Drawing::Point(689, 13);
+		this->NalLable->Name = L"label3";
+		this->NalLable->Size = System::Drawing::Size(72, 16);
+		this->NalLable->TabIndex = 0;
+		this->NalLable->Text = L"Наличник";
 		// 
 		// label4
 		// 
-		this->label4->AutoSize = true;
-		this->label4->Location = System::Drawing::Point(829, 13);
-		this->label4->Name = L"label4";
-		this->label4->Size = System::Drawing::Size(48, 16);
-		this->label4->TabIndex = 0;
-		this->label4->Text = L"Добор";
+		this->DobLable->AutoSize = true;
+		this->DobLable->Location = System::Drawing::Point(829, 13);
+		this->DobLable->Name = L"label4";
+		this->DobLable->Size = System::Drawing::Size(48, 16);
+		this->DobLable->TabIndex = 0;
+		this->DobLable->Text = L"Добор";
 		// 
 		// comboBox1
 		// 
-		this->comboBox1->FormattingEnabled = true;
-		this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
-		this->comboBox1->Location = System::Drawing::Point(566, 33);
-		this->comboBox1->Name = L"comboBox1";
-		this->comboBox1->Size = System::Drawing::Size(118, 24);
-		this->comboBox1->TabIndex = 2;
-		this->comboBox1->Text = L"Размер";
+		this->KorComboBox->FormattingEnabled = true;
+		this->KorComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
+		this->KorComboBox->Location = System::Drawing::Point(566, 33);
+		this->KorComboBox->Name = L"comboBox1";
+		this->KorComboBox->Size = System::Drawing::Size(118, 24);
+		this->KorComboBox->TabIndex = 2;
+		this->KorComboBox->Text = L"Размер";
 		// 
 		// comboBox2
 		// 
-		this->comboBox2->FormattingEnabled = true;
-		this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
-		this->comboBox2->Location = System::Drawing::Point(692, 33);
-		this->comboBox2->Name = L"comboBox2";
-		this->comboBox2->Size = System::Drawing::Size(118, 24);
-		this->comboBox2->TabIndex = 2;
-		this->comboBox2->Text = L"Размер";
+		this->NalComboBox->FormattingEnabled = true;
+		this->NalComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
+		this->NalComboBox->Location = System::Drawing::Point(692, 33);
+		this->NalComboBox->Name = L"comboBox2";
+		this->NalComboBox->Size = System::Drawing::Size(118, 24);
+		this->NalComboBox->TabIndex = 2;
+		this->NalComboBox->Text = L"Размер";
 		// 
 		// comboBox3
 		// 
-		this->comboBox3->FormattingEnabled = true;
-		this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
-		this->comboBox3->Location = System::Drawing::Point(832, 33);
-		this->comboBox3->Name = L"comboBox3";
-		this->comboBox3->Size = System::Drawing::Size(118, 24);
-		this->comboBox3->TabIndex = 2;
-		this->comboBox3->Text = L"Размер";
+		this->DobComboBox->FormattingEnabled = true;
+		this->DobComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
+		this->DobComboBox->Location = System::Drawing::Point(832, 33);
+		this->DobComboBox->Name = L"comboBox3";
+		this->DobComboBox->Size = System::Drawing::Size(118, 24);
+		this->DobComboBox->TabIndex = 2;
+		this->DobComboBox->Text = L"Размер";
 		// 
 		// label5
 		// 
-		this->label5->AutoSize = true;
-		this->label5->Location = System::Drawing::Point(13, 41);
-		this->label5->Name = L"label5";
-		this->label5->Size = System::Drawing::Size(81, 16);
-		this->label5->TabIndex = 0;
-		this->label5->Text = L"Фурнитура";
+		this->FurLable->AutoSize = true;
+		this->FurLable->Location = System::Drawing::Point(13, 41);
+		this->FurLable->Name = L"label5";
+		this->FurLable->Size = System::Drawing::Size(81, 16);
+		this->FurLable->TabIndex = 0;
+		this->FurLable->Text = L"Фурнитура";
 		// 
 		// button3
 		// 
-		this->button3->Location = System::Drawing::Point(95, 41);
-		this->button3->Name = L"button3";
-		this->button3->Size = System::Drawing::Size(23, 23);
-		this->button3->TabIndex = 1;
-		this->button3->Text = L"+";
-		this->button3->UseVisualStyleBackColor = true;
-		this->button3->Click += gcnew System::EventHandler(this, &MainWindow::button3_Click);
+		this->FurButtonPlus->Location = System::Drawing::Point(95, 41);
+		this->FurButtonPlus->Name = L"button3";
+		this->FurButtonPlus->Size = System::Drawing::Size(23, 23);
+		this->FurButtonPlus->TabIndex = 1;
+		this->FurButtonPlus->Text = L"+";
+		this->FurButtonPlus->UseVisualStyleBackColor = true;
+		this->FurButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::button3_Click);
 		// 
 		// button4
 		// 
-		this->button4->Location = System::Drawing::Point(124, 41);
-		this->button4->Name = L"button4";
-		this->button4->Size = System::Drawing::Size(23, 23);
-		this->button4->TabIndex = 1;
-		this->button4->Text = L"-";
-		this->button4->UseVisualStyleBackColor = true;
-		this->button4->Click += gcnew System::EventHandler(this, &MainWindow::button4_Click);
+		this->FurButtonMinus->Location = System::Drawing::Point(124, 41);
+		this->FurButtonMinus->Name = L"button4";
+		this->FurButtonMinus->Size = System::Drawing::Size(23, 23);
+		this->FurButtonMinus->TabIndex = 1;
+		this->FurButtonMinus->Text = L"-";
+		this->FurButtonMinus->UseVisualStyleBackColor = true;
+		this->FurButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::button4_Click);
 		// 
 		// label11
 		// 
-		this->label11->AutoSize = true;
-		this->label11->Location = System::Drawing::Point(563, 99);
-		this->label11->Name = L"label11";
-		this->label11->Size = System::Drawing::Size(59, 16);
-		this->label11->TabIndex = 0;
-		this->label11->Text = L"Подъем";
+		this->PodLable->AutoSize = true;
+		this->PodLable->Location = System::Drawing::Point(563, 99);
+		this->PodLable->Name = L"label11";
+		this->PodLable->Size = System::Drawing::Size(59, 16);
+		this->PodLable->TabIndex = 0;
+		this->PodLable->Text = L"Подъем";
 		// 
 		// label12
 		// 
-		this->label12->AutoSize = true;
-		this->label12->Location = System::Drawing::Point(689, 99);
-		this->label12->Name = L"label12";
-		this->label12->Size = System::Drawing::Size(58, 16);
-		this->label12->TabIndex = 0;
-		this->label12->Text = L"Монтаж";
+		this->MonLable->AutoSize = true;
+		this->MonLable->Location = System::Drawing::Point(689, 99);
+		this->MonLable->Name = L"label12";
+		this->MonLable->Size = System::Drawing::Size(58, 16);
+		this->MonLable->TabIndex = 0;
+		this->MonLable->Text = L"Монтаж";
 		// 
 		// label13
 		// 
-		this->label13->AutoSize = true;
-		this->label13->Location = System::Drawing::Point(829, 99);
-		this->label13->Name = L"label13";
-		this->label13->Size = System::Drawing::Size(69, 16);
-		this->label13->TabIndex = 0;
-		this->label13->Text = L"Доставка";
+		this->DosLable->AutoSize = true;
+		this->DosLable->Location = System::Drawing::Point(829, 99);
+		this->DosLable->Name = L"label13";
+		this->DosLable->Size = System::Drawing::Size(69, 16);
+		this->DosLable->TabIndex = 0;
+		this->DosLable->Text = L"Доставка";
 		// 
 		// dateTimePicker1
 		// 
@@ -316,12 +314,12 @@ namespace DverMarketWinForms {
 		// 
 		// label6
 		// 
-		this->label6->Location = System::Drawing::Point(566, 432);
-		this->label6->Name = L"label6";
-		this->label6->Size = System::Drawing::Size(384, 38);
-		this->label6->TabIndex = 7;
-		this->label6->Text = L"ИТОГОВАЯ СУММА";
-		this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		this->TotalAmountLable->Location = System::Drawing::Point(566, 432);
+		this->TotalAmountLable->Name = L"label6";
+		this->TotalAmountLable->Size = System::Drawing::Size(384, 38);
+		this->TotalAmountLable->TabIndex = 7;
+		this->TotalAmountLable->Text = L"ИТОГОВАЯ СУММА";
+		this->TotalAmountLable->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
 		// label7
 		// 
@@ -333,13 +331,13 @@ namespace DverMarketWinForms {
 		// 
 		// button5
 		// 
-		this->button5->Location = System::Drawing::Point(566, 538);
-		this->button5->Name = L"button5";
-		this->button5->Size = System::Drawing::Size(384, 23);
-		this->button5->TabIndex = 8;
-		this->button5->Text = L"Рассчитать";
-		this->button5->UseVisualStyleBackColor = true;
-		this->button5->Click += gcnew System::EventHandler(this, &MainWindow::button5_Click);
+		this->CalculateButton->Location = System::Drawing::Point(566, 538);
+		this->CalculateButton->Name = L"button5";
+		this->CalculateButton->Size = System::Drawing::Size(384, 23);
+		this->CalculateButton->TabIndex = 8;
+		this->CalculateButton->Text = L"Рассчитать";
+		this->CalculateButton->UseVisualStyleBackColor = true;
+		this->CalculateButton->Click += gcnew System::EventHandler(this, &MainWindow::button5_Click);
 		// 
 		// label8
 		// 
@@ -430,36 +428,36 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->comboBox4);
 		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
-		this->Controls->Add(this->button5);
+		this->Controls->Add(this->CalculateButton);
 		this->Controls->Add(this->label7);
-		this->Controls->Add(this->label6);
+		this->Controls->Add(this->TotalAmountLable);
 		this->Controls->Add(this->richTextBox1);
 		this->Controls->Add(this->dateTimePicker1);
-		this->Controls->Add(this->textBox12);
-		this->Controls->Add(this->textBox6);
-		this->Controls->Add(this->textBox11);
-		this->Controls->Add(this->textBox4);
-		this->Controls->Add(this->textBox10);
-		this->Controls->Add(this->textBox2);
-		this->Controls->Add(this->textBox5);
-		this->Controls->Add(this->comboBox3);
-		this->Controls->Add(this->textBox3);
-		this->Controls->Add(this->comboBox2);
-		this->Controls->Add(this->textBox7);
-		this->Controls->Add(this->textBox1);
-		this->Controls->Add(this->comboBox1);
-		this->Controls->Add(this->button4);
-		this->Controls->Add(this->button2);
-		this->Controls->Add(this->button3);
-		this->Controls->Add(this->button1);
-		this->Controls->Add(this->label13);
-		this->Controls->Add(this->label4);
-		this->Controls->Add(this->label12);
-		this->Controls->Add(this->label3);
-		this->Controls->Add(this->label11);
-		this->Controls->Add(this->label2);
-		this->Controls->Add(this->label5);
-		this->Controls->Add(this->label1);
+		this->Controls->Add(this->DosPriceBox);
+		this->Controls->Add(this->DobPriceBox);
+		this->Controls->Add(this->MonPriceBox);
+		this->Controls->Add(this->NalPriceBox);
+		this->Controls->Add(this->PodPriceBox);
+		this->Controls->Add(this->KorPriceBox);
+		this->Controls->Add(this->DobVolBox);
+		this->Controls->Add(this->DobComboBox);
+		this->Controls->Add(this->NalVolBox);
+		this->Controls->Add(this->NalComboBox);
+		this->Controls->Add(this->PodVolBox);
+		this->Controls->Add(this->KorVolBox);
+		this->Controls->Add(this->KorComboBox);
+		this->Controls->Add(this->FurButtonMinus);
+		this->Controls->Add(this->DoorButtonMinus);
+		this->Controls->Add(this->FurButtonPlus);
+		this->Controls->Add(this->DoorButtonPlus);
+		this->Controls->Add(this->DosLable);
+		this->Controls->Add(this->DobLable);
+		this->Controls->Add(this->MonLable);
+		this->Controls->Add(this->NalLable);
+		this->Controls->Add(this->PodLable);
+		this->Controls->Add(this->KorLable);
+		this->Controls->Add(this->FurLable);
+		this->Controls->Add(this->DoorLable);
 		this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(204)));
 		this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -475,7 +473,7 @@ namespace DverMarketWinForms {
 	}
 
 	void MainWindow::button1_Click(System::Object^ sender, System::EventArgs^ e){
-		MoveCompsDown(0);
+		MoveComponents(0);
 		tbDoorName[doorCount] = gcnew TextBox();
 		tbDoorName[doorCount]->Location = System::Drawing::Point(13, 33 + doorCount * 30);
 		tbDoorName[doorCount]->Name = L"textDoorBox" + doorCount.ToString();
@@ -521,23 +519,22 @@ namespace DverMarketWinForms {
 	}
 
 	void MainWindow::button2_Click(System::Object^ sender, System::EventArgs^ e){
-		MoveCompsUp(0);
+		MoveComponents(1);
 		Controls->Remove(tbDoorName[doorCount - 1]);
-		delete tbDoorName[doorCount - 1];
+		if (tbDoorName[doorCount - 1] != nullptr) delete tbDoorName[doorCount - 1];
 		Controls->Remove(cbDoorSize[doorCount - 1]);
-		delete cbDoorSize[doorCount - 1];
+		if (cbDoorSize[doorCount - 1] != nullptr) delete cbDoorSize[doorCount - 1];
 		Controls->Remove(tbDoorColor[doorCount - 1]);
-		delete tbDoorColor[doorCount - 1];
+		if (tbDoorColor[doorCount - 1] != nullptr) delete tbDoorColor[doorCount - 1];
 		Controls->Remove(tbDoorCount[doorCount - 1]);
-		delete tbDoorCount[doorCount - 1];
+		if (tbDoorCount[doorCount - 1] != nullptr) delete tbDoorCount[doorCount - 1];
 		Controls->Remove(tbDoorPrice[doorCount - 1]);
-		delete tbDoorPrice[doorCount - 1];
+		if (tbDoorPrice[doorCount - 1] != nullptr) delete tbDoorPrice[doorCount - 1];
 		doorCount--;
 		checkButtonStatus();
 	}
 
 	void MainWindow::button3_Click(System::Object^ sender, System::EventArgs^ e){
-		MoveCompsDown(1);
 		tbFurnituraName[furCount] = gcnew TextBox();
 		tbFurnituraName[furCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + furCount * 30);
 		tbFurnituraName[furCount]->Size = System::Drawing::Size(175, 24);
@@ -566,13 +563,12 @@ namespace DverMarketWinForms {
 	}
 
 	void MainWindow::button4_Click(System::Object^ sender, System::EventArgs^ e){
-		MoveCompsUp(1);
 		Controls->Remove(tbFurnituraName[furCount - 1]);
-		delete tbFurnituraName[furCount - 1];
+		if (tbFurnituraName[furCount - 1] != nullptr) delete tbFurnituraName[furCount - 1];
 		Controls->Remove(tbFurnituraCount[furCount - 1]);
-		delete tbFurnituraCount[furCount - 1];
+		if (tbFurnituraCount[furCount - 1] != nullptr) delete tbFurnituraCount[furCount - 1];
 		Controls->Remove(tbFurnituraPrice[furCount - 1]);
-		delete tbFurnituraPrice[furCount - 1];
+		if (tbFurnituraPrice[furCount - 1] != nullptr) delete tbFurnituraPrice[furCount - 1];
 		furCount--;
 		checkButtonStatus2();
 	}
@@ -593,25 +589,30 @@ namespace DverMarketWinForms {
 	}
 
 	void MainWindow::checkButtonStatus(){
-		if (doorCount > 0) { button2->Enabled = true; }
-		else { button2->Enabled = false; }
-		if (doorCount > 98) { button1->Enabled = false; }
-		else { button1->Enabled = true; }
+		if (doorCount > 0) { DoorButtonMinus->Enabled = true; }
+		else { DoorButtonMinus->Enabled = false; }
+		if (doorCount > arrSize - 1) { DoorButtonPlus->Enabled = false; }
+		else { DoorButtonPlus->Enabled = true; }
 	}
 
 	void MainWindow::checkButtonStatus2(){
-		if (furCount > 0) { button4->Enabled = true; }
-		else { button4->Enabled = false; }
-		if (furCount > 98) { button3->Enabled = false; }
-		else { button3->Enabled = true; }
+		if (furCount > 0) { FurButtonMinus->Enabled = true; }
+		else { FurButtonMinus->Enabled = false; }
+		if (furCount > arrSize - 1) { FurButtonPlus->Enabled = false; }
+		else { FurButtonPlus->Enabled = true; }
 	}
 
-	void MainWindow::MoveCompsDown(int index){
-		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, currentFurnituraY += 30);
-			this->button3->Location = System::Drawing::Point(95, currentFurnituraY);
-			this->button4->Location = System::Drawing::Point(124, currentFurnituraY);
-			for (int i = 0; i < 99; i++)
+	void MainWindow::MoveComponents(int direction){
+		int offset;
+		if (direction == 0)
+			offset = 30;
+		else 
+			offset = -30;
+
+			this->FurLable->Location = System::Drawing::Point(13, currentFurnituraY += offset);
+			this->FurButtonPlus->Location = System::Drawing::Point(95, currentFurnituraY);
+			this->FurButtonMinus->Location = System::Drawing::Point(124, currentFurnituraY);
+			for (int i = 0; i < arrSize; i++)
 			{
 				if (tbFurnituraName[i] != nullptr) {
 					tbFurnituraName[i]->Location = System::Drawing::Point(13, (currentFurnituraY + 23 + i * 30));
@@ -622,33 +623,13 @@ namespace DverMarketWinForms {
 					Controls->Add(tbFurnituraPrice[i]);
 				}
 			}
-		}
-	}
-
-	void MainWindow::MoveCompsUp(int index){
-		if (index == 0) {
-			this->label5->Location = System::Drawing::Point(13, currentFurnituraY -= 30);
-			this->button3->Location = System::Drawing::Point(95, currentFurnituraY);
-			this->button4->Location = System::Drawing::Point(124, currentFurnituraY);
-			for (int i = 0; i < 99; i++)
-			{
-				if (tbFurnituraName[i] != nullptr) {
-					tbFurnituraName[i]->Location = System::Drawing::Point(13, (currentFurnituraY + 23 + i * 30));
-					Controls->Add(tbFurnituraName[i]);
-					tbFurnituraCount[i]->Location = System::Drawing::Point(194, (currentFurnituraY + 23 + i * 30));
-					Controls->Add(tbFurnituraCount[i]);
-					tbFurnituraPrice[i]->Location = System::Drawing::Point(293, (currentFurnituraY + 23 + i * 30));
-					Controls->Add(tbFurnituraPrice[i]);
-				}
-			}
-		}
 	}
 
 	void MainWindow::Calculate(){
-		int DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,
+		double DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,
 			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Sum = 0, Skidka = 0, Result = 0;
 
-		for (int i = 0; i < 99; i++) {
+		for (int i = 0; i < arrSize; i++) {
 			if (tbDoorCount[i] != nullptr && tbDoorPrice[i] != nullptr && cbDoorSize[i] != nullptr) {
 				int count, price;
 				if (Int32::TryParse(tbDoorCount[i]->Text, count) && Int32::TryParse(tbDoorPrice[i]->Text, price)) {
@@ -666,7 +647,7 @@ namespace DverMarketWinForms {
 			}
 		}
 
-		for (int i = 0; i < 99; i++) {
+		for (int i = 0; i < arrSize; i++) {
 			if (tbFurnituraCount[i] != nullptr && tbFurnituraPrice[i] != nullptr) {
 				int count, price;
 				if (Int32::TryParse(tbFurnituraCount[i]->Text, count) && Int32::TryParse(tbFurnituraPrice[i]->Text, price)) {
@@ -676,40 +657,40 @@ namespace DverMarketWinForms {
 		}
 
 		int tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb10, tb11, tb12;
-		Int32::TryParse(textBox1->Text, tb1);
-		Int32::TryParse(textBox2->Text, tb2);
-		Int32::TryParse(textBox3->Text, tb3);
-		Int32::TryParse(textBox4->Text, tb4);
-		Int32::TryParse(textBox5->Text, tb5);
-		Int32::TryParse(textBox6->Text, tb6);
-		Int32::TryParse(textBox7->Text, tb7);
-		Int32::TryParse(textBox10->Text, tb10);
-		Int32::TryParse(textBox11->Text, tb11);
-		Int32::TryParse(textBox12->Text, tb12);
+		Int32::TryParse(KorVolBox->Text, tb1);
+		Int32::TryParse(KorPriceBox->Text, tb2);
+		Int32::TryParse(NalVolBox->Text, tb3);
+		Int32::TryParse(NalPriceBox->Text, tb4);
+		Int32::TryParse(DobVolBox->Text, tb5);
+		Int32::TryParse(DobPriceBox->Text, tb6);
+		Int32::TryParse(PodVolBox->Text, tb7);
+		Int32::TryParse(PodPriceBox->Text, tb10);
+		Int32::TryParse(MonPriceBox->Text, tb11);
+		Int32::TryParse(DosPriceBox->Text, tb12);
 
-		if (comboBox1->Text == "+30%")
+		if (KorComboBox->Text == "+30%")
 			KorPrice = tb1 * (tb2 * 1.3);
-		else if (comboBox1->Text == "+40%")
+		else if (KorComboBox->Text == "+40%")
 			KorPrice = tb1 * (tb2 * 1.4);
-		else if (comboBox1->Text == "+50%")
+		else if (KorComboBox->Text == "+50%")
 			KorPrice = tb1 * (tb2 * 1.5);
 		else
 			KorPrice = tb1 * tb2;
 
-		if (comboBox2->Text == "+30%")
+		if (NalComboBox->Text == "+30%")
 			NalPrice = tb3 * (tb4 * 1.3);
-		else if (comboBox2->Text == "+40%")
+		else if (NalComboBox->Text == "+40%")
 			NalPrice = tb3 * (tb4 * 1.4);
-		else if (comboBox2->Text == "+50%")
+		else if (NalComboBox->Text == "+50%")
 			NalPrice = tb3 * (tb4 * 1.5);
 		else
 			NalPrice = tb3 * tb4;
 
-		if (comboBox3->Text == "+30%")
+		if (DobComboBox->Text == "+30%")
 			DoborPrice = tb5 * (tb6 * 1.3);
-		else if (comboBox3->Text == "+40%")
+		else if (DobComboBox->Text == "+40%")
 			DoborPrice = tb5 * (tb6 * 1.4);
-		else if (comboBox3->Text == "+50%")
+		else if (DobComboBox->Text == "+50%")
 			DoborPrice = tb5 * (tb6 * 1.5);
 		else
 			DoborPrice = tb5 * tb6;
