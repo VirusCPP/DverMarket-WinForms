@@ -80,6 +80,5 @@ namespace DverMarketWinForms {
 		void Calculate();
 		void checkButtonStatus();
 		void MoveComponents(int direction);
-		//Void button7_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
