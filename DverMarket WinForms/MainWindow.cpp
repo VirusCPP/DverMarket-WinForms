@@ -20,6 +20,14 @@ namespace DverMarketWinForms {
 		{
 			delete bmp;
 		}
+		delete tbDoorName[doorCount];
+		delete cbDoorSize[doorCount];
+		delete tbDoorColor[doorCount];
+		delete tbDoorCount[doorCount];
+		delete tbDoorPrice[doorCount];
+		delete tbFurnituraName[furCount];
+		delete tbFurnituraCount[furCount];
+		delete tbFurnituraPrice[furCount];
 	}
 
 	void MainWindow::InitializeComponent(void){
@@ -470,7 +478,7 @@ namespace DverMarketWinForms {
 		this->PerformLayout();
 
 	}
-
+	//Кнопка "+" для добавления двери
 	void MainWindow::DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(0);
 		tbDoorName[doorCount] = gcnew TextBox();
@@ -516,7 +524,7 @@ namespace DverMarketWinForms {
 		doorCount++;
 		checkButtonStatus();
 	}
-
+	//Кнопка "-" для удаления двери
 	void MainWindow::DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(1);
 		Controls->Remove(tbDoorName[doorCount - 1]);
@@ -532,7 +540,7 @@ namespace DverMarketWinForms {
 		doorCount--;
 		checkButtonStatus();
 	}
-
+	//Кнопка "+" для добавления фурнитуры
 	void MainWindow::FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
 		tbFurnituraName[furCount] = gcnew TextBox();
 		tbFurnituraName[furCount]->Location = System::Drawing::Point(13, currentFurnituraY + 23 + furCount * 30);
@@ -560,7 +568,7 @@ namespace DverMarketWinForms {
 		furCount++;
 		checkButtonStatus();
 	}
-
+	//Кнопка "-" для удаления фурнитуры
 	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		Controls->Remove(tbFurnituraName[furCount - 1]);
 		if (tbFurnituraName[furCount - 1] != nullptr) delete tbFurnituraName[furCount - 1];
@@ -571,14 +579,14 @@ namespace DverMarketWinForms {
 		furCount--;
 		checkButtonStatus();
 	}
-
+	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
 	Void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e){
 		Calculate();
 		PrintForm^ printForm = gcnew PrintForm();
 		printForm->enterText();
 		printForm->ShowDialog();
 	}
-
+	//Настройка подсказок
 	void MainWindow::Form1_Load(){
 		ToolTip^ toolTip1 = gcnew ToolTip;
 		toolTip1->AutoPopDelay = 50000;
@@ -586,7 +594,7 @@ namespace DverMarketWinForms {
 		toolTip1->ReshowDelay = 1;
 		toolTip1->ShowAlways = true;
 	}
-
+	//Включение и отключение кнопок "+" и "-" для дверей и фурнитуры
 	void MainWindow::checkButtonStatus(){
 		if (doorCount > 0) { DoorButtonMinus->Enabled = true; }
 		else { DoorButtonMinus->Enabled = false; }
@@ -597,7 +605,7 @@ namespace DverMarketWinForms {
 		if (furCount > arrSize - 1) { FurButtonPlus->Enabled = false; }
 		else { FurButtonPlus->Enabled = true; }
 	}
-
+	//Функция для сдвига полей двери и фурнитуры, 0 - вверх, другое значение - вниз
 	void MainWindow::MoveComponents(int direction){
 		int offset;
 		if (direction == 0)
@@ -620,7 +628,7 @@ namespace DverMarketWinForms {
 				}
 			}
 	}
-
+	//Функция рассчета итоговой стоимости
 	void MainWindow::Calculate(){
 		double DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,
 			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Sum = 0, Skidka = 0, Result = 0;
@@ -711,66 +719,5 @@ namespace DverMarketWinForms {
 		this->textBox8->Text = Sum.ToString() + " Руб.";
 		this->textBox9->Text = Skidka.ToString() + " Руб.";
 		this->label7->Text = Result.ToString() + " Руб.";
-	}
-
-	void PrintForm::enterText(){
-		for (int i = 0; i < MainWindow::doorCount; i++) {
-			this->textBox1->Text += "Дверь № " + Int32(i + 1) + "\r\n"
-				+ "Полотно: " + MainWindow::tbDoorName[i]->Text
-				+ "   Размер: " + MainWindow::cbDoorSize[i]->Text
-				+ "   Цвет: " + MainWindow::tbDoorColor[i]->Text
-				+ "   Количество: " + MainWindow::tbDoorCount[i]->Text
-				+ "   Стоимость за 1 шт.: " + MainWindow::tbDoorPrice[i]->Text + "\r\n";
-		}
-		if (MainWindow::furCount > 0)
-			this->textBox1->Text += "\r\nФурнитура:" + "\r\n";
-		for (int i = 0; i < MainWindow::furCount; i++) {
-			this->textBox1->Text += "Наименование: " + MainWindow::tbFurnituraName[i]->Text
-				+ "   Количество: " + MainWindow::tbFurnituraCount[i]->Text
-				+ "   Стоимость за 1 шт.: " + MainWindow::tbFurnituraPrice[i]->Text + "\r\n";
-		}
-		if (MainWindow::KorComboBox->Text != "Размер") {
-			this->textBox1->Text += "\r\nКоробка: " + "\r\n"
-				+ "   Размер: " + MainWindow::KorComboBox->Text
-				+ "   Количество: " + MainWindow::KorVolBox->Text
-				+ "   Стоимость: " + MainWindow::KorPriceBox->Text + "\r\n";
-		}
-		if (MainWindow::NalComboBox->Text != "Размер") {
-			this->textBox1->Text += "\r\nНаличник: " + "\r\n"
-				+ "   Размер: " + MainWindow::NalComboBox->Text
-				+ "   Количество: " + MainWindow::NalVolBox->Text
-				+ "   Стоимость: " + MainWindow::NalPriceBox->Text + "\r\n";
-		}
-
-		if (MainWindow::DobComboBox->Text != "Размер") {
-			this->textBox1->Text += "\r\nДобор: " + "\r\n"
-				+ "   Размер: " + MainWindow::KorComboBox->Text
-				+ "   Количество: " + MainWindow::DobVolBox->Text
-				+ "   Стоимость: " + MainWindow::DobPriceBox->Text + "\r\n";
-		}
-		if (MainWindow::PodVolBox->Text != "") {
-			this->textBox1->Text += "\r\nПодъем: " + "\r\n"
-				+ "   Этаж: " + MainWindow::PodVolBox->Text
-				+ "   Стоимость за этаж: " + MainWindow::PodPriceBox->Text + "\r\n";
-		}
-		if (MainWindow::MonPriceBox->Text != "") {
-			this->textBox1->Text += "\r\nМонтаж: " + "\r\n"
-				+ "   Стоимость монтажа: " + MainWindow::MonPriceBox->Text + "\r\n";
-		}
-		if (MainWindow::DosPriceBox->Text != "") {
-			this->textBox1->Text += "\r\nДоставка: " + "\r\n"
-				+ "   Стоимость доставки: " + MainWindow::DosPriceBox->Text + "\r\n";
-		}
-		if (MainWindow::textBox8->Text != "") {
-			this->textBox1->Text += "\r\nОбщая сумма: "
-				+ MainWindow::textBox8->Text + "\r\n";
-		}
-
-		if (MainWindow::comboBox4->Text != "без скидки") {
-			this->textBox1->Text += "\r\nСкидка: "
-				+ MainWindow::comboBox4->Text
-				+ "   Сумма скидки: " + MainWindow::textBox9->Text + "\r\n";
-		}
-		this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::label7->Text;
 	}
 }
