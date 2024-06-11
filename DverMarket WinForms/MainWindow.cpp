@@ -576,7 +576,7 @@ namespace DverMarketWinForms {
 		Calculate();
 		PrintForm^ printForm = gcnew PrintForm();
 		printForm->enterText();
-		printForm->Show();
+		printForm->ShowDialog();
 	}
 
 	void MainWindow::Form1_Load(){

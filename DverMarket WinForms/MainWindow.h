@@ -10,7 +10,7 @@ namespace DverMarketWinForms {
 	using namespace System::Drawing;
 	using namespace System::Drawing::Printing;
 
-	static int currentFurnituraY = 41;
+	
 
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
@@ -19,6 +19,7 @@ namespace DverMarketWinForms {
 		~MainWindow();
 		Bitmap^ bmp;
 		static const int arrSize = 99;
+		static int currentFurnituraY = 41;
 		static int doorCount = 0, furCount = 0;
 		static array <TextBox^>^ tbDoorName = gcnew array<TextBox^>(arrSize);
 		static array <ComboBox^>^ cbDoorSize = gcnew array<ComboBox^>(arrSize);
