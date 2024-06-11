@@ -7,7 +7,6 @@ namespace DverMarketWinForms {
 	{
 		InitializeComponent();
 		checkButtonStatus();
-		checkButtonStatus2();
 		Form1_Load();
 	}
 
@@ -559,7 +558,7 @@ namespace DverMarketWinForms {
 		this->toolTip1->SetToolTip(tbFurnituraPrice[furCount], L"Стоимость");
 		Controls->Add(tbFurnituraPrice[furCount]);
 		furCount++;
-		checkButtonStatus2();
+		checkButtonStatus();
 	}
 
 	void MainWindow::button4_Click(System::Object^ sender, System::EventArgs^ e){
@@ -570,7 +569,7 @@ namespace DverMarketWinForms {
 		Controls->Remove(tbFurnituraPrice[furCount - 1]);
 		if (tbFurnituraPrice[furCount - 1] != nullptr) delete tbFurnituraPrice[furCount - 1];
 		furCount--;
-		checkButtonStatus2();
+		checkButtonStatus();
 	}
 
 	Void MainWindow::button5_Click(System::Object^ sender, System::EventArgs^ e){
@@ -593,9 +592,6 @@ namespace DverMarketWinForms {
 		else { DoorButtonMinus->Enabled = false; }
 		if (doorCount > arrSize - 1) { DoorButtonPlus->Enabled = false; }
 		else { DoorButtonPlus->Enabled = true; }
-	}
-
-	void MainWindow::checkButtonStatus2(){
 		if (furCount > 0) { FurButtonMinus->Enabled = true; }
 		else { FurButtonMinus->Enabled = false; }
 		if (furCount > arrSize - 1) { FurButtonPlus->Enabled = false; }
