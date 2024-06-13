@@ -10,14 +10,11 @@ namespace DverMarketWinForms {
 	using namespace System::Drawing;
 	using namespace System::Drawing::Printing;
 
-	
-
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
 	public:
 		MainWindow(void);
 		~MainWindow();
-		Bitmap^ bmp;
 		static const int arrSize = 99;
 		static int currentFurnituraY = 41;
 		static int doorCount = 0, furCount = 0;
