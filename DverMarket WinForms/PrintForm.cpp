@@ -80,7 +80,7 @@ namespace DverMarketWinForms {
 				+ MainWindow::comboBox4->Text
 				+ "   Сумма скидки: " + MainWindow::textBox9->Text + "\r\n";
 		}
-		this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::label7->Text;
+		this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::TotalAmountBox->Text;
 	}
 	//Действие на кнопку Печать - выводит на печать форму
 	void PrintForm::button1_Click(System::Object^ sender, System::EventArgs^ e) {

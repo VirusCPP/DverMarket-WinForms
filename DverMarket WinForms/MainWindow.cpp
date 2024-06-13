@@ -49,7 +49,7 @@ namespace DverMarketWinForms {
 		this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 		this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 		this->TotalAmountLable = (gcnew System::Windows::Forms::Label());
-		this->label7 = (gcnew System::Windows::Forms::Label());
+		this->TotalAmountBox = (gcnew System::Windows::Forms::Label());
 		this->CalculateButton = (gcnew System::Windows::Forms::Button());
 		this->label8 = (gcnew System::Windows::Forms::Label());
 		this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
@@ -317,11 +317,11 @@ namespace DverMarketWinForms {
 		// 
 		// label7
 		// 
-		this->label7->Location = System::Drawing::Point(566, 470);
-		this->label7->Name = L"label7";
-		this->label7->Size = System::Drawing::Size(384, 33);
-		this->label7->TabIndex = 7;
-		this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		this->TotalAmountBox->Location = System::Drawing::Point(566, 470);
+		this->TotalAmountBox->Name = L"label7";
+		this->TotalAmountBox->Size = System::Drawing::Size(384, 33);
+		this->TotalAmountBox->TabIndex = 7;
+		this->TotalAmountBox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
 		// button5
 		// 
@@ -423,7 +423,7 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
 		this->Controls->Add(this->CalculateButton);
-		this->Controls->Add(this->label7);
+		this->Controls->Add(this->TotalAmountBox);
 		this->Controls->Add(this->TotalAmountLable);
 		this->Controls->Add(this->richTextBox1);
 		this->Controls->Add(this->dateTimePicker1);
@@ -701,6 +701,6 @@ namespace DverMarketWinForms {
 
 		this->textBox8->Text = Sum.ToString() + " Руб.";
 		this->textBox9->Text = Skidka.ToString() + " Руб.";
-		this->label7->Text = Result.ToString() + " Руб.";
+		this->TotalAmountBox->Text = Result.ToString() + " Руб.";
 	}
 }

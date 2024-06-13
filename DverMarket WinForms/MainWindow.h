@@ -56,7 +56,7 @@ namespace DverMarketWinForms {
 		static System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 		static System::Windows::Forms::RichTextBox^ richTextBox1;
 		static System::Windows::Forms::Label^ TotalAmountLable;
-		static System::Windows::Forms::Label^ label7;
+		static System::Windows::Forms::Label^ TotalAmountBox;
 		static System::Windows::Forms::Button^ CalculateButton;
 		static System::Windows::Forms::Label^ label8;
 		static System::Drawing::Printing::PrintDocument^ printDocument1;
