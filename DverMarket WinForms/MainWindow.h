@@ -21,14 +21,6 @@ namespace DverMarketWinForms {
 		static const int arrSize = 99;
 		static int currentFurnituraY = 41;
 		static int doorCount = 0, furCount = 0;
-		static array <TextBox^>^ tbDoorName = gcnew array<TextBox^>(arrSize);
-		static array <ComboBox^>^ cbDoorSize = gcnew array<ComboBox^>(arrSize);
-		static array <TextBox^>^ tbDoorColor = gcnew array<TextBox^>(arrSize);
-		static array <TextBox^>^ tbDoorCount = gcnew array<TextBox^>(arrSize);
-		static array <TextBox^>^ tbDoorPrice = gcnew array<TextBox^>(arrSize);
-		static array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(arrSize);
-		static array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(arrSize);
-		static array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(arrSize);
 		void InitializeComponent(void);
 		void DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
 		void DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
@@ -80,6 +72,61 @@ namespace DverMarketWinForms {
 		static System::Windows::Forms::Label^ label14;
 		static System::Windows::Forms::TextBox^ textBox9;
 		PrintDocument^ printDocument;
-	private: System::ComponentModel::IContainer^ components;
+		static System::Windows::Forms::Form^ formInstance;
+	private:
+	    System::ComponentModel::IContainer^ components;	 
+
+	};
+
+	ref class Door {
+	public:
+		Door() {
+
+		}
+		TextBox^ DoorName;
+		ComboBox^ DoorSize;
+		TextBox^ DoorColor;
+		TextBox^ DoorCount;
+		TextBox^ DoorPrice;
+
+		static array<Door^>^ arrDoor = nullptr;
+
+		static void InitializeDoors() {
+			if (arrDoor == nullptr) {
+				arrDoor = gcnew array<Door^>(MainWindow::arrSize);
+				for (int i = 0; i < arrDoor->Length; i++) {
+					arrDoor[i] = gcnew Door();
+				}
+			}
+		}
+		~Door() {
+
+		}
+		static void addDoor();
+	};
+
+	ref class Fur {
+	public:
+		Fur() {
+
+		}
+		TextBox^ FurName;
+		TextBox^ FurCount;
+		TextBox^ FurPrice;
+
+		static array<Fur^>^ arrFur = nullptr;
+
+		static void InitializeFurs() {
+			if (arrFur == nullptr) {
+				arrFur = gcnew array<Fur^>(MainWindow::arrSize);
+				for (int i = 0; i < arrFur->Length; i++) {
+					arrFur[i] = gcnew Fur();
+				}
+			}
+		}
+		~Fur() {
+			
+		}
+		static void addFur();
 	};
 }

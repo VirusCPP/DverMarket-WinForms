@@ -25,36 +25,36 @@ namespace DverMarketWinForms {
 	void PrintForm::enterText() {
 		for (int i = 0; i < MainWindow::doorCount; i++) {
 			this->textBox1->Text += "Дверь № " + Int32(i + 1) + "\r\n"
-				+ "Полотно: " + MainWindow::tbDoorName[i]->Text
-				+ "   Размер: " + MainWindow::cbDoorSize[i]->Text
-				+ "   Цвет: " + MainWindow::tbDoorColor[i]->Text
-				+ "   Количество: " + MainWindow::tbDoorCount[i]->Text
-				+ "   Стоимость за 1 шт.: " + MainWindow::tbDoorPrice[i]->Text + "\r\n";
+				+ "Полотно: " + Door::arrDoor[i]->DoorName->Text
+				+ "   Размер: " + Door::arrDoor[i]->DoorSize->Text
+				+ "   Цвет: " + Door::arrDoor[i]->DoorColor->Text
+				+ "   Кол-во: " + Door::arrDoor[i]->DoorCount->Text
+				+ "   Стоимость за 1 шт.: " + Door::arrDoor[i]->DoorPrice->Text + "\r\n";
 		}
 		if (MainWindow::furCount > 0)
 			this->textBox1->Text += "\r\nФурнитура:" + "\r\n";
 		for (int i = 0; i < MainWindow::furCount; i++) {
-			this->textBox1->Text += "Наименование: " + MainWindow::tbFurnituraName[i]->Text
-				+ "   Количество: " + MainWindow::tbFurnituraCount[i]->Text
-				+ "   Стоимость за 1 шт.: " + MainWindow::tbFurnituraPrice[i]->Text + "\r\n";
+			this->textBox1->Text += "Наименование: " + Fur::arrFur[i]->FurName->Text
+				+ "   Кол-во: " + Fur::arrFur[i]->FurCount->Text
+				+ "   Стоимость за 1 шт.: " + Fur::arrFur[i]->FurPrice->Text + "\r\n";
 		}
 		if (MainWindow::KorComboBox->Text != "Размер") {
 			this->textBox1->Text += "\r\nКоробка: " + "\r\n"
 				+ "   Размер: " + MainWindow::KorComboBox->Text
-				+ "   Количество: " + MainWindow::KorVolBox->Text
+				+ "   Кол-во: " + MainWindow::KorVolBox->Text
 				+ "   Стоимость: " + MainWindow::KorPriceBox->Text + "\r\n";
 		}
 		if (MainWindow::NalComboBox->Text != "Размер") {
 			this->textBox1->Text += "\r\nНаличник: " + "\r\n"
 				+ "   Размер: " + MainWindow::NalComboBox->Text
-				+ "   Количество: " + MainWindow::NalVolBox->Text
+				+ "   Кол-во: " + MainWindow::NalVolBox->Text
 				+ "   Стоимость: " + MainWindow::NalPriceBox->Text + "\r\n";
 		}
 
 		if (MainWindow::DobComboBox->Text != "Размер") {
 			this->textBox1->Text += "\r\nДобор: " + "\r\n"
 				+ "   Размер: " + MainWindow::KorComboBox->Text
-				+ "   Количество: " + MainWindow::DobVolBox->Text
+				+ "   Кол-во: " + MainWindow::DobVolBox->Text
 				+ "   Стоимость: " + MainWindow::DobPriceBox->Text + "\r\n";
 		}
 		if (MainWindow::PodVolBox->Text != "") {
