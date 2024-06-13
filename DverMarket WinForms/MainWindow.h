@@ -29,6 +29,16 @@ namespace DverMarketWinForms {
 		static array <TextBox^>^ tbFurnituraName = gcnew array<TextBox^>(arrSize);
 		static array <TextBox^>^ tbFurnituraCount = gcnew array<TextBox^>(arrSize);
 		static array <TextBox^>^ tbFurnituraPrice = gcnew array<TextBox^>(arrSize);
+		void InitializeComponent(void);
+		void DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
+		void DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
+		void FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
+		void FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
+		void Calculate_Click(System::Object^ sender, System::EventArgs^ e);
+		void Form1_Load();
+		void Calculate();
+		void checkButtonStatus();
+		void MoveComponents(int direction);
 		static System::Windows::Forms::Label^ DoorLable;
 		static System::Windows::Forms::Button^ DoorButtonPlus;
 		static System::Windows::Forms::Button^ DoorButtonMinus;
@@ -71,15 +81,5 @@ namespace DverMarketWinForms {
 		static System::Windows::Forms::TextBox^ textBox9;
 		PrintDocument^ printDocument;
 	private: System::ComponentModel::IContainer^ components;
-		void InitializeComponent(void);
-		void DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
-		void DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
-		void FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
-		void FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
-		void Calculate_Click(System::Object^ sender, System::EventArgs^ e);
-		void Form1_Load();
-		void Calculate();
-		void checkButtonStatus();
-		void MoveComponents(int direction);
 	};
 }
