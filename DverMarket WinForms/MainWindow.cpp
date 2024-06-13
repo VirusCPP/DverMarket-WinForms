@@ -476,7 +476,6 @@ namespace DverMarketWinForms {
 		this->Text = L"ДверМаркет";
 		this->ResumeLayout(false);
 		this->PerformLayout();
-
 	}
 	//Кнопка "+" для добавления двери
 	void MainWindow::DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
