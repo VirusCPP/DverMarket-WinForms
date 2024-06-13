@@ -5,9 +5,6 @@ namespace DverMarketWinForms {
 
 	MainWindow::MainWindow(void)
 	{
-		formInstance = gcnew Form();
-		Door::InitializeDoors();
-		Fur::InitializeFurs();
 		InitializeComponent();
 		checkButtonStatus();
 		Form1_Load();
@@ -470,66 +467,70 @@ namespace DverMarketWinForms {
 	}
 	//Функция добавляет поля Двери 
 	void Door::addDoor() {
-		Door::arrDoor[MainWindow::doorCount]->DoorName = gcnew TextBox();
-		Door::arrDoor[MainWindow::doorCount]->DoorSize = gcnew ComboBox();
-		Door::arrDoor[MainWindow::doorCount]->DoorColor = gcnew TextBox();
-		Door::arrDoor[MainWindow::doorCount]->DoorCount = gcnew TextBox();
-		Door::arrDoor[MainWindow::doorCount]->DoorPrice = gcnew TextBox();
+		arrDoor[MainWindow::doorCount] = gcnew Door();
 
-		Door::arrDoor[MainWindow::doorCount]->DoorName->Location = System::Drawing::Point(13, 33 + MainWindow::doorCount * 30);
-		Door::arrDoor[MainWindow::doorCount]->DoorName->Name = "textDoorBox" + "Name" + MainWindow::doorCount.ToString();
-		Door::arrDoor[MainWindow::doorCount]->DoorName->Size = System::Drawing::Size(175, 24);
-		Door::arrDoor[MainWindow::doorCount]->DoorName->TabIndex = MainWindow::doorCount;
-		MainWindow::toolTip1->SetToolTip(Door::arrDoor[MainWindow::doorCount]->DoorName, "Полотно");
-		
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->Location = System::Drawing::Point(194, 33 + MainWindow::doorCount * 30);
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->Name = L"comboSizeBox" + MainWindow::doorCount.ToString();
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->Size = System::Drawing::Size(92, 24);
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->TabIndex = MainWindow::doorCount;
-		Door::arrDoor[MainWindow::doorCount]->DoorSize->Text = L"Размер";
+		arrDoor[MainWindow::doorCount]->DoorName = gcnew TextBox();
+		arrDoor[MainWindow::doorCount]->DoorSize = gcnew ComboBox();
+		arrDoor[MainWindow::doorCount]->DoorColor = gcnew TextBox();
+		arrDoor[MainWindow::doorCount]->DoorCount = gcnew TextBox();
+		arrDoor[MainWindow::doorCount]->DoorPrice = gcnew TextBox();
 
-		Door::arrDoor[MainWindow::doorCount]->DoorColor->Location = System::Drawing::Point(293, 33 + MainWindow::doorCount * 30);
-		Door::arrDoor[MainWindow::doorCount]->DoorColor->Name = "textDoorBox" + "Color" + MainWindow::doorCount.ToString();
-		Door::arrDoor[MainWindow::doorCount]->DoorColor->Size = System::Drawing::Size(100, 24);
-		Door::arrDoor[MainWindow::doorCount]->DoorColor->TabIndex = MainWindow::doorCount;
-		MainWindow::toolTip1->SetToolTip(Door::arrDoor[MainWindow::doorCount]->DoorColor, "Цвет");
+		arrDoor[MainWindow::doorCount]->DoorName->Location = System::Drawing::Point(13, 33 + MainWindow::doorCount * 30);
+		arrDoor[MainWindow::doorCount]->DoorName->Name = "textDoorBox" + "Name" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorName->Size = System::Drawing::Size(175, 24);
+		arrDoor[MainWindow::doorCount]->DoorName->TabIndex = MainWindow::doorCount;
+		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorName, "Полотно");
 		
-		Door::arrDoor[MainWindow::doorCount]->DoorCount->Location = System::Drawing::Point(399, 33 + MainWindow::doorCount * 30);
-		Door::arrDoor[MainWindow::doorCount]->DoorCount->Name = "textDoorBox" + "Count" + MainWindow::doorCount.ToString();
-		Door::arrDoor[MainWindow::doorCount]->DoorCount->Size = System::Drawing::Size(50, 24);
-		Door::arrDoor[MainWindow::doorCount]->DoorCount->TabIndex = MainWindow::doorCount;
-		MainWindow::toolTip1->SetToolTip(Door::arrDoor[MainWindow::doorCount]->DoorCount, "Количество");
+		arrDoor[MainWindow::doorCount]->DoorSize->Location = System::Drawing::Point(194, 33 + MainWindow::doorCount * 30);
+		arrDoor[MainWindow::doorCount]->DoorSize->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
+		arrDoor[MainWindow::doorCount]->DoorSize->Name = L"comboSizeBox" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorSize->Size = System::Drawing::Size(92, 24);
+		arrDoor[MainWindow::doorCount]->DoorSize->TabIndex = MainWindow::doorCount;
+		arrDoor[MainWindow::doorCount]->DoorSize->Text = L"Размер";
+
+		arrDoor[MainWindow::doorCount]->DoorColor->Location = System::Drawing::Point(293, 33 + MainWindow::doorCount * 30);
+		arrDoor[MainWindow::doorCount]->DoorColor->Name = "textDoorBox" + "Color" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorColor->Size = System::Drawing::Size(100, 24);
+		arrDoor[MainWindow::doorCount]->DoorColor->TabIndex = MainWindow::doorCount;
+		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorColor, "Цвет");
 		
-		Door::arrDoor[MainWindow::doorCount]->DoorPrice->Location = System::Drawing::Point(455, 33 + MainWindow::doorCount * 30);
-		Door::arrDoor[MainWindow::doorCount]->DoorPrice->Name = "textDoorBox" + "Price" + MainWindow::doorCount.ToString();
-		Door::arrDoor[MainWindow::doorCount]->DoorPrice->Size = System::Drawing::Size(85, 24);
-		Door::arrDoor[MainWindow::doorCount]->DoorPrice->TabIndex = MainWindow::doorCount;
-		MainWindow::toolTip1->SetToolTip(Door::arrDoor[MainWindow::doorCount]->DoorPrice, "Цена");
+		arrDoor[MainWindow::doorCount]->DoorCount->Location = System::Drawing::Point(399, 33 + MainWindow::doorCount * 30);
+		arrDoor[MainWindow::doorCount]->DoorCount->Name = "textDoorBox" + "Count" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorCount->Size = System::Drawing::Size(50, 24);
+		arrDoor[MainWindow::doorCount]->DoorCount->TabIndex = MainWindow::doorCount;
+		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorCount, "Количество");
+		
+		arrDoor[MainWindow::doorCount]->DoorPrice->Location = System::Drawing::Point(455, 33 + MainWindow::doorCount * 30);
+		arrDoor[MainWindow::doorCount]->DoorPrice->Name = "textDoorBox" + "Price" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorPrice->Size = System::Drawing::Size(85, 24);
+		arrDoor[MainWindow::doorCount]->DoorPrice->TabIndex = MainWindow::doorCount;
+		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorPrice, "Цена");
 	}
 	//Функция добавляет поля Фурнитуры
 	void Fur::addFur() {
-		Fur::arrFur[MainWindow::furCount]->FurName = gcnew TextBox();
-		Fur::arrFur[MainWindow::furCount]->FurCount = gcnew TextBox();
-		Fur::arrFur[MainWindow::furCount]->FurPrice = gcnew TextBox();
+		arrFur[MainWindow::furCount] = gcnew Fur();
+		
+		arrFur[MainWindow::furCount]->FurName = gcnew TextBox();
+		arrFur[MainWindow::furCount]->FurCount = gcnew TextBox();
+		arrFur[MainWindow::furCount]->FurPrice = gcnew TextBox();
 
-		Fur::arrFur[MainWindow::furCount]->FurName->Location = System::Drawing::Point(13, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
-		Fur::arrFur[MainWindow::furCount]->FurName->Size = System::Drawing::Size(175, 24);
-		Fur::arrFur[MainWindow::furCount]->FurName->Name = L"textFurNameBox" + "Name" + MainWindow::doorCount.ToString();
-		Fur::arrFur[MainWindow::furCount]->FurName->TabIndex = MainWindow::furCount;
-		MainWindow::toolTip1->SetToolTip(Fur::arrFur[MainWindow::furCount]->FurName, L"Наименование");
+		arrFur[MainWindow::furCount]->FurName->Location = System::Drawing::Point(13, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
+		arrFur[MainWindow::furCount]->FurName->Size = System::Drawing::Size(175, 24);
+		arrFur[MainWindow::furCount]->FurName->Name = L"textFurNameBox" + "Name" + MainWindow::doorCount.ToString();
+		arrFur[MainWindow::furCount]->FurName->TabIndex = MainWindow::furCount;
+		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurName, L"Наименование");
 
-		Fur::arrFur[MainWindow::furCount]->FurCount->Location = System::Drawing::Point(194, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
-		Fur::arrFur[MainWindow::furCount]->FurCount->Size = System::Drawing::Size(92, 24);
-		Fur::arrFur[MainWindow::furCount]->FurCount->Name = L"textFurCountBox" + MainWindow::doorCount.ToString();
-		Fur::arrFur[MainWindow::furCount]->FurCount->TabIndex = MainWindow::furCount;
-		MainWindow::toolTip1->SetToolTip(Fur::arrFur[MainWindow::furCount]->FurCount, L"Количество");
+		arrFur[MainWindow::furCount]->FurCount->Location = System::Drawing::Point(194, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
+		arrFur[MainWindow::furCount]->FurCount->Size = System::Drawing::Size(92, 24);
+		arrFur[MainWindow::furCount]->FurCount->Name = L"textFurCountBox" + MainWindow::doorCount.ToString();
+		arrFur[MainWindow::furCount]->FurCount->TabIndex = MainWindow::furCount;
+		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurCount, L"Количество");
 
-		Fur::arrFur[MainWindow::furCount]->FurPrice->Location = System::Drawing::Point(293, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
-		Fur::arrFur[MainWindow::furCount]->FurPrice->Size = System::Drawing::Size(85, 24);
-		Fur::arrFur[MainWindow::furCount]->FurPrice->Name = L"textFurPriceBox" + MainWindow::doorCount.ToString();
-		Fur::arrFur[MainWindow::furCount]->FurPrice->TabIndex = MainWindow::furCount;
-		MainWindow::toolTip1->SetToolTip(Fur::arrFur[MainWindow::furCount]->FurPrice, L"Стоимость");
+		arrFur[MainWindow::furCount]->FurPrice->Location = System::Drawing::Point(293, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
+		arrFur[MainWindow::furCount]->FurPrice->Size = System::Drawing::Size(85, 24);
+		arrFur[MainWindow::furCount]->FurPrice->Name = L"textFurPriceBox" + MainWindow::doorCount.ToString();
+		arrFur[MainWindow::furCount]->FurPrice->TabIndex = MainWindow::furCount;
+		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurPrice, L"Стоимость");
 	}
 	//Действия по нажатию на кнопку "+" для добавления полей Двери
 	void MainWindow::DoorButtonPlus_Click(System::Object^ sender, System::EventArgs^ e){
@@ -546,13 +547,13 @@ namespace DverMarketWinForms {
 	//Действия по нажатию на кнопку "-" для удаления полей Двери
 	void MainWindow::DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(1);
-		if (Door::arrDoor[doorCount - 1]) delete Door::arrDoor[doorCount - 1];
-		Controls->Remove(Door::arrDoor[doorCount - 1]->DoorName);
-		Controls->Remove(Door::arrDoor[doorCount - 1]->DoorSize);
-		Controls->Remove(Door::arrDoor[doorCount - 1]->DoorColor);
-		Controls->Remove(Door::arrDoor[doorCount - 1]->DoorCount);
-		Controls->Remove(Door::arrDoor[doorCount - 1]->DoorPrice);
 		doorCount--;
+		if (Door::arrDoor[doorCount]) delete Door::arrDoor[doorCount];
+		Controls->Remove(Door::arrDoor[doorCount]->DoorName);
+		Controls->Remove(Door::arrDoor[doorCount]->DoorSize);
+		Controls->Remove(Door::arrDoor[doorCount]->DoorColor);
+		Controls->Remove(Door::arrDoor[doorCount]->DoorCount);
+		Controls->Remove(Door::arrDoor[doorCount]->DoorPrice);
 		checkButtonStatus();
 	}
 	//Действия по нажатию на кнопку "+" для добавления полей Фурнитуры
@@ -566,11 +567,11 @@ namespace DverMarketWinForms {
 	}
 	//Действия по нажатию на кнопку "-" для удаления полей Фурнитуры
 	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
-		if (Fur::arrFur[furCount - 1]) delete Fur::arrFur[furCount - 1];
-		Controls->Remove(Fur::arrFur[furCount - 1]->FurName);
-		Controls->Remove(Fur::arrFur[furCount - 1]->FurCount);
-		Controls->Remove(Fur::arrFur[furCount - 1]->FurPrice);
 		furCount--;
+		if (Fur::arrFur[furCount]) delete Fur::arrFur[furCount];
+		Controls->Remove(Fur::arrFur[furCount]->FurName);
+		Controls->Remove(Fur::arrFur[furCount]->FurCount);
+		Controls->Remove(Fur::arrFur[furCount]->FurPrice);
 		checkButtonStatus();
 	}
 	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
@@ -612,7 +613,7 @@ namespace DverMarketWinForms {
 		this->FurButtonMinus->Location = System::Drawing::Point(124, currentFurnituraY);
 		for (int i = 0; i < arrSize; i++)
 		{
-			if (Fur::arrFur[i]->FurName != nullptr) {
+			if (Fur::arrFur[i] != nullptr) {
 				Fur::arrFur[i]->FurName->Location = System::Drawing::Point(13, (currentFurnituraY + 23 + i * 30));
 				Fur::arrFur[i]->FurCount->Location = System::Drawing::Point(194, (currentFurnituraY + 23 + i * 30));
 				Fur::arrFur[i]->FurPrice->Location = System::Drawing::Point(293, (currentFurnituraY + 23 + i * 30));
@@ -625,7 +626,7 @@ namespace DverMarketWinForms {
 			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Sum = 0, Skidka = 0, Result = 0;
 
 		for (int i = 0; i < arrSize; i++) {
-			if (Door::arrDoor[i]->DoorCount != nullptr && Door::arrDoor[i]->DoorPrice != nullptr && Door::arrDoor[i]->DoorSize != nullptr) {
+			if (Door::arrDoor[i] != nullptr) {
 				int count, price;
 				if (Int32::TryParse(Door::arrDoor[i]->DoorCount->Text, count) && Int32::TryParse(Door::arrDoor[i]->DoorPrice->Text, price)) {
 					String^ size = Door::arrDoor[i]->DoorSize->Text;
@@ -643,7 +644,7 @@ namespace DverMarketWinForms {
 		}
 
 		for (int i = 0; i < arrSize; i++) {
-			if (Fur::arrFur[i]->FurCount != nullptr && Fur::arrFur[i]->FurPrice != nullptr) {
+			if (Fur::arrFur[i] != nullptr) {
 				int count, price;
 				if (Int32::TryParse(Fur::arrFur[i]->FurCount->Text, count) && Int32::TryParse(Fur::arrFur[i]->FurPrice->Text, price)) {
 					FurPrice += count * price;
