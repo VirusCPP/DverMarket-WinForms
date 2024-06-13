@@ -2,6 +2,25 @@
 #include "PrintForm.h"
 
 namespace DverMarketWinForms {
+
+	PrintForm::PrintForm(void)
+	{
+		InitializeComponent();
+
+	}
+
+	PrintForm::~PrintForm()
+	{
+		if (components)
+		{
+			delete components;
+		}
+		if (bmp)
+		{
+			delete bmp;
+		}
+	}
+
 	//«аполнение осмновного пол€ рассчетами
 	void PrintForm::enterText() {
 		for (int i = 0; i < MainWindow::doorCount; i++) {

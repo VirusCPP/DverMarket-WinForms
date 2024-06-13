@@ -515,15 +515,15 @@ namespace DverMarketWinForms {
 	void MainWindow::DoorButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		MoveComponents(1);
 		Controls->Remove(tbDoorName[doorCount - 1]);
-		if (tbDoorName[doorCount - 1] != nullptr) delete tbDoorName[doorCount - 1];
+		if (tbDoorName[doorCount - 1]) delete tbDoorName[doorCount - 1];
 		Controls->Remove(cbDoorSize[doorCount - 1]);
-		if (cbDoorSize[doorCount - 1] != nullptr) delete cbDoorSize[doorCount - 1];
+		if (cbDoorSize[doorCount - 1]) delete cbDoorSize[doorCount - 1];
 		Controls->Remove(tbDoorColor[doorCount - 1]);
-		if (tbDoorColor[doorCount - 1] != nullptr) delete tbDoorColor[doorCount - 1];
+		if (tbDoorColor[doorCount - 1]) delete tbDoorColor[doorCount - 1];
 		Controls->Remove(tbDoorCount[doorCount - 1]);
-		if (tbDoorCount[doorCount - 1] != nullptr) delete tbDoorCount[doorCount - 1];
+		if (tbDoorCount[doorCount - 1]) delete tbDoorCount[doorCount - 1];
 		Controls->Remove(tbDoorPrice[doorCount - 1]);
-		if (tbDoorPrice[doorCount - 1] != nullptr) delete tbDoorPrice[doorCount - 1];
+		if (tbDoorPrice[doorCount - 1]) delete tbDoorPrice[doorCount - 1];
 		doorCount--;
 		checkButtonStatus();
 	}
@@ -558,11 +558,11 @@ namespace DverMarketWinForms {
 	//Кнопка "-" для удаления фурнитуры
 	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		Controls->Remove(tbFurnituraName[furCount - 1]);
-		if (tbFurnituraName[furCount - 1] != nullptr) delete tbFurnituraName[furCount - 1];
+		if (tbFurnituraName[furCount - 1]) delete tbFurnituraName[furCount - 1];
 		Controls->Remove(tbFurnituraCount[furCount - 1]);
-		if (tbFurnituraCount[furCount - 1] != nullptr) delete tbFurnituraCount[furCount - 1];
+		if (tbFurnituraCount[furCount - 1]) delete tbFurnituraCount[furCount - 1];
 		Controls->Remove(tbFurnituraPrice[furCount - 1]);
-		if (tbFurnituraPrice[furCount - 1] != nullptr) delete tbFurnituraPrice[furCount - 1];
+		if (tbFurnituraPrice[furCount - 1]) delete tbFurnituraPrice[furCount - 1];
 		furCount--;
 		checkButtonStatus();
 	}

@@ -20,25 +20,10 @@ namespace DverMarketWinForms {
 		void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
 
-		PrintForm(void)
-		{
-			InitializeComponent();
-			
-		}
+		PrintForm(void);
 
-	protected:
-		
-		~PrintForm()
-		{
-			if (components)
-			{
-				delete components;
-			}
-			if (bmp)
-			{
-				delete bmp;
-			}
-		}
+		~PrintForm();
+
 	private: 
 		System::Windows::Forms::TextBox^ textBox1;
 		System::Windows::Forms::PictureBox^ pictureBox1;
