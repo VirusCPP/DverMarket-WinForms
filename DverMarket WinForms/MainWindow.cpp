@@ -16,18 +16,6 @@ namespace DverMarketWinForms {
 		{
 			delete components;
 		}
-		if (bmp)
-		{
-			delete bmp;
-		}
-		delete tbDoorName[doorCount];
-		delete cbDoorSize[doorCount];
-		delete tbDoorColor[doorCount];
-		delete tbDoorCount[doorCount];
-		delete tbDoorPrice[doorCount];
-		delete tbFurnituraName[furCount];
-		delete tbFurnituraCount[furCount];
-		delete tbFurnituraPrice[furCount];
 	}
 
 	void MainWindow::InitializeComponent(void){

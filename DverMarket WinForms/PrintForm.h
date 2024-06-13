@@ -34,6 +34,10 @@ namespace DverMarketWinForms {
 			{
 				delete components;
 			}
+			if (bmp)
+			{
+				delete bmp;
+			}
 		}
 	private: 
 		System::Windows::Forms::TextBox^ textBox1;
