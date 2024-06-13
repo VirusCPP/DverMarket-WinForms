@@ -549,11 +549,11 @@ namespace DverMarketWinForms {
 		MoveComponents(1);
 		doorCount--;
 		if (Door::arrDoor[doorCount]) delete Door::arrDoor[doorCount];
-		Controls->Remove(Door::arrDoor[doorCount]->DoorName);
-		Controls->Remove(Door::arrDoor[doorCount]->DoorSize);
-		Controls->Remove(Door::arrDoor[doorCount]->DoorColor);
-		Controls->Remove(Door::arrDoor[doorCount]->DoorCount);
-		Controls->Remove(Door::arrDoor[doorCount]->DoorPrice);
+		if (Door::arrDoor[doorCount]) Controls->Remove(Door::arrDoor[doorCount]->DoorName);
+		if (Door::arrDoor[doorCount]) Controls->Remove(Door::arrDoor[doorCount]->DoorSize);
+		if (Door::arrDoor[doorCount]) Controls->Remove(Door::arrDoor[doorCount]->DoorColor);
+		if (Door::arrDoor[doorCount]) Controls->Remove(Door::arrDoor[doorCount]->DoorCount);
+		if (Door::arrDoor[doorCount]) Controls->Remove(Door::arrDoor[doorCount]->DoorPrice);
 		checkButtonStatus();
 	}
 	//Действия по нажатию на кнопку "+" для добавления полей Фурнитуры
@@ -569,9 +569,9 @@ namespace DverMarketWinForms {
 	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e){
 		furCount--;
 		if (Fur::arrFur[furCount]) delete Fur::arrFur[furCount];
-		Controls->Remove(Fur::arrFur[furCount]->FurName);
-		Controls->Remove(Fur::arrFur[furCount]->FurCount);
-		Controls->Remove(Fur::arrFur[furCount]->FurPrice);
+		if (Fur::arrFur[furCount]) Controls->Remove(Fur::arrFur[furCount]->FurName);
+		if (Fur::arrFur[furCount]) Controls->Remove(Fur::arrFur[furCount]->FurCount);
+		if (Fur::arrFur[furCount]) Controls->Remove(Fur::arrFur[furCount]->FurPrice);
 		checkButtonStatus();
 	}
 	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
@@ -600,7 +600,7 @@ namespace DverMarketWinForms {
 		if (furCount > arrSize - 1) { FurButtonPlus->Enabled = false; }
 		else { FurButtonPlus->Enabled = true; }
 	}
-	//Функция для сдвига полей фурнитуры, 0 - вверх, другое значение - вниз
+	//Функция для сдвига полей фурнитуры, 0 - вниз, другое значение - вверх
 	void MainWindow::MoveComponents(int direction) {
 		int offset;
 		if (direction == 0)
