@@ -476,7 +476,7 @@ namespace DverMarketWinForms {
 		arrDoor[MainWindow::doorCount]->DoorPrice = gcnew TextBox();
 
 		arrDoor[MainWindow::doorCount]->DoorName->Location = System::Drawing::Point(13, 33 + MainWindow::doorCount * 30);
-		arrDoor[MainWindow::doorCount]->DoorName->Name = "textDoorBox" + "Name" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorName->Name = "textDoorNameBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorName->Size = System::Drawing::Size(175, 24);
 		arrDoor[MainWindow::doorCount]->DoorName->TabIndex = MainWindow::doorCount;
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorName, "Полотно");
@@ -489,19 +489,19 @@ namespace DverMarketWinForms {
 		arrDoor[MainWindow::doorCount]->DoorSize->Text = L"Размер";
 
 		arrDoor[MainWindow::doorCount]->DoorColor->Location = System::Drawing::Point(293, 33 + MainWindow::doorCount * 30);
-		arrDoor[MainWindow::doorCount]->DoorColor->Name = "textDoorBox" + "Color" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorColor->Name = "textDoorColorBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorColor->Size = System::Drawing::Size(100, 24);
 		arrDoor[MainWindow::doorCount]->DoorColor->TabIndex = MainWindow::doorCount;
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorColor, "Цвет");
 		
 		arrDoor[MainWindow::doorCount]->DoorCount->Location = System::Drawing::Point(399, 33 + MainWindow::doorCount * 30);
-		arrDoor[MainWindow::doorCount]->DoorCount->Name = "textDoorBox" + "Count" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorCount->Name = "textDoorCountBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorCount->Size = System::Drawing::Size(50, 24);
 		arrDoor[MainWindow::doorCount]->DoorCount->TabIndex = MainWindow::doorCount;
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorCount, "Количество");
 		
 		arrDoor[MainWindow::doorCount]->DoorPrice->Location = System::Drawing::Point(455, 33 + MainWindow::doorCount * 30);
-		arrDoor[MainWindow::doorCount]->DoorPrice->Name = "textDoorBox" + "Price" + MainWindow::doorCount.ToString();
+		arrDoor[MainWindow::doorCount]->DoorPrice->Name = "textDoorPriceBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorPrice->Size = System::Drawing::Size(85, 24);
 		arrDoor[MainWindow::doorCount]->DoorPrice->TabIndex = MainWindow::doorCount;
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorPrice, "Цена");
