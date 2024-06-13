@@ -2,7 +2,7 @@
 #include "PrintForm.h"
 
 namespace DverMarketWinForms {
-
+	//Заполнение осмновного поля рассчетами
 	void PrintForm::enterText() {
 		for (int i = 0; i < MainWindow::doorCount; i++) {
 			this->textBox1->Text += "Дверь № " + Int32(i + 1) + "\r\n"
@@ -63,7 +63,7 @@ namespace DverMarketWinForms {
 		}
 		this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::label7->Text;
 	}
-
+	//Действие на кнопку Печать - выводит на печать форму
 	void PrintForm::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		bmp = gcnew Bitmap(this->Width, this->Height, g);
@@ -77,7 +77,7 @@ namespace DverMarketWinForms {
 			e->Graphics->DrawImage(bmp, 0, 0);
 		}
 	}
-
+	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
 	{
 		System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PrintForm::typeid));
