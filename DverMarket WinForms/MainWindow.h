@@ -24,7 +24,6 @@ namespace DverMarketWinForms {
 		void FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e);
 		void FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e);
 		void Calculate_Click(System::Object^ sender, System::EventArgs^ e);
-		void Form1_Load();
 		void Calculate();
 		void checkButtonStatus();
 		void MoveComponents(int direction);

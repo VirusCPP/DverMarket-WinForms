@@ -7,7 +7,6 @@ namespace DverMarketWinForms {
 	{
 		InitializeComponent();
 		checkButtonStatus();
-		Form1_Load();
 	}
 
 	MainWindow::~MainWindow()
@@ -580,14 +579,6 @@ namespace DverMarketWinForms {
 		PrintForm^ printForm = gcnew PrintForm();
 		printForm->enterText();
 		printForm->ShowDialog();
-	}
-	//Настройка подсказок
-	void MainWindow::Form1_Load(){
-		ToolTip^ toolTip1 = gcnew ToolTip;
-		toolTip1->AutoPopDelay = 50000;
-		toolTip1->InitialDelay = 1;
-		toolTip1->ReshowDelay = 1;
-		toolTip1->ShowAlways = true;
 	}
 	//Включение и отключение кнопок "+" и "-" для дверей и фурнитуры
 	void MainWindow::checkButtonStatus(){
