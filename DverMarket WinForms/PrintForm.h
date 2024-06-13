@@ -16,11 +16,11 @@ namespace DverMarketWinForms {
 	public:
 		Bitmap^ bmp;
 		void enterText();
-		void InitializeComponent(void);
+		void InitializeComponent();
 		void button1_Click(System::Object^ sender, System::EventArgs^ e);
 		void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
 
-		PrintForm(void);
+		PrintForm();
 
 		~PrintForm();
 

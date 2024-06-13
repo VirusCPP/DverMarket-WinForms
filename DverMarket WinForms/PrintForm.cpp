@@ -3,7 +3,7 @@
 
 namespace DverMarketWinForms {
 
-	PrintForm::PrintForm(void)
+	PrintForm::PrintForm()
 	{
 		InitializeComponent();
 

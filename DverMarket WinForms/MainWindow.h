@@ -13,7 +13,7 @@ namespace DverMarketWinForms {
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
 	public:
-		MainWindow(void);
+		MainWindow();
 		~MainWindow();
 		static const int arrSize = 99;
 		static int currentFurnituraY = 41;
@@ -71,7 +71,6 @@ namespace DverMarketWinForms {
 		PrintDocument^ printDocument;
 	private:
 	    System::ComponentModel::IContainer^ components;	 
-
 	};
 
 	ref class Door {

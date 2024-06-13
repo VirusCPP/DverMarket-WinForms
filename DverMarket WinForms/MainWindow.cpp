@@ -3,7 +3,7 @@
 
 namespace DverMarketWinForms {
 
-	MainWindow::MainWindow(void)
+	MainWindow::MainWindow()
 	{
 		InitializeComponent();
 		checkButtonStatus();
