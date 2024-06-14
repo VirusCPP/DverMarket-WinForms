@@ -8,7 +8,7 @@ namespace DverMarketWinForms {
 		InitializeComponent();
 
 	}
-
+	
 	PrintForm::~PrintForm()
 	{
 		if (components)
@@ -20,7 +20,7 @@ namespace DverMarketWinForms {
 			delete bmp;
 		}
 	}
-
+	
 	//Заполнение осмновного поля рассчетами
 	void PrintForm::enterText() {
 		for (int i = 0; i < MainWindow::doorCount; i++) {
@@ -84,17 +84,21 @@ namespace DverMarketWinForms {
 	}
 	//Действие на кнопку Печать - выводит на печать форму
 	void PrintForm::button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Graphics^ g = this->CreateGraphics();
-		bmp = gcnew Bitmap(this->Width, this->Height, g);
-		Graphics^ mg = Graphics::FromImage(bmp);
-		mg->CopyFromScreen(this->Location.X + 10, this->Location.Y + 30, 20, 40, this->Size);
-		printPreviewDialog1->Document = printDocument1;
-		printPreviewDialog1->ShowDialog();
+		PrintDialog^ p1 = gcnew PrintDialog();
+		PrintDocument^ p2 = gcnew PrintDocument();
+		p2->PrintPage += gcnew PrintPageEventHandler(this, &PrintForm::printDocument_PrintPage);
+		p1->Document = p2;
+		p1->AllowSelection = false;
+		if (p1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			p2->Print();
 	}
-	void PrintForm::printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
-		if (bmp != nullptr) {
-			e->Graphics->DrawImage(bmp, 0, 0);
-		}
+	void PrintForm::printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
+		System::Drawing::Image^ image = System::Drawing::Image::FromFile("Header.jpg");
+		e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
+		int yOffset = image->Height + 10;
+		System::Drawing::Font^ printFont = gcnew System::Drawing::Font("Arial", 10);
+		System::Drawing::Brush^ printBrush = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Black);
+		e->Graphics->DrawString(this->textBox1->Text, printFont, printBrush, 10, yOffset);
 	}
 	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
@@ -106,6 +110,7 @@ namespace DverMarketWinForms {
 		this->button1 = (gcnew System::Windows::Forms::Button());
 		this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 		this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
+		this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 		this->SuspendLayout();
 		// 
@@ -159,7 +164,7 @@ namespace DverMarketWinForms {
 		// 
 		// printDocument1
 		// 
-		this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &PrintForm::printDocument1_PrintPage);
+		this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &PrintForm::printDocument_PrintPage);
 		// 
 		// printPreviewDialog1
 		// 
@@ -171,6 +176,10 @@ namespace DverMarketWinForms {
 		this->printPreviewDialog1->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"printPreviewDialog1.Icon")));
 		this->printPreviewDialog1->Name = L"printPreviewDialog1";
 		this->printPreviewDialog1->Visible = false;
+		// 
+		// printDialog1
+		// 
+		this->printDialog1->UseEXDialog = true;
 		// 
 		// PrintForm
 		// 
@@ -190,5 +199,6 @@ namespace DverMarketWinForms {
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 		this->ResumeLayout(false);
 		this->PerformLayout();
+
 	}
 }

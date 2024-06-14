@@ -18,7 +18,7 @@ namespace DverMarketWinForms {
 		void enterText();
 		void InitializeComponent();
 		void button1_Click(System::Object^ sender, System::EventArgs^ e);
-		void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
+		void printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
 
 		PrintForm();
 
@@ -31,6 +31,7 @@ namespace DverMarketWinForms {
 		System::Windows::Forms::Button^ button1;
 		System::Drawing::Printing::PrintDocument^ printDocument1;
 		System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
-		System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::PrintDialog^ printDialog1;
+		   System::ComponentModel::IContainer^ components;
 };
 }

@@ -142,6 +142,17 @@
       <DependentUpon>PrintForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Word.8.7">
+      <VersionMinor>7</VersionMinor>
+      <VersionMajor>8</VersionMajor>
+      <Guid>00020905-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
