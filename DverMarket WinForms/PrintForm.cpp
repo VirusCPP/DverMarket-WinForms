@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "PrintForm.h"
 
+
 namespace DverMarketWinForms {
 
 	PrintForm::PrintForm()
@@ -92,21 +93,52 @@ namespace DverMarketWinForms {
 		if (p1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 			p2->Print();
 	}
+
 	void PrintForm::printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
+		String^ textToPrint = this->textBox1->Text;
 		try
 		{
 			System::Drawing::Image^ image = System::Drawing::Image::FromFile("Header.jpg");
-			e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
 			int yOffset = image->Height + 10;
+			e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
 			System::Drawing::Font^ printFont = gcnew System::Drawing::Font("Arial", 10);
 			System::Drawing::Brush^ printBrush = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Black);
-			e->Graphics->DrawString(this->textBox1->Text, printFont, printBrush, 10, yOffset);
+
+			int pageSize = e->MarginBounds.Height - yOffset;
+
+			int charCount = 0;
+			while (charCount < textToPrint->Length) {
+				String^ line = this->GetLine(textToPrint, charCount, printFont, e->MarginBounds.Width, e->Graphics);
+				e->Graphics->DrawString(line, printFont, printBrush, 10, yOffset);
+				yOffset += (int)printFont->GetHeight();
+				charCount += line->Length;
+
+				if (yOffset > pageSize) {
+					e->HasMorePages = true;
+					return;
+				}
+			}
+			e->HasMorePages = false;
 		}
 		catch (Exception^ e)
 		{
-			MessageBox::Show("Ошибка загрузки Header", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Ошибка открытия Header", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
+	}
+
+	String^ PrintForm::GetLine(String^ text, int& charCount, System::Drawing::Font^ font, int width, System::Drawing::Graphics^ graphics) {
+		String^ line = "";
+		for (; charCount < text->Length; charCount++) {
+			line += text[charCount].ToString();
+			System::Drawing::SizeF size = graphics->MeasureString(line, font);
+			if (size.Width > width) {
+				line = line->Substring(0, line->Length - 1);
+				charCount--;
+				break;
+			}
+		}
+		return line;
 	}
 	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
@@ -133,6 +165,7 @@ namespace DverMarketWinForms {
 		this->textBox1->Multiline = true;
 		this->textBox1->Name = L"textBox1";
 		this->textBox1->ReadOnly = true;
+		this->textBox1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 		this->textBox1->Size = System::Drawing::Size(721, 789);
 		this->textBox1->TabIndex = 10;
 		// 
