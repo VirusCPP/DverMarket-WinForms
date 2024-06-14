@@ -32,8 +32,8 @@ namespace DverMarketWinForms {
 		System::Windows::Forms::Button^ button1;
 		System::Drawing::Printing::PrintDocument^ printDocument1;
 		System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
-	private: System::Windows::Forms::PrintDialog^ printDialog1;
-
-		   System::ComponentModel::IContainer^ components;
+	private: 
+		System::Windows::Forms::PrintDialog^ printDialog1;
+		System::ComponentModel::IContainer^ components;
 };
 }
