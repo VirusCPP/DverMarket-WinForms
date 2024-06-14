@@ -95,35 +95,62 @@ namespace DverMarketWinForms {
 	}
 
 	void PrintForm::printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
-		String^ textToPrint = this->textBox1->Text;
-		try
-		{
-			System::Drawing::Image^ image = System::Drawing::Image::FromFile("Header.jpg");
-			int yOffset = image->Height + 10;
+		static int charCount = 0;  // Переменная для хранения текущей позиции символа в тексте.
+		String^ textToPrint = this->textBox1->Text; // Получаем весь текст из TextBox
+
+		try {
+			// Создаем экземпляр ComponentResourceManager для доступа к ресурсам
+			System::ComponentModel::ComponentResourceManager^ resources = gcnew System::ComponentModel::ComponentResourceManager(PrintForm::typeid);
+
+			// Загружаем изображение из ресурсов формы
+			System::Drawing::Image^ image = nullptr;
+
+			try {
+				// Получаем изображение из ресурсов
+				image = (System::Drawing::Image^)resources->GetObject("Header");
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show("Ошибка загрузки ресурса Header: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				e->HasMorePages = false;
+				return;
+			}
+
+			if (image == nullptr) {
+				MessageBox::Show("Ресурс Header не найден или не является изображением.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				e->HasMorePages = false;
+				return;
+			}
+
+			int yOffset = image->Height + 10; // Смещение для текста после изображения.
 			e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
+
+			// Настройки шрифта и кисти
 			System::Drawing::Font^ printFont = gcnew System::Drawing::Font("Arial", 10);
 			System::Drawing::Brush^ printBrush = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Black);
 
+			// Высота страницы с учетом отступов и смещения
 			int pageSize = e->MarginBounds.Height - yOffset;
+			float lineHeight = printFont->GetHeight(e->Graphics);
 
-			int charCount = 0;
 			while (charCount < textToPrint->Length) {
+				// Получаем строку для печати
 				String^ line = this->GetLine(textToPrint, charCount, printFont, e->MarginBounds.Width, e->Graphics);
-				e->Graphics->DrawString(line, printFont, printBrush, 10, yOffset);
-				yOffset += (int)printFont->GetHeight();
-				charCount += line->Length;
+				e->Graphics->DrawString(line, printFont, printBrush, e->MarginBounds.Left, yOffset);
+				yOffset += lineHeight;
 
-				if (yOffset > pageSize) {
+				// Если текущее смещение по высоте превышает размер страницы
+				if (yOffset + lineHeight > e->MarginBounds.Bottom) {
 					e->HasMorePages = true;
 					return;
 				}
 			}
+
+			// Если весь текст напечатан, больше страниц нет
 			e->HasMorePages = false;
+			charCount = 0; // Сбрасываем для следующего документа
 		}
-		catch (Exception^ e)
-		{
-			MessageBox::Show("Ошибка открытия Header", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
+		catch (Exception^ ex) {
+			MessageBox::Show("Общая ошибка при печати: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 
@@ -134,12 +161,14 @@ namespace DverMarketWinForms {
 			System::Drawing::SizeF size = graphics->MeasureString(line, font);
 			if (size.Width > width) {
 				line = line->Substring(0, line->Length - 1);
-				charCount--;
+				charCount--; // Откат на предыдущий символ
 				break;
 			}
 		}
 		return line;
 	}
+
+
 	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
 	{
