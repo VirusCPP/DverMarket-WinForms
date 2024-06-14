@@ -82,6 +82,7 @@ namespace DverMarketWinForms {
 				+ "   Сумма скидки: " + MainWindow::textBox9->Text + "\r\n";
 		}
 		this->textBox1->Text += "\r\nИтоговая сумма: " + MainWindow::TotalAmountBox->Text;
+
 		if (MainWindow::richTextBox1->Text != "") {
 			this->textBox1->Text += "\r\n\r\nПримечание: " + "\r\n"
 				+ MainWindow::richTextBox1->Text + "\r\n";

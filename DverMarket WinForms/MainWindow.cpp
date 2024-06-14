@@ -62,29 +62,29 @@ namespace DverMarketWinForms {
 		this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 		this->SuspendLayout();
 		// 
-		// label1
+		// DoorLable
 		// 
 		this->DoorLable->AutoSize = true;
 		this->DoorLable->Location = System::Drawing::Point(13, 10);
-		this->DoorLable->Name = L"label1";
+		this->DoorLable->Name = L"DoorLable";
 		this->DoorLable->Size = System::Drawing::Size(47, 16);
 		this->DoorLable->TabIndex = 0;
 		this->DoorLable->Text = L"Дверь";
 		// 
-		// button1
+		// DoorButtonPlus
 		// 
 		this->DoorButtonPlus->Location = System::Drawing::Point(95, 10);
-		this->DoorButtonPlus->Name = L"button1";
+		this->DoorButtonPlus->Name = L"DoorButtonPlus";
 		this->DoorButtonPlus->Size = System::Drawing::Size(23, 23);
 		this->DoorButtonPlus->TabIndex = 1;
 		this->DoorButtonPlus->Text = L"+";
 		this->DoorButtonPlus->UseVisualStyleBackColor = true;
 		this->DoorButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::DoorButtonPlus_Click);
 		// 
-		// button2
+		// DoorButtonMinus
 		// 
 		this->DoorButtonMinus->Location = System::Drawing::Point(124, 10);
-		this->DoorButtonMinus->Name = L"button2";
+		this->DoorButtonMinus->Name = L"DoorButtonMinus";
 		this->DoorButtonMinus->Size = System::Drawing::Size(23, 23);
 		this->DoorButtonMinus->TabIndex = 1;
 		this->DoorButtonMinus->Text = L"-";
@@ -98,195 +98,195 @@ namespace DverMarketWinForms {
 		this->toolTip1->ReshowDelay = 100;
 		this->toolTip1->ShowAlways = true;
 		// 
-		// textBox1
+		// KorVolBox
 		// 
 		this->KorVolBox->Location = System::Drawing::Point(566, 64);
-		this->KorVolBox->Name = L"textBox1";
+		this->KorVolBox->Name = L"KorVolBox";
 		this->KorVolBox->Size = System::Drawing::Size(59, 22);
 		this->KorVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->KorVolBox, L"Количество");
 		// 
-		// textBox2
+		// KorPriceBox
 		// 
 		this->KorPriceBox->Location = System::Drawing::Point(625, 64);
-		this->KorPriceBox->Name = L"textBox2";
+		this->KorPriceBox->Name = L"KorPriceBox";
 		this->KorPriceBox->Size = System::Drawing::Size(59, 22);
 		this->KorPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->KorPriceBox, L"Стоимость");
 		// 
-		// textBox4
+		// NalPriceBox
 		// 
 		this->NalPriceBox->Location = System::Drawing::Point(751, 64);
-		this->NalPriceBox->Name = L"textBox4";
+		this->NalPriceBox->Name = L"NalPriceBox";
 		this->NalPriceBox->Size = System::Drawing::Size(59, 22);
 		this->NalPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->NalPriceBox, L"Стоимость");
 		// 
-		// textBox3
+		// NalVolBox
 		// 
 		this->NalVolBox->Location = System::Drawing::Point(692, 64);
-		this->NalVolBox->Name = L"textBox3";
+		this->NalVolBox->Name = L"NalVolBox";
 		this->NalVolBox->Size = System::Drawing::Size(59, 22);
 		this->NalVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->NalVolBox, L"Количество");
 		// 
-		// textBox5
+		// DobVolBox
 		// 
 		this->DobVolBox->Location = System::Drawing::Point(832, 64);
-		this->DobVolBox->Name = L"textBox5";
+		this->DobVolBox->Name = L"DobVolBox";
 		this->DobVolBox->Size = System::Drawing::Size(59, 22);
 		this->DobVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->DobVolBox, L"Количество");
 		// 
-		// textBox6
+		// DobPriceBox
 		// 
 		this->DobPriceBox->Location = System::Drawing::Point(891, 64);
-		this->DobPriceBox->Name = L"textBox6";
+		this->DobPriceBox->Name = L"DobPriceBox";
 		this->DobPriceBox->Size = System::Drawing::Size(59, 22);
 		this->DobPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->DobPriceBox, L"Стоимость");
 		// 
-		// textBox7
+		// PodVolBox
 		// 
 		this->PodVolBox->Location = System::Drawing::Point(566, 122);
-		this->PodVolBox->Name = L"textBox7";
+		this->PodVolBox->Name = L"PodVolBox";
 		this->PodVolBox->Size = System::Drawing::Size(59, 22);
 		this->PodVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->PodVolBox, L"Этаж");
 		// 
-		// textBox10
+		// PodPriceBox
 		// 
 		this->PodPriceBox->Location = System::Drawing::Point(625, 122);
-		this->PodPriceBox->Name = L"textBox10";
+		this->PodPriceBox->Name = L"PodPriceBox";
 		this->PodPriceBox->Size = System::Drawing::Size(59, 22);
 		this->PodPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->PodPriceBox, L"Стоимость");
 		// 
-		// textBox11
+		// MonPriceBox
 		// 
 		this->MonPriceBox->Location = System::Drawing::Point(692, 122);
-		this->MonPriceBox->Name = L"textBox11";
+		this->MonPriceBox->Name = L"MonPriceBox";
 		this->MonPriceBox->Size = System::Drawing::Size(118, 22);
 		this->MonPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->MonPriceBox, L"Стоимость");
 		// 
-		// textBox12
+		// DosPriceBox
 		// 
 		this->DosPriceBox->Location = System::Drawing::Point(832, 122);
-		this->DosPriceBox->Name = L"textBox12";
+		this->DosPriceBox->Name = L"DosPriceBox";
 		this->DosPriceBox->Size = System::Drawing::Size(118, 22);
 		this->DosPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->DosPriceBox, L"Стоимость");
 		// 
-		// label2
+		// KorLable
 		// 
 		this->KorLable->AutoSize = true;
 		this->KorLable->Location = System::Drawing::Point(563, 13);
-		this->KorLable->Name = L"label2";
+		this->KorLable->Name = L"KorLable";
 		this->KorLable->Size = System::Drawing::Size(62, 16);
 		this->KorLable->TabIndex = 0;
 		this->KorLable->Text = L"Коробка";
 		// 
-		// label3
+		// NalLable
 		// 
 		this->NalLable->AutoSize = true;
 		this->NalLable->Location = System::Drawing::Point(689, 13);
-		this->NalLable->Name = L"label3";
+		this->NalLable->Name = L"NalLable";
 		this->NalLable->Size = System::Drawing::Size(72, 16);
 		this->NalLable->TabIndex = 0;
 		this->NalLable->Text = L"Наличник";
 		// 
-		// label4
+		// DobLable
 		// 
 		this->DobLable->AutoSize = true;
 		this->DobLable->Location = System::Drawing::Point(829, 13);
-		this->DobLable->Name = L"label4";
+		this->DobLable->Name = L"DobLable";
 		this->DobLable->Size = System::Drawing::Size(48, 16);
 		this->DobLable->TabIndex = 0;
 		this->DobLable->Text = L"Добор";
 		// 
-		// comboBox1
+		// KorComboBox
 		// 
 		this->KorComboBox->FormattingEnabled = true;
 		this->KorComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
 		this->KorComboBox->Location = System::Drawing::Point(566, 33);
-		this->KorComboBox->Name = L"comboBox1";
+		this->KorComboBox->Name = L"KorComboBox";
 		this->KorComboBox->Size = System::Drawing::Size(118, 24);
 		this->KorComboBox->TabIndex = 2;
 		this->KorComboBox->Text = L"Размер";
 		// 
-		// comboBox2
+		// NalComboBox
 		// 
 		this->NalComboBox->FormattingEnabled = true;
 		this->NalComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
 		this->NalComboBox->Location = System::Drawing::Point(692, 33);
-		this->NalComboBox->Name = L"comboBox2";
+		this->NalComboBox->Name = L"NalComboBox";
 		this->NalComboBox->Size = System::Drawing::Size(118, 24);
 		this->NalComboBox->TabIndex = 2;
 		this->NalComboBox->Text = L"Размер";
 		// 
-		// comboBox3
+		// DobComboBox
 		// 
 		this->DobComboBox->FormattingEnabled = true;
 		this->DobComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"стандарт", L"+30%", L"+40%", L"+50%" });
 		this->DobComboBox->Location = System::Drawing::Point(832, 33);
-		this->DobComboBox->Name = L"comboBox3";
+		this->DobComboBox->Name = L"DobComboBox";
 		this->DobComboBox->Size = System::Drawing::Size(118, 24);
 		this->DobComboBox->TabIndex = 2;
 		this->DobComboBox->Text = L"Размер";
 		// 
-		// label5
+		// FurLable
 		// 
 		this->FurLable->AutoSize = true;
 		this->FurLable->Location = System::Drawing::Point(13, 41);
-		this->FurLable->Name = L"label5";
+		this->FurLable->Name = L"FurLable";
 		this->FurLable->Size = System::Drawing::Size(81, 16);
 		this->FurLable->TabIndex = 0;
 		this->FurLable->Text = L"Фурнитура";
 		// 
-		// button3
+		// FurButtonPlus
 		// 
 		this->FurButtonPlus->Location = System::Drawing::Point(95, 41);
-		this->FurButtonPlus->Name = L"button3";
+		this->FurButtonPlus->Name = L"FurButtonPlus";
 		this->FurButtonPlus->Size = System::Drawing::Size(23, 23);
 		this->FurButtonPlus->TabIndex = 1;
 		this->FurButtonPlus->Text = L"+";
 		this->FurButtonPlus->UseVisualStyleBackColor = true;
 		this->FurButtonPlus->Click += gcnew System::EventHandler(this, &MainWindow::FurButtonPlus_Click);
 		// 
-		// button4
+		// FurButtonMinus
 		// 
 		this->FurButtonMinus->Location = System::Drawing::Point(124, 41);
-		this->FurButtonMinus->Name = L"button4";
+		this->FurButtonMinus->Name = L"FurButtonMinus";
 		this->FurButtonMinus->Size = System::Drawing::Size(23, 23);
 		this->FurButtonMinus->TabIndex = 1;
 		this->FurButtonMinus->Text = L"-";
 		this->FurButtonMinus->UseVisualStyleBackColor = true;
 		this->FurButtonMinus->Click += gcnew System::EventHandler(this, &MainWindow::FurButtonMinus_Click);
 		// 
-		// label11
+		// PodLable
 		// 
 		this->PodLable->AutoSize = true;
 		this->PodLable->Location = System::Drawing::Point(563, 99);
-		this->PodLable->Name = L"label11";
+		this->PodLable->Name = L"PodLable";
 		this->PodLable->Size = System::Drawing::Size(59, 16);
 		this->PodLable->TabIndex = 0;
 		this->PodLable->Text = L"Подъем";
 		// 
-		// label12
+		// MonLable
 		// 
 		this->MonLable->AutoSize = true;
 		this->MonLable->Location = System::Drawing::Point(689, 99);
-		this->MonLable->Name = L"label12";
+		this->MonLable->Name = L"MonLable";
 		this->MonLable->Size = System::Drawing::Size(58, 16);
 		this->MonLable->TabIndex = 0;
 		this->MonLable->Text = L"Монтаж";
 		// 
-		// label13
+		// DosLable
 		// 
 		this->DosLable->AutoSize = true;
 		this->DosLable->Location = System::Drawing::Point(829, 99);
-		this->DosLable->Name = L"label13";
+		this->DosLable->Name = L"DosLable";
 		this->DosLable->Size = System::Drawing::Size(69, 16);
 		this->DosLable->TabIndex = 0;
 		this->DosLable->Text = L"Доставка";
@@ -306,27 +306,27 @@ namespace DverMarketWinForms {
 		this->richTextBox1->TabIndex = 6;
 		this->richTextBox1->Text = L"";
 		// 
-		// label6
+		// TotalAmountLable
 		// 
 		this->TotalAmountLable->Location = System::Drawing::Point(566, 432);
-		this->TotalAmountLable->Name = L"label6";
+		this->TotalAmountLable->Name = L"TotalAmountLable";
 		this->TotalAmountLable->Size = System::Drawing::Size(384, 38);
 		this->TotalAmountLable->TabIndex = 7;
 		this->TotalAmountLable->Text = L"ИТОГОВАЯ СУММА";
 		this->TotalAmountLable->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
-		// label7
+		// TotalAmountBox
 		// 
 		this->TotalAmountBox->Location = System::Drawing::Point(566, 470);
-		this->TotalAmountBox->Name = L"label7";
+		this->TotalAmountBox->Name = L"TotalAmountBox";
 		this->TotalAmountBox->Size = System::Drawing::Size(384, 33);
 		this->TotalAmountBox->TabIndex = 7;
 		this->TotalAmountBox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		// 
-		// button5
+		// CalculateButton
 		// 
 		this->CalculateButton->Location = System::Drawing::Point(566, 538);
-		this->CalculateButton->Name = L"button5";
+		this->CalculateButton->Name = L"CalculateButton";
 		this->CalculateButton->Size = System::Drawing::Size(384, 23);
 		this->CalculateButton->TabIndex = 8;
 		this->CalculateButton->Text = L"Рассчитать";
