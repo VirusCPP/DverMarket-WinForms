@@ -508,12 +508,14 @@ namespace DverMarketWinForms {
 		arrDoor[MainWindow::doorCount]->DoorCount->Name = "textDoorCountBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorCount->Size = System::Drawing::Size(50, 24);
 		arrDoor[MainWindow::doorCount]->DoorCount->TabIndex = MainWindow::doorCount;
+		arrDoor[MainWindow::doorCount]->DoorCount->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(arrDoor[MainWindow::doorCount], &textBox_KeyPress);
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorCount, "Количество");
 		
 		arrDoor[MainWindow::doorCount]->DoorPrice->Location = System::Drawing::Point(455, 33 + MainWindow::doorCount * 30);
 		arrDoor[MainWindow::doorCount]->DoorPrice->Name = "textDoorPriceBox" + MainWindow::doorCount.ToString();
 		arrDoor[MainWindow::doorCount]->DoorPrice->Size = System::Drawing::Size(85, 24);
 		arrDoor[MainWindow::doorCount]->DoorPrice->TabIndex = MainWindow::doorCount;
+		arrDoor[MainWindow::doorCount]->DoorPrice->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(arrDoor[MainWindow::doorCount], &textBox_KeyPress);
 		MainWindow::toolTip1->SetToolTip(arrDoor[MainWindow::doorCount]->DoorPrice, "Цена");
 	}
 	//Функция добавляет поля Фурнитуры
@@ -533,12 +535,14 @@ namespace DverMarketWinForms {
 		arrFur[MainWindow::furCount]->FurCount->Location = System::Drawing::Point(194, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
 		arrFur[MainWindow::furCount]->FurCount->Size = System::Drawing::Size(92, 24);
 		arrFur[MainWindow::furCount]->FurCount->Name = L"textFurCountBox" + MainWindow::doorCount.ToString();
+		arrFur[MainWindow::furCount]->FurCount->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(arrFur[MainWindow::furCount], &textBox_KeyPress);
 		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurCount, L"Количество");
 
 		arrFur[MainWindow::furCount]->FurPrice->Location = System::Drawing::Point(293, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
 		arrFur[MainWindow::furCount]->FurPrice->Size = System::Drawing::Size(85, 24);
 		arrFur[MainWindow::furCount]->FurPrice->Name = L"textFurPriceBox" + MainWindow::doorCount.ToString();
 		arrFur[MainWindow::furCount]->FurPrice->TabIndex = MainWindow::furCount;
+		arrFur[MainWindow::furCount]->FurPrice->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(arrFur[MainWindow::furCount], &textBox_KeyPress);
 		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurPrice, L"Стоимость");
 	}
 	//Действия по нажатию на кнопку "+" для добавления полей Двери
@@ -584,10 +588,9 @@ namespace DverMarketWinForms {
 		checkButtonStatus();
 	}
 	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
-	Void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e){
+	void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e) {
 		Calculate();
 		PrintForm^ printForm = gcnew PrintForm();
-		printForm->enterText();
 		printForm->ShowDialog();
 	}
 	//Включение и отключение кнопок "+" и "-" для дверей и фурнитуры

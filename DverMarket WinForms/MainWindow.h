@@ -68,50 +68,7 @@ namespace DverMarketWinForms {
 		static  System::Windows::Forms::TextBox^ textBox8;
 		static  System::Windows::Forms::Label^ label14;
 		static  System::Windows::Forms::TextBox^ textBox9;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		PrintDocument^ printDocument;
-
-
 	private:
 	    System::ComponentModel::IContainer^ components;	 
 	};
@@ -126,7 +83,13 @@ namespace DverMarketWinForms {
 		TextBox^ DoorColor;
 		TextBox^ DoorCount;
 		TextBox^ DoorPrice;
-
+		void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+		{
+			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
+			{
+				e->Handled = true;
+			}
+		}
 		static array<Door^>^ arrDoor = gcnew array<Door^>(MainWindow::arrSize);
 
 		~Door() {
@@ -143,7 +106,13 @@ namespace DverMarketWinForms {
 		TextBox^ FurName;
 		TextBox^ FurCount;
 		TextBox^ FurPrice;
-
+		void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+		{
+			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
+			{
+				e->Handled = true;
+			}
+		}
 		static array<Fur^>^ arrFur = gcnew array<Fur^>(MainWindow::arrSize);
 
 		~Fur() {
