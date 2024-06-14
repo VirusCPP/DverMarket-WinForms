@@ -93,12 +93,20 @@ namespace DverMarketWinForms {
 			p2->Print();
 	}
 	void PrintForm::printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
-		System::Drawing::Image^ image = System::Drawing::Image::FromFile("Header.jpg");
-		e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
-		int yOffset = image->Height + 10;
-		System::Drawing::Font^ printFont = gcnew System::Drawing::Font("Arial", 10);
-		System::Drawing::Brush^ printBrush = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Black);
-		e->Graphics->DrawString(this->textBox1->Text, printFont, printBrush, 10, yOffset);
+		try
+		{
+			System::Drawing::Image^ image = System::Drawing::Image::FromFile("Header.jpg");
+			e->Graphics->DrawImage(image, 10, 10, image->Width, image->Height);
+			int yOffset = image->Height + 10;
+			System::Drawing::Font^ printFont = gcnew System::Drawing::Font("Arial", 10);
+			System::Drawing::Brush^ printBrush = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Black);
+			e->Graphics->DrawString(this->textBox1->Text, printFont, printBrush, 10, yOffset);
+		}
+		catch (Exception^ e)
+		{
+			MessageBox::Show("Ошибка загрузки Header", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 	}
 	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
