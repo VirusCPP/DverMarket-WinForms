@@ -101,10 +101,8 @@ namespace DverMarketWinForms {
 		try {
 			// Создаем экземпляр ComponentResourceManager для доступа к ресурсам
 			System::ComponentModel::ComponentResourceManager^ resources = gcnew System::ComponentModel::ComponentResourceManager(PrintForm::typeid);
-
 			// Загружаем изображение из ресурсов формы
 			System::Drawing::Image^ image = nullptr;
-
 			try {
 				// Получаем изображение из ресурсов
 				image = (System::Drawing::Image^)resources->GetObject("Header");
@@ -144,7 +142,6 @@ namespace DverMarketWinForms {
 					return;
 				}
 			}
-
 			// Если весь текст напечатан, больше страниц нет
 			e->HasMorePages = false;
 			charCount = 0; // Сбрасываем для следующего документа
@@ -167,7 +164,6 @@ namespace DverMarketWinForms {
 		}
 		return line;
 	}
-
 
 	//Инициализация компонентов формы
 	void PrintForm::InitializeComponent(void)
