@@ -105,6 +105,7 @@ namespace DverMarketWinForms {
 		this->KorVolBox->Size = System::Drawing::Size(59, 22);
 		this->KorVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->KorVolBox, L"Количество");
+		this->KorVolBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// KorPriceBox
 		// 
@@ -113,6 +114,7 @@ namespace DverMarketWinForms {
 		this->KorPriceBox->Size = System::Drawing::Size(59, 22);
 		this->KorPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->KorPriceBox, L"Стоимость");
+		this->KorPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// NalPriceBox
 		// 
@@ -121,6 +123,7 @@ namespace DverMarketWinForms {
 		this->NalPriceBox->Size = System::Drawing::Size(59, 22);
 		this->NalPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->NalPriceBox, L"Стоимость");
+		this->NalPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// NalVolBox
 		// 
@@ -129,6 +132,7 @@ namespace DverMarketWinForms {
 		this->NalVolBox->Size = System::Drawing::Size(59, 22);
 		this->NalVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->NalVolBox, L"Количество");
+		this->NalVolBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// DobVolBox
 		// 
@@ -137,6 +141,7 @@ namespace DverMarketWinForms {
 		this->DobVolBox->Size = System::Drawing::Size(59, 22);
 		this->DobVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->DobVolBox, L"Количество");
+		this->DobVolBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// DobPriceBox
 		// 
@@ -145,6 +150,7 @@ namespace DverMarketWinForms {
 		this->DobPriceBox->Size = System::Drawing::Size(59, 22);
 		this->DobPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->DobPriceBox, L"Стоимость");
+		this->DobPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// PodVolBox
 		// 
@@ -153,6 +159,7 @@ namespace DverMarketWinForms {
 		this->PodVolBox->Size = System::Drawing::Size(59, 22);
 		this->PodVolBox->TabIndex = 3;
 		this->toolTip1->SetToolTip(this->PodVolBox, L"Этаж");
+		this->PodVolBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// PodPriceBox
 		// 
@@ -161,6 +168,7 @@ namespace DverMarketWinForms {
 		this->PodPriceBox->Size = System::Drawing::Size(59, 22);
 		this->PodPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->PodPriceBox, L"Стоимость");
+		this->PodPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// MonPriceBox
 		// 
@@ -169,6 +177,7 @@ namespace DverMarketWinForms {
 		this->MonPriceBox->Size = System::Drawing::Size(118, 22);
 		this->MonPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->MonPriceBox, L"Стоимость");
+		this->MonPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// DosPriceBox
 		// 
@@ -177,6 +186,7 @@ namespace DverMarketWinForms {
 		this->DosPriceBox->Size = System::Drawing::Size(118, 22);
 		this->DosPriceBox->TabIndex = 4;
 		this->toolTip1->SetToolTip(this->DosPriceBox, L"Стоимость");
+		this->DosPriceBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainWindow::textBox_KeyPress);
 		// 
 		// KorLable
 		// 
@@ -463,6 +473,7 @@ namespace DverMarketWinForms {
 		this->Text = L"ДверМаркет";
 		this->ResumeLayout(false);
 		this->PerformLayout();
+
 	}
 	//Функция добавляет поля Двери 
 	void Door::addDoor() {
@@ -522,7 +533,6 @@ namespace DverMarketWinForms {
 		arrFur[MainWindow::furCount]->FurCount->Location = System::Drawing::Point(194, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
 		arrFur[MainWindow::furCount]->FurCount->Size = System::Drawing::Size(92, 24);
 		arrFur[MainWindow::furCount]->FurCount->Name = L"textFurCountBox" + MainWindow::doorCount.ToString();
-		arrFur[MainWindow::furCount]->FurCount->TabIndex = MainWindow::furCount;
 		MainWindow::toolTip1->SetToolTip(arrFur[MainWindow::furCount]->FurCount, L"Количество");
 
 		arrFur[MainWindow::furCount]->FurPrice->Location = System::Drawing::Point(293, MainWindow::currentFurnituraY + 23 + MainWindow::furCount * 30);
@@ -611,6 +621,15 @@ namespace DverMarketWinForms {
 			}
 		}
 	}
+
+	void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+	{
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
+		{
+			e->Handled = true;
+		}
+	}
+
 	//Функция рассчета итоговой стоимости
 	void MainWindow::Calculate(){
 		double DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,

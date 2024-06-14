@@ -18,6 +18,7 @@ namespace DverMarketWinForms {
 		void enterText();
 		void InitializeComponent();
 		void button1_Click(System::Object^ sender, System::EventArgs^ e);
+		void PrintForm::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
 		void printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
 		String^ GetLine(String^ text, int& charCount, System::Drawing::Font^ font, int width, System::Drawing::Graphics^ graphics);
 
