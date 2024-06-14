@@ -570,11 +570,11 @@ namespace DverMarketWinForms {
 		MoveComponents(1);
 		doorCount--;
 		if (Door::arrDoor[doorCount] != nullptr) delete Door::arrDoor[doorCount];
-		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorName; Controls->Remove(Door::arrDoor[doorCount]->DoorName); }
-		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorSize; Controls->Remove(Door::arrDoor[doorCount]->DoorSize); }
-		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorColor; Controls->Remove(Door::arrDoor[doorCount]->DoorColor); }
-		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorCount; Controls->Remove(Door::arrDoor[doorCount]->DoorCount); }
-		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorPrice; Controls->Remove(Door::arrDoor[doorCount]->DoorPrice); }
+		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorName; Controls->Remove(Door::arrDoor[doorCount]->DoorName);}
+		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorSize; Controls->Remove(Door::arrDoor[doorCount]->DoorSize);}
+		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorColor; Controls->Remove(Door::arrDoor[doorCount]->DoorColor);}
+		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorCount; Controls->Remove(Door::arrDoor[doorCount]->DoorCount);}
+		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorPrice; Controls->Remove(Door::arrDoor[doorCount]->DoorPrice);}
 		checkButtonStatus();
 	}
 	//Действия по нажатию на кнопку "+" для добавления полей Фурнитуры
@@ -591,8 +591,8 @@ namespace DverMarketWinForms {
 		furCount--;
 		if (Fur::arrFur[furCount] != nullptr) delete Fur::arrFur[furCount];
 		if (Fur::arrFur[furCount] != nullptr) {delete Fur::arrFur[furCount]->FurName; Controls->Remove(Fur::arrFur[furCount]->FurName);}
-		if (Fur::arrFur[furCount] != nullptr) { delete Fur::arrFur[furCount]->FurCount; Controls->Remove(Fur::arrFur[furCount]->FurCount); }
-		if (Fur::arrFur[furCount] != nullptr) { delete Fur::arrFur[furCount]->FurPrice; Controls->Remove(Fur::arrFur[furCount]->FurPrice); }
+		if (Fur::arrFur[furCount] != nullptr) { delete Fur::arrFur[furCount]->FurCount; Controls->Remove(Fur::arrFur[furCount]->FurCount);}
+		if (Fur::arrFur[furCount] != nullptr) { delete Fur::arrFur[furCount]->FurPrice; Controls->Remove(Fur::arrFur[furCount]->FurPrice);}
 		checkButtonStatus();
 	}
 	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
