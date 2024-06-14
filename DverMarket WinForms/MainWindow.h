@@ -27,7 +27,13 @@ namespace DverMarketWinForms {
 		void Calculate();
 		void checkButtonStatus();
 		void MoveComponents(int direction);
-		//void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
+		void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+		{
+			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
+			{
+				e->Handled = true;
+			}
+		}
 		static System::Windows::Forms::Label^ DoorLable;
 		static System::Windows::Forms::Button^ DoorButtonPlus;
 		static System::Windows::Forms::Button^ DoorButtonMinus;

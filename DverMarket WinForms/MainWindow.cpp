@@ -634,13 +634,7 @@ namespace DverMarketWinForms {
 		}
 	}
 
-	void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-	{
-		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
-		{
-			e->Handled = true;
-		}
-	}
+	
 
 	//Функция рассчета итоговой стоимости
 	void MainWindow::Calculate(){
