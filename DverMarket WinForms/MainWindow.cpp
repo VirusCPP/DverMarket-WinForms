@@ -482,7 +482,6 @@ namespace DverMarketWinForms {
 			e->Handled = true;
 		}
 	}
-
 	//Функция добавляет поля Двери 
 	void Door::addDoor() {
 		arrDoor[MainWindow::doorCount] = gcnew Door();
@@ -633,9 +632,6 @@ namespace DverMarketWinForms {
 			}
 		}
 	}
-
-	
-
 	//Функция рассчета итоговой стоимости
 	void MainWindow::Calculate(){
 		double DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,

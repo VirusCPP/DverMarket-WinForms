@@ -89,13 +89,6 @@ namespace DverMarketWinForms {
 		}
 	}
 
-	/*void PrintForm::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-	{
-		if (!Char::IsDigit(e->KeyChar))
-		{
-			e->Handled = true;
-		}
-	}*/
 	//Действие на кнопку Печать - выводит на печать форму
 	void PrintForm::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		PrintDialog^ p1 = gcnew PrintDialog();
@@ -253,6 +246,5 @@ namespace DverMarketWinForms {
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 		this->ResumeLayout(false);
 		this->PerformLayout();
-
 	}
 }
