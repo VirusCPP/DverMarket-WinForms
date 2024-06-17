@@ -60,6 +60,7 @@ namespace DverMarketWinForms {
 		this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 		this->label14 = (gcnew System::Windows::Forms::Label());
 		this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+		this->PrintButton = (gcnew System::Windows::Forms::Button());
 		this->SuspendLayout();
 		// 
 		// DoorLable
@@ -335,7 +336,7 @@ namespace DverMarketWinForms {
 		// 
 		// CalculateButton
 		// 
-		this->CalculateButton->Location = System::Drawing::Point(566, 538);
+		this->CalculateButton->Location = System::Drawing::Point(566, 506);
 		this->CalculateButton->Name = L"CalculateButton";
 		this->CalculateButton->Size = System::Drawing::Size(384, 23);
 		this->CalculateButton->TabIndex = 8;
@@ -418,6 +419,16 @@ namespace DverMarketWinForms {
 		this->textBox9->Size = System::Drawing::Size(77, 22);
 		this->textBox9->TabIndex = 13;
 		// 
+		// PrintButton
+		// 
+		this->PrintButton->Location = System::Drawing::Point(566, 551);
+		this->PrintButton->Name = L"PrintButton";
+		this->PrintButton->Size = System::Drawing::Size(384, 23);
+		this->PrintButton->TabIndex = 8;
+		this->PrintButton->Text = L"Распечатать";
+		this->PrintButton->UseVisualStyleBackColor = true;
+		this->PrintButton->Click += gcnew System::EventHandler(this, &MainWindow::PrintButton_Click);
+		// 
 		// MainWindow
 		// 
 		this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
@@ -432,6 +443,7 @@ namespace DverMarketWinForms {
 		this->Controls->Add(this->comboBox4);
 		this->Controls->Add(this->label9);
 		this->Controls->Add(this->label8);
+		this->Controls->Add(this->PrintButton);
 		this->Controls->Add(this->CalculateButton);
 		this->Controls->Add(this->TotalAmountBox);
 		this->Controls->Add(this->TotalAmountLable);
@@ -473,14 +485,7 @@ namespace DverMarketWinForms {
 		this->Text = L"ДверМаркет";
 		this->ResumeLayout(false);
 		this->PerformLayout();
-	}
 
-	void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-	{
-		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
-		{
-			e->Handled = true;
-		}
 	}
 	//Функция добавляет поля Двери 
 	void Door::addDoor() {
@@ -594,9 +599,12 @@ namespace DverMarketWinForms {
 		if (Fur::arrFur[furCount] != nullptr) { delete Fur::arrFur[furCount]->FurPrice; Controls->Remove(Fur::arrFur[furCount]->FurPrice);}
 		checkButtonStatus();
 	}
-	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
+	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate 
 	Void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e){
 		Calculate();
+	}
+	//Отрывает форму для печати на принтере
+	void MainWindow::PrintButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		PrintForm^ printForm = gcnew PrintForm();
 		printForm->enterText();
 		printForm->ShowDialog();
@@ -720,8 +728,8 @@ namespace DverMarketWinForms {
 			Skidka = 0;
 		Result = Sum - Skidka;
 
-		this->textBox8->Text = Sum.ToString() + " Руб.";
-		this->textBox9->Text = Skidka.ToString() + " Руб.";
-		this->TotalAmountBox->Text = Result.ToString() + " Руб.";
+		this->textBox8->Text = Sum.ToString();
+		this->textBox9->Text = Skidka.ToString();
+		this->TotalAmountBox->Text = Result.ToString();
 	}
 }
