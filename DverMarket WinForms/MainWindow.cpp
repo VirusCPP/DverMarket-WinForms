@@ -482,7 +482,7 @@ namespace DverMarketWinForms {
 		this->MinimumSize = System::Drawing::Size(986, 650);
 		this->Name = L"MainWindow";
 		this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-		this->Text = L"ДверМаркет " + "версия: " + version;
+		this->Text = L"ДверМаркет    " + "версия: " + version;
 		this->ResumeLayout(false);
 		this->PerformLayout();
 
