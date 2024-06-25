@@ -533,7 +533,7 @@ namespace DverMarketWinForms {
 		this->button1->TabIndex = 0;
 		this->button1->Text = L"Печать";
 		this->button1->UseVisualStyleBackColor = true;
-		this->button1->Click += gcnew System::EventHandler(this, &PrintForm::button1_Click);
+		this->button1->Click += gcnew System::EventHandler(this, &PrintForm::printButton_Click);
 		// 
 		// printDocument1
 		// 

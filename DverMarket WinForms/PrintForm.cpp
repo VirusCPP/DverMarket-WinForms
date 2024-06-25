@@ -97,7 +97,7 @@ namespace DverMarketWinForms {
 		}
 	}
 	//Действие на кнопку Печать - выводит на печать форму
-	void PrintForm::button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	void PrintForm::printButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		PrintDialog^ p1 = gcnew PrintDialog();
 		PrintDocument^ p2 = gcnew PrintDocument();
 		p2->PrintPage += gcnew PrintPageEventHandler(this, &PrintForm::printDocument_PrintPage);
