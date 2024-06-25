@@ -13,7 +13,7 @@ namespace DverMarketWinForms {
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
 	public:
-		String^ version = "0.2";
+		String^ version = "0.3";
 		MainWindow();
 		~MainWindow();
 		static const int arrSize = 99;
