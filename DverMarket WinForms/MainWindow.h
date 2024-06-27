@@ -13,9 +13,21 @@ namespace DverMarketWinForms {
 	public ref class MainWindow : public System::Windows::Forms::Form
 	{
 	public:
+		MainWindow()
+		{
+			InitializeComponent();
+			checkButtonStatus();
+		}
+
+		~MainWindow()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+
 		String^ version = "0.3";
-		MainWindow();
-		~MainWindow();
 		static const int arrSize = 99;
 		static int currentFurnituraY = 41;
 		static int doorCount = 0, furCount = 0;
@@ -30,12 +42,7 @@ namespace DverMarketWinForms {
 		void Calculate();
 		void checkButtonStatus();
 		void MoveComponents(int direction);
-		void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e) {
-			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
-			{
-				e->Handled = true;
-			}
-		}
+		void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e); 
 		static System::Windows::Forms::Label^ DoorLable;
 		static System::Windows::Forms::Button^ DoorButtonPlus;
 		static System::Windows::Forms::Button^ DoorButtonMinus;
@@ -79,53 +86,5 @@ namespace DverMarketWinForms {
 		PrintDocument^ printDocument;
 	private:
 		System::ComponentModel::IContainer^ components;
-	};
-
-	ref class Door {
-	public:
-		Door() {
-
-		}
-		TextBox^ DoorName;
-		ComboBox^ DoorSize;
-		TextBox^ DoorColor;
-		TextBox^ DoorCount;
-		TextBox^ DoorPrice;
-		void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-		{
-			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
-			{
-				e->Handled = true;
-			}
-		}
-		static array<Door^>^ arrDoor = gcnew array<Door^>(MainWindow::arrSize);
-
-		~Door() {
-
-		}
-		static void addDoor();
-	};
-
-	ref class Fur {
-	public:
-		Fur() {
-
-		}
-		TextBox^ FurName;
-		TextBox^ FurCount;
-		TextBox^ FurPrice;
-		void textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-		{
-			if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
-			{
-				e->Handled = true;
-			}
-		}
-		static array<Fur^>^ arrFur = gcnew array<Fur^>(MainWindow::arrSize);
-
-		~Fur() {
-
-		}
-		static void addFur();
 	};
 }

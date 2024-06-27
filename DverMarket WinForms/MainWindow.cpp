@@ -1,22 +1,16 @@
 ﻿#include "MainWindow.h"
+#include "Door.h"
+#include "Furnitura.h"
 #include "PrintForm.h"
 
 namespace DverMarketWinForms {
 
-	MainWindow::MainWindow()
-	{
-		InitializeComponent();
-		checkButtonStatus();
-	}
-
-	MainWindow::~MainWindow()
-	{
-		if (components)
+	void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e) {
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
 		{
-			delete components;
+			e->Handled = true;
 		}
 	}
-
 	
 	//Функция добавляет поля Двери 
 	void Door::addDoor() {
@@ -112,7 +106,7 @@ namespace DverMarketWinForms {
 		if (Door::arrDoor[doorCount] != nullptr) { delete Door::arrDoor[doorCount]->DoorPrice; Controls->Remove(Door::arrDoor[doorCount]->DoorPrice); }
 		checkButtonStatus();
 	}
-	//Äåéñòâèÿ ïî íàæàòèþ íà êíîïêó "+" äëÿ äîáàâëåíèÿ ïîëåé Ôóðíèòóðû
+	
 	void MainWindow::FurButtonPlus_Click(System::Object^ sender, System::EventArgs^ e) {
 		Fur::addFur();
 		Controls->Add(Fur::arrFur[MainWindow::furCount]->FurName);
@@ -121,7 +115,7 @@ namespace DverMarketWinForms {
 		furCount++;
 		checkButtonStatus();
 	}
-	//Äåéñòâèÿ ïî íàæàòèþ íà êíîïêó "-" äëÿ óäàëåíèÿ ïîëåé Ôóðíèòóðû
+	
 	void MainWindow::FurButtonMinus_Click(System::Object^ sender, System::EventArgs^ e) {
 		furCount--;
 		if (Fur::arrFur[furCount] != nullptr) delete Fur::arrFur[furCount];
@@ -133,8 +127,6 @@ namespace DverMarketWinForms {
 	//Действие по нажатию кнопки рассчитать - вызывает функцию Calculate и открывает форму для печати
 	void MainWindow::Calculate_Click(System::Object^ sender, System::EventArgs^ e) {
 		Calculate();
-		PrintForm^ printForm = gcnew PrintForm();
-		printForm->ShowDialog();
 	}
 	//Включение и отключение кнопок "+" и "-" для дверей и фурнитуры
 	void MainWindow::checkButtonStatus(){

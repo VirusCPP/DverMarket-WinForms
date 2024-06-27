@@ -13,18 +13,33 @@ namespace DverMarketWinForms {
 
 	public ref class PrintForm : public System::Windows::Forms::Form
 	{
+		
+
 	public:
+		PrintForm()
+		{
+			InitializeComponent();
+
+		}
+
+		~PrintForm()
+		{
+			if (components)
+			{
+				delete components;
+			}
+			if (bmp)
+			{
+				delete bmp;
+			}
+		}
+
 		Bitmap^ bmp;
 		void enterText();
 		void InitializeComponent();
 		void printButton_Click(System::Object^ sender, System::EventArgs^ e);
-		void PrintForm::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
 		void printDocument_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e);
 		String^ GetLine(String^ text, int& charCount, System::Drawing::Font^ font, int width, System::Drawing::Graphics^ graphics);
-
-		PrintForm();
-
-		~PrintForm();
 
 	private: 
 		System::Windows::Forms::TextBox^ textBox1;
