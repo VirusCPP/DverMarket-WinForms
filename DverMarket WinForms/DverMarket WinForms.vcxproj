@@ -136,6 +136,7 @@
     <ClInclude Include="PrintForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource2.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
@@ -157,7 +158,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\NewRepo\DverMarket WinForms\Favicon.ico" />
     <Image Include="Header.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DverMarket WinForms2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

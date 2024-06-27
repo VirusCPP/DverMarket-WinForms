@@ -41,10 +41,21 @@
     <ClInclude Include="Furnitura.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="resource2.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Header.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
+    <Image Include="..\..\..\NewRepo\DverMarket WinForms\Favicon.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DverMarket WinForms2.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
