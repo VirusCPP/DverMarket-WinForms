@@ -27,7 +27,7 @@ namespace DverMarketWinForms {
 			}
 		}
 
-		String^ version = "0.3";
+		String^ version = "0.4";
 		static const int arrSize = 99;
 		static int currentFurnituraY = 41;
 		static int doorCount = 0, furCount = 0;

@@ -169,12 +169,12 @@ namespace DverMarketWinForms {
 	//Функция рассчета итоговой стоимости
 	void MainWindow::Calculate(){
 		double DoorPrice = 0, FurPrice = 0, KorPrice = 0, NalPrice = 0,
-			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, Sum = 0, Skidka = 0, Result = 0;
+			DoborPrice = 0, PodPrice = 0, MonPrice = 0, DosPrice = 0, DoorsCost = 0, Uslugi = 0, Skidka = 0, Result = 0;
 
 		for (int i = 0; i < arrSize; i++) {
 			if (Door::arrDoor[i] != nullptr) {
-				int count, price;
-				if (Int32::TryParse(Door::arrDoor[i]->DoorCount->Text, count) && Int32::TryParse(Door::arrDoor[i]->DoorPrice->Text, price)) {
+				double count, price;
+				if (Double::TryParse(Door::arrDoor[i]->DoorCount->Text, count) && Double::TryParse(Door::arrDoor[i]->DoorPrice->Text, price)) {
 					String^ size = Door::arrDoor[i]->DoorSize->Text;
 
 					if (size == "+30%")
@@ -191,24 +191,24 @@ namespace DverMarketWinForms {
 
 		for (int i = 0; i < arrSize; i++) {
 			if (Fur::arrFur[i] != nullptr) {
-				int count, price;
-				if (Int32::TryParse(Fur::arrFur[i]->FurCount->Text, count) && Int32::TryParse(Fur::arrFur[i]->FurPrice->Text, price)) {
+				double count, price;
+				if (Double::TryParse(Fur::arrFur[i]->FurCount->Text, count) && Double::TryParse(Fur::arrFur[i]->FurPrice->Text, price)) {
 					FurPrice += count * price;
 				}
 			}
 		}
 
-		int tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb10, tb11, tb12;
-		Int32::TryParse(KorVolBox->Text, tb1);
-		Int32::TryParse(KorPriceBox->Text, tb2);
-		Int32::TryParse(NalVolBox->Text, tb3);
-		Int32::TryParse(NalPriceBox->Text, tb4);
-		Int32::TryParse(DobVolBox->Text, tb5);
-		Int32::TryParse(DobPriceBox->Text, tb6);
-		Int32::TryParse(PodVolBox->Text, tb7);
-		Int32::TryParse(PodPriceBox->Text, tb10);
-		Int32::TryParse(MonPriceBox->Text, tb11);
-		Int32::TryParse(DosPriceBox->Text, tb12);
+		double tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb10, tb11, tb12;
+		Double::TryParse(KorVolBox->Text, tb1);
+		Double::TryParse(KorPriceBox->Text, tb2);
+		Double::TryParse(NalVolBox->Text, tb3);
+		Double::TryParse(NalPriceBox->Text, tb4);
+		Double::TryParse(DobVolBox->Text, tb5);
+		Double::TryParse(DobPriceBox->Text, tb6);
+		Double::TryParse(PodVolBox->Text, tb7);
+		Double::TryParse(PodPriceBox->Text, tb10);
+		Double::TryParse(MonPriceBox->Text, tb11);
+		Double::TryParse(DosPriceBox->Text, tb12);
 
 		if (KorComboBox->Text == "+30%")
 			KorPrice = tb1 * (tb2 * 1.3);
@@ -240,21 +240,22 @@ namespace DverMarketWinForms {
 		PodPrice = tb7 * tb10;
 		MonPrice = tb11;
 		DosPrice = tb12;
-		Sum = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice + PodPrice + MonPrice + DosPrice;
+		DoorsCost = DoorPrice + FurPrice + KorPrice + NalPrice + DoborPrice;
+		Uslugi = PodPrice + MonPrice + DosPrice;
 		if (comboBox4->Text == "5%") {
-			Skidka = (Sum * 5) / 100;
+			Skidka = (DoorsCost * 5) / 100;
 		}
 		else if (comboBox4->Text == "7%") {
-			Skidka = (Sum * 7) / 100;
+			Skidka = (DoorsCost * 7) / 100;
 		}
 		else if (comboBox4->Text == "10%") {
-			Skidka = (Sum * 10) / 100;
+			Skidka = (DoorsCost * 10) / 100;
 		}
 		else
 			Skidka = 0;
-		Result = Sum - Skidka;
+		Result = DoorsCost - Skidka + Uslugi;
 
-		this->textBox8->Text = Sum.ToString() + " Руб.";
+		this->textBox8->Text = (DoorsCost + Uslugi).ToString() + " Руб.";
 		this->textBox9->Text = Skidka.ToString() + " Руб.";
 		this->TotalAmountBox->Text = Result.ToString() + " Руб.";
 	}

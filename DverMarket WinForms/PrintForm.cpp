@@ -63,7 +63,7 @@ namespace DverMarketWinForms {
 		}
 
 		if (MainWindow::comboBox4->Text != "без скидки") {
-			this->textBox1->Text += "\r\nСкидка: "
+			this->textBox1->Text += "\r\nСкидка на двери и комплектующие: "
 				+ MainWindow::comboBox4->Text
 				+ "   Сумма скидки: " + MainWindow::textBox9->Text + "\r\n";
 		}
