@@ -6,9 +6,16 @@
 namespace DverMarketWinForms {
 
 	void MainWindow::textBox_KeyPress(Object^ sender, KeyPressEventArgs^ e) {
-		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b')
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != '\b' && e->KeyChar != ',')
 		{
-			e->Handled = true;
+			if (e->KeyChar == '.')
+			{
+				e->KeyChar = ',';
+			}
+			else
+			{
+				e->Handled = true;
+			}
 		}
 	}
 	
